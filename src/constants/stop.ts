@@ -28,6 +28,20 @@ export enum Stop {
   HEO = 'HEO', // Heng On
   MOS = 'MOS', // Ma On Shan
   WKS = 'WKS', // Wu Kai Sha
+  ADM = 'ADM', //  Admiralty
+  EXC = 'EXC', //  Exhibition Centre
+  MKK = 'MKK', //  Mong Kok East
+  KOT = 'KOT', //  Kowloon Tong
+  SHT = 'SHT', //  Sha Tin
+  FOT = 'FOT', //  Fo Tan
+  RAC = 'RAC', //  Racecourse
+  UNI = 'UNI', //  University
+  TAP = 'TAP', //  Tai Po Market
+  TWO = 'TWO', //  Tai Wo
+  FAN = 'FAN', //  Fanling
+  SHS = 'SHS', //  Sheung Shui
+  LOW = 'LOW', //  Lo Wu
+  LMC = 'LMC', //  Lok Ma Chau
 }
 
 export const stops = {
@@ -58,6 +72,20 @@ export const stops = {
   [Stop.HEO]: { nameEn: 'Heng On', nameZh: '恆安' },
   [Stop.MOS]: { nameEn: 'Ma On Shan', nameZh: '馬鞍山' },
   [Stop.WKS]: { nameEn: 'Wu Kai Sha', nameZh: '烏溪沙' },
+  [Stop.ADM]: { nameEn: 'Admiralty', nameZh: '金鐘' },
+  [Stop.EXC]: { nameEn: 'Exhibition Centre', nameZh: '會展' },
+  [Stop.MKK]: { nameEn: 'Mong Kok East', nameZh: '旺角東' },
+  [Stop.KOT]: { nameEn: 'Kowloon Tong', nameZh: '九龍塘' },
+  [Stop.SHT]: { nameEn: 'Sha Tin', nameZh: '沙田' },
+  [Stop.FOT]: { nameEn: 'Fo Tan', nameZh: '火炭' },
+  [Stop.RAC]: { nameEn: 'Racecourse', nameZh: '馬場' },
+  [Stop.UNI]: { nameEn: 'University', nameZh: '大學' },
+  [Stop.TAP]: { nameEn: 'Tai Po Market', nameZh: '大埔墟' },
+  [Stop.TWO]: { nameEn: 'Tai Wo', nameZh: '太和' },
+  [Stop.FAN]: { nameEn: 'Fanling', nameZh: '粉嶺' },
+  [Stop.SHS]: { nameEn: 'Sheung Shui', nameZh: '上水' },
+  [Stop.LOW]: { nameEn: 'Lo Wu', nameZh: '羅湖' },
+  [Stop.LMC]: { nameEn: 'Lok Ma Chau', nameZh: '落馬洲' },
 }
 
 export const linesStops = {
@@ -89,5 +117,23 @@ export const linesStops = {
     [Stop.HEO]: stops[Stop.HEO],
     [Stop.MOS]: stops[Stop.MOS],
     [Stop.WKS]: stops[Stop.WKS],
+  },
+  [Line.EAL]: {
+    [Stop.ADM]: stops[Stop.ADM],
+    [Stop.EXC]: stops[Stop.EXC],
+    [Stop.HUH]: stops[Stop.HUH],
+    [Stop.MKK]: stops[Stop.MKK],
+    [Stop.KOT]: stops[Stop.KOT],
+    [Stop.TAW]: stops[Stop.TAW],
+    [Stop.SHT]: stops[Stop.SHT],
+    [Stop.FOT]: stops[Stop.FOT],
+    [Stop.RAC]: stops[Stop.RAC],
+    [Stop.UNI]: stops[Stop.UNI],
+    [Stop.TAP]: stops[Stop.TAP],
+    [Stop.TWO]: stops[Stop.TWO],
+    [Stop.FAN]: stops[Stop.FAN],
+    [Stop.SHS]: stops[Stop.SHS],
+    [Stop.LOW]: stops[Stop.LOW],
+    [Stop.LMC]: stops[Stop.LMC],
   },
 }
