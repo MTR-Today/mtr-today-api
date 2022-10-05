@@ -10,7 +10,7 @@ export const lineConfig = {
     color: '#5d4037',
   },
   [Line.EAL]: {
-    nameEn: 'Tuen Ma Line',
+    nameEn: 'East Rail Line',
     nameZh: '東鐵線',
     color: '#2C5282',
   },
