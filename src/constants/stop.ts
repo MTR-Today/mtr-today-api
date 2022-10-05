@@ -42,6 +42,20 @@ export enum Stop {
   SHS = 'SHS', //  Sheung Shui
   LOW = 'LOW', //  Lo Wu
   LMC = 'LMC', //  Lok Ma Chau
+  TSW = 'TSW', // Tsuen Wan
+  TWH = 'TWH', // Tai Wo Hau
+  KWH = 'KWH', // Kwai Hing
+  KWF = 'KWF', // Kwai Fong
+  LAK = 'LAK', // Lai King
+  LCK = 'LCK', // Lai Chi Kok
+  CSW = 'CSW', // Cheung Sha Wan
+  SSP = 'SSP', // Sham Shui Po
+  PRE = 'PRE', // Prince Edward
+  MOK = 'MOK', // Mong Kok
+  YMT = 'YMT', // Yau Ma Tei
+  JOR = 'JOR', // Jordan
+  TST = 'TST', // Tsim Sha Tsui
+  CEN = 'CEN', // Central
 }
 
 export const stops = {
@@ -86,6 +100,21 @@ export const stops = {
   [Stop.SHS]: { nameEn: 'Sheung Shui', nameZh: '上水' },
   [Stop.LOW]: { nameEn: 'Lo Wu', nameZh: '羅湖' },
   [Stop.LMC]: { nameEn: 'Lok Ma Chau', nameZh: '落馬洲' },
+  [Stop.TSW]: { nameZh: '荃灣', nameEn: 'Tsuen Wan' },
+  [Stop.TWH]: { nameZh: '大窩口', nameEn: 'Tai Wo Hau' },
+  [Stop.KWH]: { nameZh: '葵興', nameEn: 'Kwai Hing' },
+  [Stop.KWF]: { nameZh: '葵芳', nameEn: 'Kwai Fong' },
+  [Stop.LAK]: { nameZh: '茘景', nameEn: 'Lai King' },
+  [Stop.LCK]: { nameZh: '茘枝角', nameEn: 'Lai Chi Kok' },
+  [Stop.CSW]: { nameZh: '長沙灣', nameEn: 'Cheung Sha Wan' },
+  [Stop.SSP]: { nameZh: '深水埗', nameEn: 'Sham Shui Po' },
+  [Stop.PRE]: { nameZh: '太子', nameEn: 'Prince Edward' },
+  [Stop.MOK]: { nameZh: '旺角', nameEn: 'Mong Kok' },
+  [Stop.YMT]: { nameZh: '油麻地', nameEn: 'Yau Ma Tei' },
+  [Stop.JOR]: { nameZh: '佐敦', nameEn: 'Jordan' },
+  [Stop.TST]: { nameZh: '尖沙咀', nameEn: 'Tsim Sha Tsui' },
+  [Stop.ADM]: { nameZh: '金鐘', nameEn: 'Admiralty' },
+  [Stop.CEN]: { nameZh: '中環', nameEn: 'Central' },
 }
 
 export const linesStops = {
@@ -135,5 +164,23 @@ export const linesStops = {
     [Stop.SHS]: stops[Stop.SHS],
     [Stop.LOW]: stops[Stop.LOW],
     [Stop.LMC]: stops[Stop.LMC],
+  },
+  [Line.TWL]: {
+    [Stop.TSW]: stops[Stop.TSW],
+    [Stop.TWH]: stops[Stop.TWH],
+    [Stop.KWH]: stops[Stop.KWH],
+    [Stop.KWF]: stops[Stop.KWF],
+    [Stop.LAK]: stops[Stop.LAK],
+    [Stop.MEF]: stops[Stop.MEF],
+    [Stop.LCK]: stops[Stop.LCK],
+    [Stop.CSW]: stops[Stop.CSW],
+    [Stop.SSP]: stops[Stop.SSP],
+    [Stop.PRE]: stops[Stop.PRE],
+    [Stop.MOK]: stops[Stop.MOK],
+    [Stop.YMT]: stops[Stop.YMT],
+    [Stop.JOR]: stops[Stop.JOR],
+    [Stop.TST]: stops[Stop.TST],
+    [Stop.ADM]: stops[Stop.ADM],
+    [Stop.CEN]: stops[Stop.CEN],
   },
 }

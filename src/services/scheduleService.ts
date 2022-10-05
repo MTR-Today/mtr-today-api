@@ -15,7 +15,6 @@ const formatScheduleItem = (items: ScheduleItem[]) =>
 
 const getSchedules = async ({ line, stop }: { line: Line; stop: Stop }) => {
   const response = await mtrApi.getSchedules({ line, stop })
-
   if (response.status === 0) return null
   const { data, curr_time, isdelay, sys_time } = response
   const { UP, DOWN } = data[`${line}-${stop}`]
