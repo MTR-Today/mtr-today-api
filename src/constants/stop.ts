@@ -62,6 +62,14 @@ export enum Stop {
   TSY = 'TSY', // Tsing Yi
   SUN = 'SUN', // Sunny Bay
   TUC = 'TUC', // Tung Chung
+  NOP = 'NOP', // North Point
+  QUB = 'QUB', // Quarry Bay
+  YAT = 'YAT', // Yau Tong
+  TIK = 'TIK', // Tiu Keng Leng
+  TKO = 'TKO', // Tseung Kwan O
+  LHP = 'LHP', // LOHAS Park
+  HAH = 'HAH', // Hang Hau
+  POA = 'POA', // Po Lam
 }
 
 export const stops = {
@@ -127,6 +135,14 @@ export const stops = {
   [Stop.TSY]: { nameEn: 'Tsing Yi', nameZh: '青衣' },
   [Stop.SUN]: { nameEn: 'Sunny Bay', nameZh: '欣澳' },
   [Stop.TUC]: { nameEn: 'Tung Chung', nameZh: '	東涌' },
+  [Stop.NOP]: { nameEn: 'North Point', nameZh: '北角' },
+  [Stop.QUB]: { nameEn: 'Quarry Bay', nameZh: '鰂魚涌' },
+  [Stop.YAT]: { nameEn: 'Yau Tong', nameZh: '油塘' },
+  [Stop.TIK]: { nameEn: 'Tiu Keng Leng', nameZh: '調景嶺' },
+  [Stop.TKO]: { nameEn: 'Tseung Kwan O', nameZh: '將軍澳' },
+  [Stop.LHP]: { nameEn: 'LOHAS Park', nameZh: '康城' },
+  [Stop.HAH]: { nameEn: 'Hang Hau', nameZh: '坑口' },
+  [Stop.POA]: { nameEn: 'Po Lam', nameZh: '	寶琳' },
 }
 
 export const linesStops = {
@@ -204,5 +220,15 @@ export const linesStops = {
     [Stop.TSY]: stops[Stop.TSY],
     [Stop.SUN]: stops[Stop.SUN],
     [Stop.TUC]: stops[Stop.TUC],
+  },
+  [Line.TKL]: {
+    [Stop.NOP]: stops[Stop.NOP],
+    [Stop.QUB]: stops[Stop.QUB],
+    [Stop.YAT]: stops[Stop.YAT],
+    [Stop.TIK]: stops[Stop.TIK],
+    [Stop.TKO]: stops[Stop.TKO],
+    [Stop.LHP]: stops[Stop.LHP],
+    [Stop.HAH]: stops[Stop.HAH],
+    [Stop.POA]: stops[Stop.POA],
   },
 }
