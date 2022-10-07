@@ -70,6 +70,8 @@ export enum Stop {
   LHP = 'LHP', // LOHAS Park
   HAH = 'HAH', // Hang Hau
   POA = 'POA', // Po Lam
+  AIR = 'AIR', // Airport
+  AWE = 'AWE', // AsiaWorld Expo
 }
 
 export const stops = {
@@ -143,6 +145,8 @@ export const stops = {
   [Stop.LHP]: { nameEn: 'LOHAS Park', nameZh: '康城' },
   [Stop.HAH]: { nameEn: 'Hang Hau', nameZh: '坑口' },
   [Stop.POA]: { nameEn: 'Po Lam', nameZh: '	寶琳' },
+  [Stop.AIR]: { nameEn: 'Airport', nameZh: '機場' },
+  [Stop.AWE]: { nameEn: 'AsiaWorld Expo', nameZh: '博覽館' },
 }
 
 export const linesStops = {
@@ -230,5 +234,12 @@ export const linesStops = {
     [Stop.LHP]: stops[Stop.LHP],
     [Stop.HAH]: stops[Stop.HAH],
     [Stop.POA]: stops[Stop.POA],
+  },
+  [Line.AEL]: {
+    [Stop.HOK]: stops[Stop.HOK],
+    [Stop.KOW]: stops[Stop.KOW],
+    [Stop.TSY]: stops[Stop.TSY],
+    [Stop.AIR]: stops[Stop.AIR],
+    [Stop.AWE]: stops[Stop.AWE],
   },
 }
