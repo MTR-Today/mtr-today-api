@@ -2,6 +2,7 @@ export enum Line {
   TML = 'TML',
   EAL = 'EAL',
   TWL = 'TWL',
+  TCL = 'TCL',
 }
 
 export const lineConfig = {
@@ -19,5 +20,10 @@ export const lineConfig = {
     nameEn: 'Tsuen Wan Line',
     nameZh: '荃灣線',
     color: '#9B2C2C',
+  },
+  [Line.TCL]: {
+    nameEn: 'Tung Chung Line',
+    nameZh: '東涌線',
+    color: '#DD6B20',
   },
 }

@@ -56,6 +56,12 @@ export enum Stop {
   JOR = 'JOR', // Jordan
   TST = 'TST', // Tsim Sha Tsui
   CEN = 'CEN', // Central
+  HOK = 'HOK', // Hong Kong
+  KOW = 'KOW', // Kowloon
+  OLY = 'OLY', // Olympic
+  TSY = 'TSY', // Tsing Yi
+  SUN = 'SUN', // Sunny Bay
+  TUC = 'TUC', // Tung Chung
 }
 
 export const stops = {
@@ -115,6 +121,12 @@ export const stops = {
   [Stop.TST]: { nameZh: '尖沙咀', nameEn: 'Tsim Sha Tsui' },
   [Stop.ADM]: { nameZh: '金鐘', nameEn: 'Admiralty' },
   [Stop.CEN]: { nameZh: '中環', nameEn: 'Central' },
+  [Stop.HOK]: { nameEn: 'Hong Kong', nameZh: '香港' },
+  [Stop.KOW]: { nameEn: 'Kowloon', nameZh: '九龍' },
+  [Stop.OLY]: { nameEn: 'Olympic', nameZh: '奧運' },
+  [Stop.TSY]: { nameEn: 'Tsing Yi', nameZh: '青衣' },
+  [Stop.SUN]: { nameEn: 'Sunny Bay', nameZh: '欣澳' },
+  [Stop.TUC]: { nameEn: 'Tung Chung', nameZh: '	東涌' },
 }
 
 export const linesStops = {
@@ -182,5 +194,15 @@ export const linesStops = {
     [Stop.TST]: stops[Stop.TST],
     [Stop.ADM]: stops[Stop.ADM],
     [Stop.CEN]: stops[Stop.CEN],
+  },
+  [Line.TCL]: {
+    [Stop.HOK]: stops[Stop.HOK],
+    [Stop.KOW]: stops[Stop.KOW],
+    [Stop.OLY]: stops[Stop.OLY],
+    [Stop.NAC]: stops[Stop.NAC],
+    [Stop.LAK]: stops[Stop.LAK],
+    [Stop.TSY]: stops[Stop.TSY],
+    [Stop.SUN]: stops[Stop.SUN],
+    [Stop.TUC]: stops[Stop.TUC],
   },
 }
