@@ -81,6 +81,7 @@ export enum Stop {
   LOF = 'LOF', // Lok Fu
   SKM = 'SKM', // Shek Kip Mei
   WHA = 'WHA', // Whampo
+  DIS = 'DIS', // Disneyland Resort
 }
 
 export const stops = {
@@ -165,6 +166,7 @@ export const stops = {
   [Stop.LOF]: { nameZh: '樂富', nameEn: 'Lok Fu' },
   [Stop.SKM]: { nameZh: '石硤尾', nameEn: 'Shek Kip Mei' },
   [Stop.WHA]: { nameZh: '黃埔', nameEn: 'Whampo' },
+  [Stop.DIS]: { nameZh: '迪士尼', nameEn: 'Disneyland Resort' },
 }
 
 export const linesStops = {
@@ -278,5 +280,9 @@ export const linesStops = {
     [Stop.YMT]: stops[Stop.YMT],
     [Stop.HOM]: stops[Stop.HOM],
     [Stop.WHA]: stops[Stop.WHA],
+  },
+  [Line.DRL]: {
+    [Stop.SUN]: stops[Stop.SUN],
+    [Stop.DIS]: stops[Stop.DIS],
   },
 }
