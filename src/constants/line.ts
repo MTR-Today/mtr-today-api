@@ -5,6 +5,7 @@ export enum Line {
   TCL = 'TCL',
   TKL = 'TKL',
   AEL = 'AEL',
+  KTL = 'KTL',
 }
 
 export const lineConfig = {
@@ -37,5 +38,10 @@ export const lineConfig = {
     nameEn: 'Airport Express',
     nameZh: '機場快綫',
     color: '#285E61',
+  },
+  [Line.KTL]: {
+    nameEn: 'Kwun Tong Line',
+    nameZh: '觀塘綫',
+    color: '#276749',
   },
 }

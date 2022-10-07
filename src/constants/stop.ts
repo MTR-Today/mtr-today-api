@@ -72,6 +72,15 @@ export enum Stop {
   POA = 'POA', // Po Lam
   AIR = 'AIR', // Airport
   AWE = 'AWE', // AsiaWorld Expo
+  LAT = 'LAT', // Lam Tin
+  KWT = 'KWT', // Kwun Tong
+  NTK = 'NTK', // Ngau Tau Kok
+  KOB = 'KOB', // Kowloon Bay
+  CHH = 'CHH', // Choi Hung
+  WTS = 'WTS', // Wong Tai Sin
+  LOF = 'LOF', // Lok Fu
+  SKM = 'SKM', // Shek Kip Mei
+  WHA = 'WHA', // Whampo
 }
 
 export const stops = {
@@ -147,6 +156,15 @@ export const stops = {
   [Stop.POA]: { nameEn: 'Po Lam', nameZh: '	寶琳' },
   [Stop.AIR]: { nameEn: 'Airport', nameZh: '機場' },
   [Stop.AWE]: { nameEn: 'AsiaWorld Expo', nameZh: '博覽館' },
+  [Stop.LAT]: { nameZh: '藍田', nameEn: 'Lam Tin' },
+  [Stop.KWT]: { nameZh: '觀塘', nameEn: 'Kwun Tong' },
+  [Stop.NTK]: { nameZh: '牛頭角', nameEn: 'Ngau Tau Kok' },
+  [Stop.KOB]: { nameZh: '九龍灣', nameEn: 'Kowloon Bay' },
+  [Stop.CHH]: { nameZh: '彩虹', nameEn: 'Choi Hung' },
+  [Stop.WTS]: { nameZh: '黃大仙', nameEn: 'Wong Tai Sin' },
+  [Stop.LOF]: { nameZh: '樂富', nameEn: 'Lok Fu' },
+  [Stop.SKM]: { nameZh: '石硤尾', nameEn: 'Shek Kip Mei' },
+  [Stop.WHA]: { nameZh: '黃埔', nameEn: 'Whampo' },
 }
 
 export const linesStops = {
@@ -241,5 +259,24 @@ export const linesStops = {
     [Stop.TSY]: stops[Stop.TSY],
     [Stop.AIR]: stops[Stop.AIR],
     [Stop.AWE]: stops[Stop.AWE],
+  },
+  [Line.KTL]: {
+    [Stop.TIK]: stops[Stop.TIK],
+    [Stop.YAT]: stops[Stop.YAT],
+    [Stop.LAT]: stops[Stop.LAT],
+    [Stop.KWT]: stops[Stop.KWT],
+    [Stop.NTK]: stops[Stop.NTK],
+    [Stop.KOB]: stops[Stop.KOB],
+    [Stop.CHH]: stops[Stop.CHH],
+    [Stop.DIH]: stops[Stop.DIH],
+    [Stop.WTS]: stops[Stop.WTS],
+    [Stop.LOF]: stops[Stop.LOF],
+    [Stop.KOT]: stops[Stop.KOT],
+    [Stop.SKM]: stops[Stop.SKM],
+    [Stop.PRE]: stops[Stop.PRE],
+    [Stop.MOK]: stops[Stop.MOK],
+    [Stop.YMT]: stops[Stop.YMT],
+    [Stop.HOM]: stops[Stop.HOM],
+    [Stop.WHA]: stops[Stop.WHA],
   },
 }
