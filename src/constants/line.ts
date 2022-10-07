@@ -7,6 +7,7 @@ export enum Line {
   AEL = 'AEL',
   KTL = 'KTL',
   DRL = 'DRL',
+  ISL = 'ISL',
 }
 
 export const lineConfig = {
@@ -49,5 +50,10 @@ export const lineConfig = {
     nameEn: 'Disneyland Resort Line',
     nameZh: '迪士尼綫',
     color: '#97266D',
+  },
+  [Line.ISL]: {
+    nameEn: 'Island Line',
+    nameZh: '港島綫',
+    color: '#2C5282',
   },
 }

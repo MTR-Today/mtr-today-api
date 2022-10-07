@@ -82,6 +82,19 @@ export enum Stop {
   SKM = 'SKM', // Shek Kip Mei
   WHA = 'WHA', // Whampo
   DIS = 'DIS', // Disneyland Resort
+  CHW = 'CHW', // Chai Wan
+  HFC = 'HFC', // Heng Fa Chuen
+  SKW = 'SKW', // Shau Kei Wan
+  SWH = 'SWH', // Sai Wan Ho
+  TAK = 'TAK', // Tai Koo
+  FOH = 'FOH', // Fortress Hill
+  TIH = 'TIH', // Tin Hau
+  CAB = 'CAB', // Causeway Bay
+  WAC = 'WAC', // Wan Chai
+  SHW = 'SHW', // Sheung Wan
+  SYP = 'SYP', // Sai Ying Pun
+  HKU = 'HKU', // HKU
+  KET = 'KET', // Kennedy Town
 }
 
 export const stops = {
@@ -167,6 +180,19 @@ export const stops = {
   [Stop.SKM]: { nameZh: '石硤尾', nameEn: 'Shek Kip Mei' },
   [Stop.WHA]: { nameZh: '黃埔', nameEn: 'Whampo' },
   [Stop.DIS]: { nameZh: '迪士尼', nameEn: 'Disneyland Resort' },
+  [Stop.CHW]: { nameZh: '柴灣', nameEn: 'Chai Wan' },
+  [Stop.HFC]: { nameZh: '杏花邨', nameEn: 'Heng Fa Chuen' },
+  [Stop.SKW]: { nameZh: '筲箕灣', nameEn: 'Shau Kei Wan' },
+  [Stop.SWH]: { nameZh: '西灣河', nameEn: 'Sai Wan Ho' },
+  [Stop.TAK]: { nameZh: '太古', nameEn: 'Tai Koo' },
+  [Stop.FOH]: { nameZh: '炮台山', nameEn: 'Fortress Hill' },
+  [Stop.TIH]: { nameZh: '天后', nameEn: 'Tin Hau' },
+  [Stop.CAB]: { nameZh: '銅鑼灣', nameEn: 'Causeway Bay' },
+  [Stop.WAC]: { nameZh: '灣仔', nameEn: 'Wan Chai' },
+  [Stop.SHW]: { nameZh: '上環', nameEn: 'Sheung Wan' },
+  [Stop.SYP]: { nameZh: '西營盤', nameEn: 'Sai Ying Pun' },
+  [Stop.HKU]: { nameZh: '香港大學', nameEn: 'HKU' },
+  [Stop.KET]: { nameZh: '堅尼地城', nameEn: 'Kennedy Town' },
 }
 
 export const linesStops = {
@@ -284,5 +310,24 @@ export const linesStops = {
   [Line.DRL]: {
     [Stop.SUN]: stops[Stop.SUN],
     [Stop.DIS]: stops[Stop.DIS],
+  },
+  [Line.ISL]: {
+    [Stop.CHW]: stops[Stop.CHW],
+    [Stop.HFC]: stops[Stop.HFC],
+    [Stop.SKW]: stops[Stop.SKW],
+    [Stop.SWH]: stops[Stop.SWH],
+    [Stop.TAK]: stops[Stop.TAK],
+    [Stop.QUB]: stops[Stop.QUB],
+    [Stop.NOP]: stops[Stop.NOP],
+    [Stop.FOH]: stops[Stop.FOH],
+    [Stop.TIH]: stops[Stop.TIH],
+    [Stop.CAB]: stops[Stop.CAB],
+    [Stop.WAC]: stops[Stop.WAC],
+    [Stop.ADM]: stops[Stop.ADM],
+    [Stop.CEN]: stops[Stop.CEN],
+    [Stop.SHW]: stops[Stop.SHW],
+    [Stop.SYP]: stops[Stop.SYP],
+    [Stop.HKU]: stops[Stop.HKU],
+    [Stop.KET]: stops[Stop.KET],
   },
 }
