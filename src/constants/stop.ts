@@ -156,7 +156,6 @@ export const stops = {
   [Stop.YMT]: { nameZh: '油麻地', nameEn: 'Yau Ma Tei' },
   [Stop.JOR]: { nameZh: '佐敦', nameEn: 'Jordan' },
   [Stop.TST]: { nameZh: '尖沙咀', nameEn: 'Tsim Sha Tsui' },
-  [Stop.ADM]: { nameZh: '金鐘', nameEn: 'Admiralty' },
   [Stop.CEN]: { nameZh: '中環', nameEn: 'Central' },
   [Stop.HOK]: { nameEn: 'Hong Kong', nameZh: '香港' },
   [Stop.KOW]: { nameEn: 'Kowloon', nameZh: '九龍' },
