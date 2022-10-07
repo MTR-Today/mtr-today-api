@@ -95,6 +95,10 @@ export enum Stop {
   SYP = 'SYP', // Sai Ying Pun
   HKU = 'HKU', // HKU
   KET = 'KET', // Kennedy Town
+  OCP = 'OCP', // Ocean Park
+  WCH = 'WCH', // Wong Chuk Hang
+  LET = 'LET', // Lei Tung
+  SOH = 'SOH', // South Horizons
 }
 
 export const stops = {
@@ -193,6 +197,10 @@ export const stops = {
   [Stop.SYP]: { nameZh: '西營盤', nameEn: 'Sai Ying Pun' },
   [Stop.HKU]: { nameZh: '香港大學', nameEn: 'HKU' },
   [Stop.KET]: { nameZh: '堅尼地城', nameEn: 'Kennedy Town' },
+  [Stop.OCP]: { nameZh: '海洋公園', nameEn: 'Ocean Park' },
+  [Stop.WCH]: { nameZh: '黃竹坑', nameEn: 'Wong Chuk Hang' },
+  [Stop.LET]: { nameZh: '利東', nameEn: 'Lei Tung' },
+  [Stop.SOH]: { nameZh: '海怡半島', nameEn: 'South Horizons' },
 }
 
 export const linesStops = {
@@ -329,5 +337,12 @@ export const linesStops = {
     [Stop.SYP]: stops[Stop.SYP],
     [Stop.HKU]: stops[Stop.HKU],
     [Stop.KET]: stops[Stop.KET],
+  },
+  [Line.SIL]: {
+    [Stop.ADM]: stops[Stop.ADM],
+    [Stop.OCP]: stops[Stop.OCP],
+    [Stop.WCH]: stops[Stop.WCH],
+    [Stop.LET]: stops[Stop.LET],
+    [Stop.SOH]: stops[Stop.SOH],
   },
 }

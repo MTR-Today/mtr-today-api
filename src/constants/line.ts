@@ -8,6 +8,7 @@ export enum Line {
   KTL = 'KTL',
   DRL = 'DRL',
   ISL = 'ISL',
+  SIL = 'SIL',
 }
 
 export const lineConfig = {
@@ -55,5 +56,10 @@ export const lineConfig = {
     nameEn: 'Island Line',
     nameZh: '港島綫',
     color: '#2C5282',
+  },
+  [Line.SIL]: {
+    nameEn: 'South Island Line',
+    nameZh: '南港島綫',
+    color: '#AFB42B',
   },
 }
