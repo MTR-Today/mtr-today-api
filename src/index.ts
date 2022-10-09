@@ -2,7 +2,7 @@ import Koa from 'koa'
 import Router from '@koa/router'
 import { Line, lineConfig } from './constants/line'
 import cors from '@koa/cors'
-import { linesStops, Stop } from './constants/stop'
+import { linesStops, Stop, stops } from './constants/stop'
 import { scheduleService } from './services/scheduleService'
 import './utils/dayjs'
 
@@ -18,6 +18,15 @@ router.get('/api/v1/lines', async ctx => {
 router.get('/api/v1/lines/:line', async ctx => {
   const { line } = ctx.params
   ctx.body = lineConfig[line as Line]
+})
+
+router.get('/api/v1/stops', async ctx => {
+  ctx.body = stops
+})
+
+router.get('/api/v1/stops/:stop', async ctx => {
+  const { stop } = ctx.params
+  ctx.body = stops[stop as Stop]
 })
 
 router.get('/api/v1/lines/:line/stops', async ctx => {
