@@ -2,6 +2,7 @@ import { Line } from '../constants/line'
 import { Stop } from '../constants/stop'
 import { mtrApi, ScheduleItem } from '../apis/getSchedules'
 import { convertTimeRecursive } from '../utils/convertTimeRecursive'
+import memoize from 'memoizee'
 
 const formatScheduleItem = (items: ScheduleItem[]) =>
   items
@@ -13,24 +14,27 @@ const formatScheduleItem = (items: ScheduleItem[]) =>
       time,
     }))
 
-const getSchedules = async ({ line, stop }: { line: Line; stop: Stop }) => {
-  const response = await mtrApi.getSchedules({ line, stop })
-  if (response.status === 0) return null
-  const { data, curr_time, isdelay, sys_time } = response
-  const { UP, DOWN } = data[`${line}-${stop}`]
+const getSchedules = memoize(
+  async ({ line, stop }: { line: Line; stop: Stop }) => {
+    const response = await mtrApi.getSchedules({ line, stop })
+    if (response.status === 0) return null
+    const { data, curr_time, isdelay, sys_time } = response
+    const { UP, DOWN } = data[`${line}-${stop}`]
 
-  return convertTimeRecursive(
-    {
-      currTime: curr_time,
-      isDelay: isdelay !== 'N',
-      sysTime: sys_time,
-      schedule: {
-        up: UP ? formatScheduleItem(UP) : UP,
-        down: DOWN ? formatScheduleItem(DOWN) : DOWN,
+    return convertTimeRecursive(
+      {
+        currTime: curr_time,
+        isDelay: isdelay !== 'N',
+        sysTime: sys_time,
+        schedule: {
+          up: UP ? formatScheduleItem(UP) : UP,
+          down: DOWN ? formatScheduleItem(DOWN) : DOWN,
+        },
       },
-    },
-    'YYYY-MM-DD HH:mm:ss'
-  )
-}
+      'YYYY-MM-DD HH:mm:ss'
+    )
+  },
+  { promise: true, maxAge: 10000, preFetch: true }
+)
 
 export const scheduleService = { getSchedules }
