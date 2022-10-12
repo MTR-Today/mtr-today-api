@@ -34,31 +34,20 @@ router.get('/api/v1/lines/:line/stops', async ctx => {
   ctx.body = linesStops[line as Line]
 })
 
+router.get('/api/v1/schedules', async ctx => {
+  ctx.body = await scheduleService.getSchedule()
+})
+
 router.get('/api/v1/lines/:line/schedules', async ctx => {
   const { line } = ctx.params
-  const stops = linesStops[line as Line]
 
-  const res = await Promise.all(
-    Object.keys(stops).map(async stop => {
-      const schedule = await scheduleService.getSchedules({
-        line: line as Line,
-        stop: stop as Stop,
-      })
-
-      return [stop, schedule]
-    })
-  )
-
-  ctx.body = Object.fromEntries(res)
+  ctx.body = await scheduleService.getLineSchedule(line as Line)
 })
 
 router.get('/api/v1/lines/:line/stops/:stop/schedules', async ctx => {
   const { line, stop } = ctx.params
 
-  ctx.body = await scheduleService.getSchedules({
-    line: line as Line,
-    stop: stop as Stop,
-  })
+  ctx.body = await scheduleService.getStopSchedules(line as Line, stop as Stop)
 })
 
 koa.use(router.routes()).use(router.allowedMethods())

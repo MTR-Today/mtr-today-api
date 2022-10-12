@@ -1,5 +1,5 @@
 import { Line } from '../constants/line'
-import { Stop } from '../constants/stop'
+import { linesStops, Stop } from '../constants/stop'
 import { mtrApi, ScheduleItem } from '../apis/getSchedules'
 import { convertTimeRecursive } from '../utils/convertTimeRecursive'
 import memoize from 'memoizee'
@@ -14,8 +14,8 @@ const formatScheduleItem = (items: ScheduleItem[]) =>
       time,
     }))
 
-const getSchedules = memoize(
-  async ({ line, stop }: { line: Line; stop: Stop }) => {
+const getStopSchedules = memoize(
+  async (line: Line, stop: Stop) => {
     const response = await mtrApi.getSchedules({ line, stop })
     if (response.status === 0) return null
     const { data, curr_time, isdelay, sys_time } = response
@@ -34,7 +34,37 @@ const getSchedules = memoize(
       'YYYY-MM-DD HH:mm:ss'
     )
   },
-  { promise: true, maxAge: 10000, preFetch: true }
+  { primitive: true, promise: true, maxAge: 20000, preFetch: true }
 )
 
-export const scheduleService = { getSchedules }
+const getLineSchedule = async (line: Line) => {
+  const stops = linesStops[line as Line]
+
+  let result = {}
+
+  for (const stop of Object.keys(stops)) {
+    const schedule = await getStopSchedules(line as Line, stop as Stop)
+
+    result = { ...result, [stop]: schedule }
+  }
+
+  return result
+}
+
+const getSchedule = async () => {
+  let result = {}
+
+  for (const line of Object.keys(linesStops)) {
+    const schedule = await getLineSchedule(line as Line)
+
+    result = { ...result, [line]: schedule }
+  }
+
+  return result
+}
+
+export const scheduleService = {
+  getStopSchedules,
+  getLineSchedule,
+  getSchedule,
+}
