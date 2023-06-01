@@ -16,7 +16,7 @@ type Schedule = {
   sys_time: string
   curr_time: string
   data: {
-    [key: string]: {
+    [key in `${LineCode}-${StopCode}`]: {
       curr_time: string
       sys_time: string
       UP?: ScheduleItem[]
