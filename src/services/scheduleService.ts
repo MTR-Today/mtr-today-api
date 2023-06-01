@@ -40,15 +40,14 @@ const getStopSchedules = memoize(
 const getLineSchedule = async (code: LineCode) => {
   const stops = lines.find(item => item.code === code)?.stops || []
 
-  let result: {
+  let result: (Awaited<ReturnType<typeof getStopSchedules>> & {
     code: StopCode
-    schedule: Awaited<ReturnType<typeof getStopSchedules>>
-  }[] = []
+  })[] = []
 
   for (const stop of stops) {
     const schedule = await getStopSchedules(code, stop.code)
 
-    result = [...result, { code: stop.code, schedule }]
+    if (schedule) result = [...result, { code: stop.code, ...schedule }]
   }
 
   return result

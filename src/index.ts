@@ -11,15 +11,7 @@ koa.use(cors({ origin: 'http://localhost:5173' }))
 
 const router = new Router()
 
-router.get('/api/v1/lines', async ctx => {
-  ctx.body = lines
-})
-
-router.get('/api/v1/lines/:line', async ctx => {
-  const { line } = ctx.params
-  ctx.body = lines.find(item => item.code === line)
-})
-
+// Stop API
 router.get('/api/v1/stops', async ctx => {
   ctx.body = stops
 })
@@ -29,13 +21,20 @@ router.get('/api/v1/stops/:stop', async ctx => {
   ctx.body = stops.find(item => item.code === stop)
 })
 
+// Line API
+
+router.get('/api/v1/lines', async ctx => {
+  ctx.body = lines
+})
+
+router.get('/api/v1/lines/:line', async ctx => {
+  const { line } = ctx.params
+  ctx.body = lines.find(item => item.code === line)
+})
+
 router.get('/api/v1/lines/:line/stops', async ctx => {
   const { line } = ctx.params
   ctx.body = lines.find(item => item.code === line)?.stops
-})
-
-router.get('/api/v1/schedules', async ctx => {
-  ctx.body = await scheduleService.getSchedule()
 })
 
 router.get('/api/v1/lines/:line/schedules', async ctx => {
@@ -49,6 +48,12 @@ router.get('/api/v1/lines/:line/stops/:stop/schedules', async ctx => {
     line as LineCode,
     stop as StopCode
   )
+})
+
+// Schedule API
+
+router.get('/api/v1/schedules', async ctx => {
+  ctx.body = await scheduleService.getSchedule()
 })
 
 koa.use(router.routes()).use(router.allowedMethods())
