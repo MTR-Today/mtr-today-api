@@ -1,5 +1,5 @@
-import { Line } from '../constants/line'
-import { Stop } from '../constants/stop'
+import { LineCode } from '../constants/line'
+import { StopCode } from '../constants/stop'
 import { apiClient } from './apiClient'
 
 export type ScheduleItem = {
@@ -28,7 +28,7 @@ type Schedule = {
   isdelay: string
 }
 
-const getSchedules = ({ line, stop }: { line: Line; stop: Stop }) =>
+const getSchedules = ({ line, stop }: { line: LineCode; stop: StopCode }) =>
   apiClient
     .url('/transport/mtr/getSchedule.php')
     .query({ line, sta: stop })
