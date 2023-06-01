@@ -1,5 +1,5 @@
-import { Line } from '../constants/line'
-import { linesStops, Stop } from '../constants/stop'
+import { LineCode, lines } from '../constants/line'
+import { StopCode } from '../constants/stop'
 import { mtrApi, ScheduleItem } from '../apis/getSchedules'
 import { convertTimeRecursive } from '../utils/convertTimeRecursive'
 import memoize from 'memoizee'
@@ -15,7 +15,7 @@ const formatScheduleItem = (items: ScheduleItem[]) =>
     }))
 
 const getStopSchedules = memoize(
-  async (line: Line, stop: Stop) => {
+  async (line: LineCode, stop: StopCode) => {
     const response = await mtrApi.getSchedules({ line, stop })
     if (response.status === 0) return null
     const { data, curr_time, isdelay, sys_time } = response
@@ -37,27 +37,33 @@ const getStopSchedules = memoize(
   { primitive: true, promise: true, maxAge: 20000, preFetch: true }
 )
 
-const getLineSchedule = async (line: Line) => {
-  const stops = linesStops[line as Line]
+const getLineSchedule = async (code: LineCode) => {
+  const stops = lines.find(item => item.code === code)?.stops || []
 
-  let result = {}
+  let result: {
+    code: StopCode
+    schedule: Awaited<ReturnType<typeof getStopSchedules>>
+  }[] = []
 
-  for (const stop of Object.keys(stops)) {
-    const schedule = await getStopSchedules(line as Line, stop as Stop)
+  for (const stop of stops) {
+    const schedule = await getStopSchedules(code, stop.code)
 
-    result = { ...result, [stop]: schedule }
+    result = [...result, { code: stop.code, schedule }]
   }
 
   return result
 }
 
 const getSchedule = async () => {
-  let result = {}
+  let result: {
+    code: LineCode
+    stops: Awaited<ReturnType<typeof getLineSchedule>>
+  }[] = []
 
-  for (const line of Object.keys(linesStops)) {
-    const schedule = await getLineSchedule(line as Line)
+  for (const line of lines) {
+    const schedule = await getLineSchedule(line.code)
 
-    result = { ...result, [line]: schedule }
+    result = [...result, { code: line.code, stops: schedule }]
   }
 
   return result

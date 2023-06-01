@@ -1,8 +1,8 @@
 import Koa from 'koa'
 import Router from '@koa/router'
-import { Line, lineConfig } from './constants/line'
+import { LineCode, lines } from './constants/line'
 import cors from '@koa/cors'
-import { linesStops, Stop, stops } from './constants/stop'
+import { StopCode, stops } from './constants/stop'
 import { scheduleService } from './services/scheduleService'
 import './utils/dayjs'
 
@@ -12,12 +12,12 @@ koa.use(cors({ origin: 'http://localhost:5173' }))
 const router = new Router()
 
 router.get('/api/v1/lines', async ctx => {
-  ctx.body = lineConfig
+  ctx.body = lines
 })
 
 router.get('/api/v1/lines/:line', async ctx => {
   const { line } = ctx.params
-  ctx.body = lineConfig[line as Line]
+  ctx.body = lines.find(item => item.code === line)
 })
 
 router.get('/api/v1/stops', async ctx => {
@@ -26,12 +26,12 @@ router.get('/api/v1/stops', async ctx => {
 
 router.get('/api/v1/stops/:stop', async ctx => {
   const { stop } = ctx.params
-  ctx.body = stops[stop as Stop]
+  ctx.body = stops.find(item => item.code === stop)
 })
 
 router.get('/api/v1/lines/:line/stops', async ctx => {
   const { line } = ctx.params
-  ctx.body = linesStops[line as Line]
+  ctx.body = lines.find(item => item.code === line)?.stops
 })
 
 router.get('/api/v1/schedules', async ctx => {
@@ -40,14 +40,15 @@ router.get('/api/v1/schedules', async ctx => {
 
 router.get('/api/v1/lines/:line/schedules', async ctx => {
   const { line } = ctx.params
-
-  ctx.body = await scheduleService.getLineSchedule(line as Line)
+  ctx.body = await scheduleService.getLineSchedule(line as LineCode)
 })
 
 router.get('/api/v1/lines/:line/stops/:stop/schedules', async ctx => {
   const { line, stop } = ctx.params
-
-  ctx.body = await scheduleService.getStopSchedules(line as Line, stop as Stop)
+  ctx.body = await scheduleService.getStopSchedules(
+    line as LineCode,
+    stop as StopCode
+  )
 })
 
 koa.use(router.routes()).use(router.allowedMethods())
