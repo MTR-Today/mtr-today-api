@@ -1,6 +1,11 @@
-import { LineCode, lines } from '../constants/line'
-import { StopCode } from '../constants/stop'
-import { mtrApi, ScheduleItem } from '../apis/getSchedules'
+import {
+  LineCode,
+  ScheduleItem,
+  StopCode,
+  lines,
+  stopScheduleApi,
+} from 'mtr-kit'
+
 import { convertTimeRecursive } from '../utils/convertTimeRecursive'
 import memoize from 'memoizee'
 
@@ -16,7 +21,7 @@ const formatScheduleItem = (items: ScheduleItem[]) =>
 
 const getStopSchedules = memoize(
   async (line: LineCode, stop: StopCode) => {
-    const response = await mtrApi.getSchedules({ line, stop })
+    const response = await stopScheduleApi.get({ line, stop })
     if (response.status === 0) return null
     const { data, curr_time, isdelay, sys_time } = response
     const { UP, DOWN } = data[`${line}-${stop}`]
