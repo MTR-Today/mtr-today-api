@@ -16,7 +16,7 @@
     "koa": "2.13.4",
     "memoizee": "0.4.15",
     "tsx": "3.9.0",
-    "wretch": "2.1.4"
+    "wretch": "2.5.2"
   },
   "devDependencies": {
     "@types/koa": "2.13.5",
