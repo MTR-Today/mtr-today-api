@@ -35,8 +35,8 @@ devDependencies:
     specifier: 2.13.5
     version: 2.13.5
   '@types/koa__cors':
-    specifier: 3.3.0
-    version: 3.3.0
+    specifier: 4.0.0
+    version: 4.0.0
   '@types/koa__router':
     specifier: 12.0.0
     version: 12.0.0
@@ -391,8 +391,8 @@ packages:
       '@types/node': 20.2.5
     dev: true
 
-  /@types/koa__cors@3.3.0:
-    resolution: {integrity: sha512-FUN8YxcBakIs+walVe3+HcNP+Bxd0SB8BJHBWkglZ5C1XQWljlKcEFDG/dPiCIqwVCUbc5X0nYDlH62uEhdHMA==}
+  /@types/koa__cors@4.0.0:
+    resolution: {integrity: sha512-qpwswNgQ2GxiDGNnKbDSBY5XmQTVJ6fspNvInLsAJ+jSwINxihvVzblj5anujNBg2BtL0xpUrcIt3UYwGzu05A==}
     dependencies:
       '@types/koa': 2.13.5
     dev: true
