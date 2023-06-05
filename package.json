@@ -16,11 +16,12 @@
     "dayjs": "1.11.8",
     "koa": "2.14.2",
     "koa-cash": "4.1.1",
-    "koa-logger": "^3.2.1",
+    "koa-logger": "3.2.1",
     "lru-cache": "9.1.2",
     "memoizee": "0.4.15",
     "mtr-kit": "1.5.0",
-    "ramda": "^0.29.0",
+    "promise-throttle": "1.1.2",
+    "ramda": "0.29.0",
     "tsx": "3.12.7",
     "wretch": "2.5.2"
   },
@@ -31,7 +32,7 @@
     "@types/koa__cors": "4.0.0",
     "@types/koa__router": "12.0.0",
     "@types/memoizee": "0.4.8",
-    "@types/ramda": "^0.29.2",
+    "@types/ramda": "0.29.2",
     "typescript": "5.1.3"
   }
 }

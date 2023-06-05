@@ -7,9 +7,9 @@ import {
   lines,
   stopScheduleApi,
 } from 'mtr-kit'
-import { flatten, splitEvery } from 'ramda'
+import { flatten } from 'ramda'
 import { convertTimeRecursive } from './utils/convertTimeRecursive'
-import { sleep } from './utils/sleep'
+import PromiseThrottle from 'promise-throttle'
 
 export type Schedule = {
   currTime: string
@@ -31,17 +31,22 @@ export type Schedule = {
         }[]
       | undefined
   }
-  line: LineCode
-  stop: StopCode
 }
 
 export const scheduleMap = new Map<`${LineCode}-${StopCode}`, Schedule>()
 
 if (isMainThread) {
   const worker = new Worker(url.fileURLToPath(import.meta.url))
-  worker.on('message', (msg: Schedule) => {
-    scheduleMap.set(`${msg.line}-${msg.stop}`, msg)
-  })
+  worker.on(
+    'message',
+    ({
+      line,
+      stop,
+      ...schedule
+    }: Schedule & { line: LineCode; stop: StopCode }) => {
+      scheduleMap.set(`${line}-${stop}`, schedule)
+    }
+  )
   worker.on('error', err => console.error(err))
   worker.on('exit', code => console.log(`Worker exited with code ${code}.`))
 } else {
@@ -85,18 +90,28 @@ if (isMainThread) {
     }
   }
 
-  const loop = async () => {
-    for (const { stop, line } of lineStops) {
-      const schedule = await getStopSchedules(line, stop)
-      if (schedule) {
-        parentPort?.postMessage({
-          line,
-          stop: stop,
-          ...schedule,
-        })
-      }
-      await sleep(500)
+  const getAndPost = async (line: LineCode, stop: StopCode) => {
+    const schedule = await getStopSchedules(line, stop)
+    if (schedule) {
+      parentPort?.postMessage({
+        line,
+        stop: stop,
+        ...schedule,
+      })
     }
+  }
+
+  const loop = async () => {
+    const promiseThrottle = new PromiseThrottle({
+      requestsPerSecond: 2,
+      promiseImplementation: Promise,
+    })
+
+    await Promise.all(
+      lineStops.map(({ stop, line }) =>
+        promiseThrottle.add(getAndPost.bind(this, line, stop))
+      )
+    )
   }
 
   while (true) {
