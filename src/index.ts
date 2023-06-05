@@ -4,9 +4,11 @@ import cors from '@koa/cors'
 import { scheduleService } from './services/scheduleService'
 import './utils/dayjs'
 import { LineCode, StopCode, lines, stops } from 'mtr-kit'
+import logger from 'koa-logger'
 
 const koa = new Koa()
-koa.use(cors({ origin: 'http://localhost:5173' }))
+koa.use(logger())
+koa.use(cors())
 
 const router = new Router()
 

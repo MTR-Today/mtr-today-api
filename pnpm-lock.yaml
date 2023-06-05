@@ -34,6 +34,9 @@ devDependencies:
   '@types/koa':
     specifier: 2.13.6
     version: 2.13.6
+  '@types/koa-logger':
+    specifier: ^3.1.2
+    version: 3.1.2
   '@types/koa__cors':
     specifier: 4.0.0
     version: 4.0.0
@@ -349,6 +352,12 @@ packages:
 
   /@types/koa-compose@3.2.5:
     resolution: {integrity: sha512-B8nG/OoE1ORZqCkBVsup/AKcvjdgoHnfi4pZMn5UwAPCbhk/96xyv284eBYW8JlQbQ7zDmnpFr68I/40mFoIBQ==}
+    dependencies:
+      '@types/koa': 2.13.6
+    dev: true
+
+  /@types/koa-logger@3.1.2:
+    resolution: {integrity: sha512-sioTA1xlKYiIgryANWPRHBkG3XGbWftw9slWADUPC+qvPIY/yRLSrhvX7zkJwMrntub5dPO0GuAoyGGf0yitfQ==}
     dependencies:
       '@types/koa': 2.13.6
     dev: true
