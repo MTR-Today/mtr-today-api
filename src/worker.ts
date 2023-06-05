@@ -10,6 +10,7 @@ import {
 import { flatten } from 'ramda'
 import { convertTimeRecursive } from './utils/convertTimeRecursive'
 import PromiseThrottle from 'promise-throttle'
+import dayjs from 'dayjs'
 
 export type Schedule = {
   currTime: string
@@ -50,11 +51,7 @@ if (isMainThread) {
   worker.on('error', err => console.error(err))
   worker.on('exit', code => console.log(`Worker exited with code ${code}.`))
 } else {
-  const lineStops = flatten(
-    lines.map(({ code, stops }) =>
-      stops.map(stop => ({ line: code, stop: stop.code }))
-    )
-  )
+  const threadMap = new Map<`${LineCode}-${StopCode}`, Schedule>()
 
   const formatScheduleItem = (items: ScheduleItem[]) =>
     items
@@ -69,6 +66,7 @@ if (isMainThread) {
   const getStopSchedules = async (line: LineCode, stop: StopCode) => {
     try {
       const response = await stopScheduleApi.get({ line, stop })
+
       if (response.status === 0) return null
       const { data, curr_time, isdelay, sys_time } = response
       const { UP, DOWN } = data[`${line}-${stop}`]
@@ -93,6 +91,7 @@ if (isMainThread) {
   const getAndPost = async (line: LineCode, stop: StopCode) => {
     const schedule = await getStopSchedules(line, stop)
     if (schedule) {
+      threadMap.set(`${line}-${stop}`, schedule)
       parentPort?.postMessage({
         line,
         stop: stop,
@@ -101,20 +100,57 @@ if (isMainThread) {
     }
   }
 
-  const loop = async () => {
+  const loop = async (ignoreUndefined: boolean) => {
+    const lineStops = flatten(
+      lines.map(({ code, stops }) =>
+        stops.map(stop => ({ line: code, stop: stop.code }))
+      )
+    )
+      .map(({ stop, line }) => {
+        const lastSchedule = threadMap.get(`${line}-${stop}`)
+        const allTime = [
+          ...(lastSchedule?.schedule.down || []),
+          ...(lastSchedule?.schedule.up || []),
+        ]
+          .map(({ time }) => dayjs(time))
+          .sort((a, b) => (a.isSame(b) ? 0 : a.isBefore(b) ? -1 : 1))
+
+        return { line, stop, closestTs: allTime[0] }
+      })
+      .sort((a, b) => {
+        if (!a.closestTs) return 1
+        if (!b.closestTs) return -1
+        return a.closestTs?.isSame(b.closestTs) || a.closestTs === b.closestTs
+          ? 0
+          : a.closestTs?.isBefore(b.closestTs)
+          ? -1
+          : 1
+      })
+      .map(({ closestTs, ...rest }) => ({
+        ...rest,
+        closestTs: closestTs?.toISOString(),
+      }))
+
     const promiseThrottle = new PromiseThrottle({
-      requestsPerSecond: 1,
+      requestsPerSecond: 2,
       promiseImplementation: Promise,
     })
 
     await Promise.all(
-      lineStops.map(({ stop, line }) =>
+      (ignoreUndefined
+        ? lineStops.filter(({ closestTs }) => closestTs)
+        : lineStops
+      ).map(({ stop, line }) =>
         promiseThrottle.add(getAndPost.bind(this, line, stop))
       )
     )
   }
 
+  let counter = 0
+
   while (true) {
-    await loop()
+    counter++
+    await loop(counter % 10 !== 0)
+    if (counter >= 100) counter = 0
   }
 }
