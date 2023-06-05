@@ -2,9 +2,9 @@ import Koa from 'koa'
 import Router from '@koa/router'
 import cors from '@koa/cors'
 import { scheduleService } from './services/scheduleService'
-import './utils/dayjs'
 import { LineCode, StopCode, lines, stops } from 'mtr-kit'
 import logger from 'koa-logger'
+import './worker'
 
 const koa = new Koa()
 koa.use(logger())
@@ -45,7 +45,7 @@ router.get('/api/v1/lines/:line/schedules', async ctx => {
 
 router.get('/api/v1/lines/:line/stops/:stop/schedules', async ctx => {
   const { line, stop } = ctx.params
-  ctx.body = await scheduleService.getStopSchedules(
+  ctx.body = scheduleService.getStopSchedules(
     line as LineCode,
     stop as StopCode
   )

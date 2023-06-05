@@ -5,6 +5,7 @@
   "repository": "https://github.com/marklai1998/mtr-today-api.git",
   "author": "marklai1998 <marklai1998@gmail.com>",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "tsc": "tsc"
@@ -14,17 +15,23 @@
     "@koa/router": "12.0.0",
     "dayjs": "1.11.8",
     "koa": "2.14.2",
+    "koa-cash": "4.1.1",
+    "koa-logger": "^3.2.1",
+    "lru-cache": "9.1.2",
     "memoizee": "0.4.15",
     "mtr-kit": "1.5.0",
+    "ramda": "^0.29.0",
     "tsx": "3.12.7",
     "wretch": "2.5.2"
   },
   "devDependencies": {
     "@types/koa": "2.13.6",
-    "@types/koa-logger": "^3.1.2",
+    "@types/koa-cash": "4.1.0",
+    "@types/koa-logger": "3.1.2",
     "@types/koa__cors": "4.0.0",
     "@types/koa__router": "12.0.0",
     "@types/memoizee": "0.4.8",
+    "@types/ramda": "^0.29.2",
     "typescript": "5.1.3"
   }
 }

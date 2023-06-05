@@ -1,80 +1,33 @@
-import {
-  LineCode,
-  ScheduleItem,
-  StopCode,
-  lines,
-  stopScheduleApi,
-} from 'mtr-kit'
+import { LineCode, StopCode, lines } from 'mtr-kit'
 
-import { convertTimeRecursive } from '../utils/convertTimeRecursive'
-import memoize from 'memoizee'
+import { scheduleMap } from '../worker'
 
-const formatScheduleItem = (items: ScheduleItem[]) =>
-  items
-    .filter(({ valid }) => valid === 'Y')
-    .sort((a, b) => Number(a.seq) - Number(b.seq))
-    .map(({ dest, plat, time }) => ({
-      plat: Number(plat),
-      dest,
-      time,
-    }))
+const getStopSchedules = (line: LineCode, stop: StopCode) =>
+  scheduleMap.get(`${line}-${stop}`)
 
-const getStopSchedules = memoize(
-  async (line: LineCode, stop: StopCode) => {
-    const response = await stopScheduleApi.get({ line, stop })
-    if (response.status === 0) return null
-    const { data, curr_time, isdelay, sys_time } = response
-    const { UP, DOWN } = data[`${line}-${stop}`]
-
-    return convertTimeRecursive(
-      {
-        currTime: curr_time,
-        isDelay: isdelay !== 'N',
-        sysTime: sys_time,
-        schedule: {
-          up: UP ? formatScheduleItem(UP) : UP,
-          down: DOWN ? formatScheduleItem(DOWN) : DOWN,
-        },
-      },
-      'YYYY-MM-DD HH:mm:ss'
-    )
-  },
-  { primitive: true, promise: true, maxAge: 20000, preFetch: true }
-)
-
-const getLineSchedule = async (code: LineCode) => {
+const getLineSchedule = (code: LineCode) => {
   const stops = lines.find(item => item.code === code)?.stops || []
-
-  let result: (Awaited<ReturnType<typeof getStopSchedules>> & {
-    code: StopCode
-  })[] = []
-
-  for (const stop of stops) {
-    const schedule = await getStopSchedules(code, stop.code)
-
-    if (schedule) result = [...result, { code: stop.code, ...schedule }]
-  }
-
-  return result
+  return stops
+    .map(stop => {
+      const schedule = getStopSchedules(code, stop.code)
+      return schedule
+        ? {
+            code: stop.code,
+            ...schedule,
+          }
+        : null
+    })
+    .filter((v): v is NonNullable<typeof v> => Boolean(v))
 }
 
-const getSchedule = async () => {
-  let result: {
-    code: LineCode
-    stops: Awaited<ReturnType<typeof getLineSchedule>>
-  }[] = []
-
-  for (const line of lines) {
-    const schedule = await getLineSchedule(line.code)
-
-    result = [...result, { code: line.code, stops: schedule }]
-  }
-
-  return result
-}
+const getSchedule = async () =>
+  lines.map(line => {
+    const schedule = getLineSchedule(line.code)
+    return { code: line.code, stops: schedule }
+  })
 
 export const scheduleService = {
-  getStopSchedules,
   getLineSchedule,
   getSchedule,
+  getStopSchedules,
 }
