@@ -103,7 +103,7 @@ if (isMainThread) {
 
   const loop = async () => {
     const promiseThrottle = new PromiseThrottle({
-      requestsPerSecond: 2,
+      requestsPerSecond: 1,
       promiseImplementation: Promise,
     })
 
