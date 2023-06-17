@@ -23,9 +23,6 @@ dependencies:
   koa-logger:
     specifier: 3.2.1
     version: 3.2.1
-  lru-cache:
-    specifier: 9.1.2
-    version: 9.1.2
   memoizee:
     specifier: 0.4.15
     version: 0.4.15
@@ -863,11 +860,6 @@ packages:
       vary: 1.1.2
     transitivePeerDependencies:
       - supports-color
-    dev: false
-
-  /lru-cache@9.1.2:
-    resolution: {integrity: sha512-ERJq3FOzJTxBbFjZ7iDs+NiK4VI9Wz+RdrrAB8dio1oV+YvdPzUEE4QNiT2VD51DkIbCYRUUzCRkssXCHqSnKQ==}
-    engines: {node: 14 || >=16.14}
     dev: false
 
   /lru-queue@0.1.0:
