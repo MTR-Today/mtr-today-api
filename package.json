@@ -19,7 +19,7 @@
     "koa-cash": "4.1.1",
     "koa-logger": "3.2.1",
     "memoizee": "0.4.15",
-    "mtr-kit": "1.5.0",
+    "mtr-kit": "1.6.0",
     "promise-throttle": "1.1.2",
     "ramda": "0.29.0",
     "tsx": "3.12.7",
