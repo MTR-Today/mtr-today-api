@@ -7,7 +7,6 @@ import {
   lines,
   stopScheduleApi,
 } from 'mtr-kit'
-import { flatten } from 'ramda'
 import { convertTimeRecursive } from './utils/convertTimeRecursive'
 import PromiseThrottle from 'promise-throttle'
 import dayjs from 'dayjs'
@@ -101,11 +100,11 @@ if (isMainThread) {
   }
 
   const loop = async (ignoreUndefined: boolean) => {
-    const lineStops = flatten(
-      lines.map(({ code, stops }) =>
+    const lineStops = lines
+      .map(({ code, stops }) =>
         stops.map(stop => ({ line: code, stop: stop.code }))
       )
-    )
+      .flat()
       .map(({ stop, line }) => {
         const lastSchedule = threadMap.get(`${line}-${stop}`)
         const allTime = [
