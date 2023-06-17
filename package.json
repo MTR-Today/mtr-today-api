@@ -8,6 +8,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
+    "build": "tsc --project tsconfig.build.json",
     "tsc": "tsc"
   },
   "dependencies": {
