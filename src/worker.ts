@@ -47,7 +47,10 @@ if (isMainThread) {
       scheduleMap.set(`${line}-${stop}`, schedule)
     }
   )
+
+  // eslint-disable-next-line no-console
   worker.on('error', err => console.error(err))
+  // eslint-disable-next-line no-console
   worker.on('exit', code => console.log(`Worker exited with code ${code}.`))
 } else {
   const threadMap = new Map<`${LineCode}-${StopCode}`, Schedule>()
@@ -83,6 +86,7 @@ if (isMainThread) {
         'YYYY-MM-DD HH:mm:ss'
       )
     } catch (e) {
+      // eslint-disable-next-line no-console
       console.error(e)
     }
   }
@@ -147,6 +151,7 @@ if (isMainThread) {
 
   let counter = 0
 
+  // eslint-disable-next-line no-constant-condition
   while (true) {
     counter++
     await loop(counter % 10 !== 0)

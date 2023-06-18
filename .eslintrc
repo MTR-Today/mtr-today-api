@@ -1,0 +1,82 @@
+{
+  "env": {
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "@spotify/eslint-config-base"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["prettier", "@typescript-eslint"],
+  "rules": {
+    // Typebox use cap for its functions
+    "new-cap": "off",
+    "arrow-body-style": "warn",
+
+    // lot of api response not using camel case
+    "camelcase": "off",
+    "no-nested-ternary": "off",
+    "consistent-return": "off",
+
+    // use prettier for code style
+    "comma-dangle": "off",
+    "semi": "off",
+    "no-extra-semi": "off",
+    "indent": "off",
+    "@typescript-eslint/no-extra-semi": "off",
+    "no-spaced-func": "off",
+    "prettier/prettier": "error",
+    "comma-spacing": "off",
+
+    // use typescript-eslint rule instead
+    "no-use-before-define": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "error",
+    "no-useless-constructor": "off",
+    "@typescript-eslint/no-useless-constructor": "error",
+
+    // custom rules
+    "max-depth": ["error", 3],
+    "max-lines": [
+      "error",
+      { "max": 500, "skipBlankLines": true, "skipComments": true }
+    ],
+    // should use `String(var)` instead of `'' + var` for type convert
+    "no-implicit-coercion": "error",
+    "no-shadow-restricted-names": "error",
+    "prefer-arrow-callback": "error",
+    // do not use `let` unless need to reassign
+    "prefer-const": "error",
+    // must add new line between statement
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": [
+          "block",
+          "block-like",
+          "cjs-export",
+          "class",
+          "export",
+          "import",
+          "multiline-const",
+          "multiline-expression"
+        ],
+        "next": "*"
+      },
+      {
+        "blankLine": "any",
+        "prev": ["export", "import"],
+        "next": ["export", "import"]
+      }
+    ]
+  }
+}

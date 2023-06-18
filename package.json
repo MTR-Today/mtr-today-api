@@ -9,7 +9,12 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc --project tsconfig.build.json",
-    "tsc": "tsc"
+    "test": "tsc",
+    "postinstall": "husky install",
+    "prepare": "husky install",
+    "pre-commit": "yarn lint-staged",
+    "pre-push": "tsc",
+    "lint:js": "eslint src"
   },
   "dependencies": {
     "@koa/cors": "4.0.0",
@@ -22,10 +27,26 @@
     "tsx": "3.12.7"
   },
   "devDependencies": {
+    "@commitlint/cli": "17.6.5",
+    "@commitlint/config-conventional": "17.6.5",
+    "@spotify/eslint-config": "15.0.0",
+    "@typescript-eslint/eslint-plugin": "5.59.11",
+    "@typescript-eslint/parser": "5.59.11",
     "@types/koa": "2.13.6",
     "@types/koa-logger": "3.1.2",
     "@types/koa__cors": "4.0.0",
     "@types/koa__router": "12.0.0",
+    "eslint": "8.43.0",
+    "eslint-plugin-fp": "2.3.0",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-prettier": "4.2.1",
+    "husky": "8.0.3",
+    "import-sort-cli": "6.0.0",
+    "import-sort-parser-babylon": "6.0.0",
+    "import-sort-parser-typescript": "6.0.0",
+    "import-sort-style-module": "6.0.0",
+    "lint-staged": "13.2.2",
+    "prettier": "2.8.8",
     "typescript": "5.1.3"
   }
 }
