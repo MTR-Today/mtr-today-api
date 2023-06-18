@@ -1,5 +1,7 @@
-import { Worker, isMainThread, parentPort } from 'worker_threads'
 import * as url from 'url'
+import { Worker, isMainThread, parentPort } from 'worker_threads'
+
+import dayjs from 'dayjs'
 import {
   LineCode,
   ScheduleItem,
@@ -7,9 +9,9 @@ import {
   lines,
   stopScheduleApi,
 } from 'mtr-kit'
-import { convertTimeRecursive } from './utils/convertTimeRecursive'
 import PromiseThrottle from 'promise-throttle'
-import dayjs from 'dayjs'
+
+import { convertTimeRecursive } from './utils/convertTimeRecursive'
 
 export type Schedule = {
   currTime: string
@@ -37,6 +39,7 @@ export const scheduleMap = new Map<`${LineCode}-${StopCode}`, Schedule>()
 
 if (isMainThread) {
   const worker = new Worker(url.fileURLToPath(import.meta.url))
+
   worker.on(
     'message',
     ({
