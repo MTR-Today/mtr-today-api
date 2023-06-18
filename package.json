@@ -1,7 +1,6 @@
 {
   "name": "mtr-today-api",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "https://github.com/marklai1998/mtr-today-api.git",
   "author": "marklai1998 <marklai1998@gmail.com>",
   "license": "MIT",
