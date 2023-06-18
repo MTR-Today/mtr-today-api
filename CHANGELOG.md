@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/mtr-today/mtr-today-api/compare/v1.0.0...v1.0.1) (2023-06-18)
+
+
+### Bug Fixes
+
+* trigger release ([28c05ae](https://github.com/mtr-today/mtr-today-api/commit/28c05ae02b956802cb7d6a512718d4a9dd0eb7a3))
+
 ## 1.0.0 (2023-06-18)
 
 
