@@ -12,7 +12,7 @@
     "test": "tsc",
     "postinstall": "husky install",
     "prepare": "husky install",
-    "pre-commit": "yarn lint-staged",
+    "pre-commit": "pnpm lint-staged",
     "pre-push": "tsc",
     "lint:js": "eslint src"
   },
