@@ -4,9 +4,14 @@ on:
     branches:
       - main
 
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
 permissions:
   contents: write
   pull-requests: write
+  packages: write
 
 jobs:
   release-please:
@@ -30,7 +35,7 @@ jobs:
         uses: docker/login-action@v2
         # if: ${{ steps.release.outputs.release_created }}
         with:
-          registry: ${{ vars.REGISTRY }}
+          registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Extract metadata (tags, labels) for Docker
@@ -38,7 +43,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ vars.REGISTRY }}/${{ vars.IMAGE_NAME }}
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
       - name: Build and push Docker image
         # if: ${{ steps.release.outputs.release_created }}
         uses: docker/build-push-action@v4
