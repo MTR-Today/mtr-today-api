@@ -39,7 +39,6 @@ export const scheduleMap = new Map<`${LineCode}-${StopCode}`, Schedule>()
 
 if (isMainThread) {
   const worker = new Worker(url.fileURLToPath(import.meta.url))
-
   worker.on(
     'message',
     ({
