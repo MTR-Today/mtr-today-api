@@ -28,19 +28,19 @@ jobs:
           release-type: node
       - name: Log in to the Container registry
         uses: docker/login-action@v2
-        if: ${{ steps.release.outputs.release_created }}
+        # if: ${{ steps.release.outputs.release_created }}
         with:
-          registry: ${{ env.REGISTRY }}
+          registry: ${{ vars.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Extract metadata (tags, labels) for Docker
-        if: ${{ steps.release.outputs.release_created }}
+        # if: ${{ steps.release.outputs.release_created }}
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          images: ${{ vars.REGISTRY }}/${{ vars.IMAGE_NAME }}
       - name: Build and push Docker image
-        if: ${{ steps.release.outputs.release_created }}
+        # if: ${{ steps.release.outputs.release_created }}
         uses: docker/build-push-action@v4
         with:
           context: .
