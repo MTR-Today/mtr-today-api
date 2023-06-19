@@ -10,7 +10,24 @@ import { scheduleService } from './services/scheduleService.js'
 
 const koa = new Koa()
 koa.use(logger())
-koa.use(cors())
+koa.use(
+  cors({
+    origin: (ctx): string => {
+      try {
+        const origin = ctx.headers.origin
+        if (!origin) return ''
+
+        const { origin: originUrl, hostname } = new URL(origin)
+        if (!hostname || !originUrl) return ''
+
+        if (hostname.endsWith('mtr.today')) return originUrl
+        return ''
+      } catch (e) {
+        return ''
+      }
+    },
+  })
+)
 
 const router = new Router()
 
