@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/mtr-today/mtr-today-api/compare/v1.0.1...v1.1.0) (2023-06-19)
+
+
+### Features
+
+* cors settings ([0dd9a6d](https://github.com/mtr-today/mtr-today-api/commit/0dd9a6d706b8db27a1c76e7e8ed289fa51f5c669))
+
 ## [1.0.1](https://github.com/mtr-today/mtr-today-api/compare/v1.0.0...v1.0.1) (2023-06-18)
 
 
