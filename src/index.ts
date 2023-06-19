@@ -1,10 +1,12 @@
-import Koa from 'koa'
-import Router from '@koa/router'
+import './worker.js'
+
 import cors from '@koa/cors'
-import { scheduleService } from './services/scheduleService'
-import { LineCode, StopCode, lines, stops } from 'mtr-kit'
+import Router from '@koa/router'
+import Koa from 'koa'
 import logger from 'koa-logger'
-import './worker'
+import { LineCode, StopCode, lines, stops } from 'mtr-kit'
+
+import { scheduleService } from './services/scheduleService.js'
 
 const koa = new Koa()
 koa.use(logger())
@@ -58,4 +60,6 @@ router.get('/api/v1/schedules', async ctx => {
 })
 
 koa.use(router.routes()).use(router.allowedMethods())
+// eslint-disable-next-line no-console
+console.log('Server is listening on port: 3000')
 koa.listen(3000)

@@ -1,6 +1,6 @@
 import { LineCode, StopCode, lines } from 'mtr-kit'
 
-import { scheduleMap } from '../worker'
+import { scheduleMap } from '../worker.js'
 
 const getStopSchedules = (line: LineCode, stop: StopCode) =>
   scheduleMap.get(`${line}-${stop}`)

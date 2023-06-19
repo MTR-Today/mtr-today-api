@@ -11,7 +11,7 @@ import {
 } from 'mtr-kit'
 import PromiseThrottle from 'promise-throttle'
 
-import { convertTimeRecursive } from './utils/convertTimeRecursive'
+import { convertTimeRecursive } from './utils/convertTimeRecursive.js'
 
 export type Schedule = {
   currTime: string
@@ -136,10 +136,11 @@ if (isMainThread) {
         closestTs: closestTs?.toISOString(),
       }))
 
-    const promiseThrottle = new PromiseThrottle({
-      requestsPerSecond: 2,
-      promiseImplementation: Promise,
-    })
+    const promiseThrottle =
+      new (PromiseThrottle as unknown as typeof PromiseThrottle.default)({
+        requestsPerSecond: 2,
+        promiseImplementation: Promise,
+      })
 
     await Promise.all(
       (ignoreUndefined
