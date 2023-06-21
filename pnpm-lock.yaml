@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -21,8 +21,8 @@ dependencies:
     specifier: 3.2.1
     version: 3.2.1
   mtr-kit:
-    specifier: 1.6.1
-    version: 1.6.1
+    specifier: 1.7.1
+    version: 1.7.1
   promise-throttle:
     specifier: 1.1.2
     version: 1.1.2
@@ -4321,9 +4321,9 @@ packages:
   /ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
 
-  /mtr-kit@1.6.1:
-    resolution: {integrity: sha512-zelnbMYw34lMydaCWGlWR+630rTTSp+YNK/v5L80z2torbo+xV+yx818XHSPjGoBC8QjkyLTuk8s74cXN2PX8w==}
-    engines: {node: ^18}
+  /mtr-kit@1.7.1:
+    resolution: {integrity: sha512-P9r5jKVSxSdVViU6RlC065NTgUHRlVMFNPRA4FZA/dBv3fVf7JZcxwrnR3vz8+CqRiREJH11J92cWsUf5QL1iw==}
+    engines: {node: '>=16.0.0 <21.0.0'}
     dependencies:
       wretch: 2.5.2
     dev: false
