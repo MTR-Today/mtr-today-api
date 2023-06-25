@@ -24,7 +24,7 @@
     "dayjs": "1.11.8",
     "koa": "2.14.2",
     "koa-logger": "3.2.1",
-    "mtr-kit": "1.7.1",
+    "mtr-kit": "1.9.1",
     "promise-throttle": "1.1.2",
     "tsx": "3.12.7"
   },
