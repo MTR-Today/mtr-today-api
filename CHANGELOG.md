@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://github.com/MTR-Today/mtr-today-api/compare/v1.1.0...v1.2.0) (2023-06-27)
+
+
+### Features
+
+* line stop api ([3a8d994](https://github.com/MTR-Today/mtr-today-api/commit/3a8d9940d097e69f4bfdc23c81995177dd92ece5))
+
+
+### Bug Fixes
+
+* **deps:** update dependency mtr-kit to v1.7.1 ([f3f607a](https://github.com/MTR-Today/mtr-today-api/commit/f3f607a234696c38e5930277353595711b759025))
+* **deps:** update dependency mtr-kit to v1.9.1 ([bd80f22](https://github.com/MTR-Today/mtr-today-api/commit/bd80f22fad990cad60c104decbc35c5b9add45f7))
+
 ## [1.1.0](https://github.com/mtr-today/mtr-today-api/compare/v1.0.1...v1.1.0) (2023-06-19)
 
 
