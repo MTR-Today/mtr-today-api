@@ -64,7 +64,7 @@ router.get('/api/v1/lines/:line/schedules', async ctx => {
 
 router.get('/api/v1/lines/:line/stops', async ctx => {
   const { line } = ctx.params
-  ctx.body = lineMap[line as LineCode]?.stops
+  ctx.body = lineMap[line as LineCode].stops
 })
 
 router.get('/api/v1/lines/:line/stops/:stop/schedules', async ctx => {
