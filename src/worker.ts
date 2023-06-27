@@ -108,9 +108,7 @@ if (isMainThread) {
 
   const loop = async (ignoreUndefined: boolean) => {
     const lineStops = lines
-      .map(({ code, stops }) =>
-        stops.map(stop => ({ line: code, stop: stop.code }))
-      )
+      .map(({ code, stops }) => stops.map(stop => ({ line: code, stop })))
       .flat()
       .map(({ stop, line }) => {
         const lastSchedule = threadMap.get(`${line}-${stop}`)

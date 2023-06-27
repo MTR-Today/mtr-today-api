@@ -4,7 +4,7 @@ import cors from '@koa/cors'
 import Router from '@koa/router'
 import Koa from 'koa'
 import logger from 'koa-logger'
-import { LineCode, StopCode, lines, stops } from 'mtr-kit'
+import { LineCode, StopCode, lineMap, lines, stopMap, stops } from 'mtr-kit'
 
 import { scheduleService } from './services/scheduleService.js'
 
@@ -38,7 +38,12 @@ router.get('/api/v1/stops', async ctx => {
 
 router.get('/api/v1/stops/:stop', async ctx => {
   const { stop } = ctx.params
-  ctx.body = stops.find(item => item.code === stop)
+  ctx.body = stopMap[stop as StopCode]
+})
+
+router.get('/api/v1/stops/:stop/schedules', async ctx => {
+  const { stop } = ctx.params
+  ctx.body = scheduleService.getStopSchedules(stop as StopCode)
 })
 
 // Line API
@@ -49,22 +54,22 @@ router.get('/api/v1/lines', async ctx => {
 
 router.get('/api/v1/lines/:line', async ctx => {
   const { line } = ctx.params
-  ctx.body = lines.find(item => item.code === line)
-})
-
-router.get('/api/v1/lines/:line/stops', async ctx => {
-  const { line } = ctx.params
-  ctx.body = lines.find(item => item.code === line)?.stops
+  ctx.body = lineMap[line as LineCode]
 })
 
 router.get('/api/v1/lines/:line/schedules', async ctx => {
   const { line } = ctx.params
-  ctx.body = await scheduleService.getLineSchedule(line as LineCode)
+  ctx.body = scheduleService.getLineSchedule(line as LineCode)
+})
+
+router.get('/api/v1/lines/:line/stops', async ctx => {
+  const { line } = ctx.params
+  ctx.body = lineMap[line as LineCode]?.stops
 })
 
 router.get('/api/v1/lines/:line/stops/:stop/schedules', async ctx => {
   const { line, stop } = ctx.params
-  ctx.body = scheduleService.getStopSchedules(
+  ctx.body = scheduleService.getLineStopSchedule(
     line as LineCode,
     stop as StopCode
   )
