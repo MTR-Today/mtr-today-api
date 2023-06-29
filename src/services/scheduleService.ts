@@ -2,48 +2,55 @@ import { LineCode, StopCode, lineMap, lines } from 'mtr-kit'
 
 import { Schedule, scheduleMap } from '../worker.js'
 
-const getLineStopSchedule = (line: LineCode, stop: StopCode) =>
-  scheduleMap.get(`${line}-${stop}`)
+const listLineStopSchedule = (line: LineCode, stop: StopCode): Schedule[] => {
+  const schedule = scheduleMap.get(`${line}-${stop}`)
+  return schedule ? [schedule] : []
+}
 
-const getStopSchedules = (stop: StopCode): ({ line: LineCode } & Schedule)[] =>
+const listStopSchedules = (stop: StopCode): ({ line: LineCode } & Schedule)[] =>
   lines
     .filter(line => line.stops.includes(stop))
-    .map(line => {
-      const schedule = getLineStopSchedule(line.code, stop)
-      return schedule
-        ? {
-            line: line.code,
-            ...schedule,
-          }
-        : null
-    })
+    .reduce<({ line: LineCode } & Schedule)[]>(
+      (acc, line) => [
+        ...acc,
+        ...listLineStopSchedule(line.code, stop).map(schedule => ({
+          line: line.code,
+          ...schedule,
+        })),
+      ],
+      []
+    )
     .filter((v): v is NonNullable<typeof v> => Boolean(v))
 
-const getLineSchedule = (code: LineCode): ({ stop: StopCode } & Schedule)[] =>
+const listLineSchedule = (code: LineCode): ({ stop: StopCode } & Schedule)[] =>
   lineMap[code].stops
-    .map(stop => {
-      const schedule = getLineStopSchedule(code, stop)
-      return schedule
-        ? {
-            stop,
-            ...schedule,
-          }
-        : null
-    })
+    .reduce<({ stop: StopCode } & Schedule)[]>(
+      (acc, stop) => [
+        ...acc,
+        ...listLineStopSchedule(code, stop).map(schedule => ({
+          stop,
+          ...schedule,
+        })),
+      ],
+      []
+    )
     .filter((v): v is NonNullable<typeof v> => Boolean(v))
 
-const getSchedule = async () =>
+const listSchedule = async () =>
   lines.reduce<({ line: LineCode; stop: StopCode } & Schedule)[]>(
     (acc, line) => [
       ...acc,
-      ...getLineSchedule(line.code).map(item => ({ line: line.code, ...item })),
+      ...listLineSchedule(line.code).map(item => ({
+        line: line.code,
+        ...item,
+      })),
     ],
     []
   )
 
 export const scheduleService = {
-  getLineSchedule,
-  getSchedule,
-  getLineStopSchedule,
-  getStopSchedules,
+  listLineSchedule,
+  listSchedule,
+  listStopSchedules,
+  listLineStopSchedule,
 }

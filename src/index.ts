@@ -6,6 +6,7 @@ import Koa from 'koa'
 import logger from 'koa-logger'
 import { LineCode, StopCode, lineMap, lines, stopMap, stops } from 'mtr-kit'
 
+import { fareService } from './services/fareServices.js'
 import { scheduleService } from './services/scheduleService.js'
 
 const koa = new Koa()
@@ -43,7 +44,12 @@ router.get('/api/v1/stops/:stop', async ctx => {
 
 router.get('/api/v1/stops/:stop/schedules', async ctx => {
   const { stop } = ctx.params
-  ctx.body = scheduleService.getStopSchedules(stop as StopCode)
+  ctx.body = scheduleService.listStopSchedules(stop as StopCode)
+})
+
+router.get('/api/v1/stops/:stop/fares', async ctx => {
+  const { stop } = ctx.params
+  ctx.body = fareService.listStopFare(stop as StopCode)
 })
 
 // Line API
@@ -59,7 +65,7 @@ router.get('/api/v1/lines/:line', async ctx => {
 
 router.get('/api/v1/lines/:line/schedules', async ctx => {
   const { line } = ctx.params
-  ctx.body = scheduleService.getLineSchedule(line as LineCode)
+  ctx.body = scheduleService.listLineSchedule(line as LineCode)
 })
 
 router.get('/api/v1/lines/:line/stops', async ctx => {
@@ -69,16 +75,27 @@ router.get('/api/v1/lines/:line/stops', async ctx => {
 
 router.get('/api/v1/lines/:line/stops/:stop/schedules', async ctx => {
   const { line, stop } = ctx.params
-  ctx.body = scheduleService.getLineStopSchedule(
+  ctx.body = scheduleService.listLineStopSchedule(
     line as LineCode,
     stop as StopCode
   )
 })
 
+router.get('/api/v1/lines/:line/stops/:stop/fares', async ctx => {
+  const { stop } = ctx.params
+  ctx.body = fareService.listStopFare(stop as StopCode)
+})
+
 // Schedule API
 
 router.get('/api/v1/schedules', async ctx => {
-  ctx.body = await scheduleService.getSchedule()
+  ctx.body = await scheduleService.listSchedule()
+})
+
+// Fare API
+
+router.get('/api/v1/fares', async ctx => {
+  ctx.body = await fareService.listFare()
 })
 
 koa.use(router.routes()).use(router.allowedMethods())
