@@ -9,8 +9,8 @@
     "node": "^20"
   },
   "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "build": "tsc --project tsconfig.build.json",
+    "dev": "rollup -c -w",
+    "build": "NODE_ENV=production rollup -c",
     "test": "tsc",
     "postinstall": "husky install",
     "prepare": "husky install",
@@ -32,6 +32,8 @@
   "devDependencies": {
     "@commitlint/cli": "17.6.6",
     "@commitlint/config-conventional": "17.6.6",
+    "@rollup/plugin-run": "^3.0.1",
+    "@rollup/plugin-typescript": "^11.1.2",
     "@spotify/eslint-config": "15.0.0",
     "@types/koa": "2.13.6",
     "@types/koa-logger": "3.1.2",
@@ -51,6 +53,7 @@
     "import-sort-style-module": "6.0.0",
     "lint-staged": "13.2.3",
     "prettier": "2.8.8",
+    "rollup": "^3.26.0",
     "typescript": "5.1.3"
   }
 }
