@@ -15,16 +15,16 @@ dependencies:
     specifier: 10.0.0
     version: 10.0.0(@nestjs/common@10.0.0)(@nestjs/core@10.0.0)
   dayjs:
-    specifier: ^1.11.9
+    specifier: 1.11.9
     version: 1.11.9
   helmet:
-    specifier: ^7.0.0
+    specifier: 7.0.0
     version: 7.0.0
   mtr-kit:
-    specifier: ^1.11.1
+    specifier: 1.11.1
     version: 1.11.1
   promise-throttle:
-    specifier: ^1.1.2
+    specifier: 1.1.2
     version: 1.1.2
   reflect-metadata:
     specifier: 0.1.13
