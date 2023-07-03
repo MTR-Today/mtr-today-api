@@ -5,12 +5,18 @@
     "module": "NodeNext",
     "moduleResolution": "nodenext",
 
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "incremental": true,
+
     "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
 
     "strict": true,
     "allowSyntheticDefaultImports": true,
@@ -21,6 +27,5 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true
-  },
-  "include": ["src"]
+  }
 }

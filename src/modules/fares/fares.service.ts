@@ -1,5 +1,5 @@
-import memoizee from 'memoizee'
-import { StopCode, fareApi, stops } from 'mtr-kit'
+import { Injectable } from '@nestjs/common'
+import { LineCode, StopCode, fareApi, stops } from 'mtr-kit'
 
 type NormalizedFare = {
   from?: StopCode
@@ -19,9 +19,10 @@ type NormalizedFare = {
   }
 }
 
-const listNormalizedMtrFares = memoizee(
-  async (): Promise<NormalizedFare[]> =>
-    (await fareApi.listMtrFares()).map(
+@Injectable()
+export class FaresService {
+  async listNormalizedMtrFares(): Promise<NormalizedFare[]> {
+    return (await fareApi.listMtrFares()).map(
       ({
         SRC_STATION_NAME,
         DEST_STATION_NAME,
@@ -56,13 +57,11 @@ const listNormalizedMtrFares = memoizee(
           elderly: SINGLE_CON_ELDERLY_FARE,
         },
       })
-    ),
-  { promise: true, maxAge: 1000 * 60 * 60 * 24 }
-)
+    )
+  }
 
-const listNormalizedAirportExpressFares = memoizee(
-  async (): Promise<NormalizedFare[]> =>
-    (await fareApi.listAirportExpressFares()).map(
+  async listNormalizedAirportExpressFares(): Promise<NormalizedFare[]> {
+    return (await fareApi.listAirportExpressFares()).map(
       ({
         ST_FROM,
         ST_TO,
@@ -90,16 +89,21 @@ const listNormalizedAirportExpressFares = memoizee(
           elderly: SINGLE_ADT_FARE,
         },
       })
-    ),
-  { promise: true, maxAge: 1000 * 60 * 60 * 24 }
-)
+    )
+  }
 
-const listFare = async (): Promise<NormalizedFare[]> => [
-  ...(await listNormalizedMtrFares()),
-  ...(await listNormalizedAirportExpressFares()),
-]
+  async listFares() {
+    return [
+      ...(await this.listNormalizedMtrFares()),
+      ...(await this.listNormalizedAirportExpressFares()),
+    ]
+  }
 
-const listStopFare = async (stop: StopCode): Promise<NormalizedFare[]> =>
-  (await listFare()).filter(({ from }) => from === stop)
+  async listStopFare(stop: StopCode) {
+    return (await this.listFares()).filter(({ from }) => from === stop)
+  }
 
-export const fareService = { listFare, listStopFare }
+  listLineStopFares(_: LineCode, stop: StopCode) {
+    return this.listStopFare(stop)
+  }
+}
