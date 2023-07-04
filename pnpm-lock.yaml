@@ -21,8 +21,8 @@ dependencies:
     specifier: 7.0.0
     version: 7.0.0
   mtr-kit:
-    specifier: 1.13.0
-    version: 1.13.0
+    specifier: 1.13.1
+    version: 1.13.1
   promise-throttle:
     specifier: 1.1.2
     version: 1.1.2
@@ -4810,8 +4810,8 @@ packages:
   /ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
-  /mtr-kit@1.13.0:
-    resolution: {integrity: sha512-LQ1ephJ/muY339QREbvgTwM29n1YrRUrzjbRSBfWHU6AXLvIwDrpTQUMI5j1K0RvAqNxYazuLuhZivkUSLbk8A==}
+  /mtr-kit@1.13.1:
+    resolution: {integrity: sha512-5vXQFwQIG5RnxgIIO4UbWEI/vDRq2VkKFaF5eR8wjF+cNMBJB13KFdOU6LDkt8wQGltg7o8og5XX3CJ/Tftqng==}
     engines: {node: '>=16.0.0 <21.0.0'}
     dependencies:
       csv-parse: 5.4.0
