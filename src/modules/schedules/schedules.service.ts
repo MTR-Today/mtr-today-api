@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { LineCode, StopCode, lineMap, lines } from 'mtr-kit'
 
-import { Schedule, scheduleMap } from '../../worker.js'
+import { NormalizedSchedule, scheduleMap } from '../../worker.js'
 
 @Injectable()
 export class ScheduleService {
@@ -12,7 +12,7 @@ export class ScheduleService {
 
   listLineSchedules(code: LineCode) {
     return lineMap[code].stops
-      .reduce<({ stop: StopCode } & Schedule)[]>(
+      .reduce<({ stop: StopCode } & NormalizedSchedule)[]>(
         (acc, { stop }) => [
           ...acc,
           ...this.listLineStopSchedules(code, stop).map(schedule => ({
@@ -28,7 +28,7 @@ export class ScheduleService {
   listStopSchedules(stop: StopCode) {
     return lines
       .filter(line => line.stops.some(item => item.stop === stop))
-      .reduce<({ line: LineCode } & Schedule)[]>(
+      .reduce<({ line: LineCode } & NormalizedSchedule)[]>(
         (acc, { line }) => [
           ...acc,
           ...this.listLineStopSchedules(line, stop).map(schedule => ({
@@ -42,7 +42,9 @@ export class ScheduleService {
   }
 
   listSchedules() {
-    return lines.reduce<({ line: LineCode; stop: StopCode } & Schedule)[]>(
+    return lines.reduce<
+      ({ line: LineCode; stop: StopCode } & NormalizedSchedule)[]
+    >(
       (acc, { line }) => [
         ...acc,
         ...this.listLineSchedules(line).map(item => ({
