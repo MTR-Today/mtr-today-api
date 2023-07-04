@@ -13,7 +13,7 @@ export class ScheduleService {
   listLineSchedules(code: LineCode) {
     return lineMap[code].stops
       .reduce<({ stop: StopCode } & Schedule)[]>(
-        (acc, stop) => [
+        (acc, { stop }) => [
           ...acc,
           ...this.listLineStopSchedules(code, stop).map(schedule => ({
             stop,
@@ -27,12 +27,12 @@ export class ScheduleService {
 
   listStopSchedules(stop: StopCode) {
     return lines
-      .filter(line => line.stops.includes(stop))
+      .filter(line => line.stops.some(item => item.stop === stop))
       .reduce<({ line: LineCode } & Schedule)[]>(
-        (acc, line) => [
+        (acc, { line }) => [
           ...acc,
-          ...this.listLineStopSchedules(line.code, stop).map(schedule => ({
-            line: line.code,
+          ...this.listLineStopSchedules(line, stop).map(schedule => ({
+            line: line,
             ...schedule,
           })),
         ],
@@ -43,10 +43,10 @@ export class ScheduleService {
 
   listSchedules() {
     return lines.reduce<({ line: LineCode; stop: StopCode } & Schedule)[]>(
-      (acc, line) => [
+      (acc, { line }) => [
         ...acc,
-        ...this.listLineSchedules(line.code).map(item => ({
-          line: line.code,
+        ...this.listLineSchedules(line).map(item => ({
+          line,
           ...item,
         })),
       ],

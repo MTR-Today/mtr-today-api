@@ -39,10 +39,10 @@ export class FaresService {
       }) => ({
         from: stops.find(
           ({ nameEn }) => nameEn === SRC_STATION_NAME.replace('-', ' ')
-        )?.code,
+        )?.stop,
         to: stops.find(
           ({ nameEn }) => nameEn === DEST_STATION_NAME.replace('-', ' ')
-        )?.code,
+        )?.stop,
         octopusCard: {
           child: OCT_CON_CHILD_FARE,
           adult: OCT_ADT_FARE,
@@ -72,9 +72,9 @@ export class FaresService {
         SINGLE_CHD_FARE,
       }) => ({
         from: stops.find(({ nameEn }) => nameEn === ST_FROM.replace('-', ' '))
-          ?.code,
+          ?.stop,
         to: stops.find(({ nameEn }) => nameEn === ST_TO.replace('-', ' '))
-          ?.code,
+          ?.stop,
         octopusCard: {
           child: OCT_CHD_FARE,
           adult: OCT_ADT_FARE,

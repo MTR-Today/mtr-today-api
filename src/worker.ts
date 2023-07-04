@@ -108,10 +108,10 @@ if (isMainThread) {
 
   const loop = async (ignoreUndefined: boolean) => {
     const lineStops = lines
-      .map(({ code, stops }) => stops.map(stop => ({ line: code, stop })))
+      .map(({ line, stops }) => stops.map(stop => ({ line, stop })))
       .flat()
       .map(({ stop, line }) => {
-        const lastSchedule = threadMap.get(`${line}-${stop}`)
+        const lastSchedule = threadMap.get(`${line}-${stop.stop}`)
         const allTime = [
           ...(lastSchedule?.schedule.down || []),
           ...(lastSchedule?.schedule.up || []),
@@ -146,7 +146,7 @@ if (isMainThread) {
         ? lineStops.filter(({ closestTs }) => closestTs)
         : lineStops
       ).map(({ stop, line }) =>
-        promiseThrottle.add(getAndPost.bind(this, line, stop))
+        promiseThrottle.add(getAndPost.bind(this, line, stop.stop))
       )
     )
   }

@@ -1,6 +1,5 @@
 import { Controller, Get, Param } from '@nestjs/common'
-import { StopCode } from 'mtr-kit'
-import { LineCode, lineMap, lines } from 'mtr-kit'
+import { LineCode, StopCode, lineMap, lines } from 'mtr-kit'
 
 import { FaresService } from '../fares/fares.service.js'
 import { ScheduleService } from '../schedules/schedules.service.js'
@@ -32,6 +31,11 @@ export class LinesController {
     return lineMap[line].stops
   }
 
+  @Get(':line/stops/:stop')
+  getLinesStop(@Param() { line, stop }: { line: LineCode; stop: StopCode }) {
+    return lineMap[line].stops.find(item => item.stop === stop)
+  }
+
   @Get(':line/stops/:stop/schedules')
   listLinesStopsSchedules(
     @Param() { line, stop }: { line: LineCode; stop: StopCode }
@@ -39,7 +43,7 @@ export class LinesController {
     return this.scheduleService.listLineStopSchedules(line, stop)
   }
 
-  @Get(':line/stops/:stop/schedules')
+  @Get(':line/stops/:stop/fares')
   listLinesStopsFares(@Param() { stop }: { line: LineCode; stop: StopCode }) {
     return this.faresService.listStopFare(stop)
   }

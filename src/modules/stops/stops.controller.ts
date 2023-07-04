@@ -1,6 +1,7 @@
 import { Controller, Get, Param } from '@nestjs/common'
-import { StopCode } from 'mtr-kit'
+import { StopCode, lines } from 'mtr-kit'
 import { stopMap, stops } from 'mtr-kit'
+import { omit } from 'ramda'
 
 import { FaresService } from '../fares/fares.service.js'
 import { ScheduleService } from '../schedules/schedules.service.js'
@@ -20,6 +21,20 @@ export class StopsController {
   @Get(':stop')
   getStop(@Param() { stop }: { stop: StopCode }) {
     return stopMap[stop]
+  }
+
+  @Get(':stop/lines')
+  getStopLines(@Param() { stop }: { stop: StopCode }) {
+    return lines
+      .filter(line => line.stops.some(item => item.stop === stop))
+      .map(({ stops: lineStops, ...rest }) => {
+        const lineStopItem = lineStops.find(item => item.stop === stop)
+        if (!lineStopItem) throw new Error(`Line Stop ${stop} not found`)
+        return {
+          ...rest,
+          ...omit(['stop'], lineStopItem),
+        }
+      })
   }
 
   @Get(':stop/schedules')
