@@ -6,10 +6,10 @@ settings:
 
 dependencies:
   '@apollo/server':
-    specifier: ^4.7.5
+    specifier: 4.7.5
     version: 4.7.5(graphql@16.7.1)
   '@nestjs/apollo':
-    specifier: ^12.0.7
+    specifier: 12.0.7
     version: 12.0.7(@apollo/server@4.7.5)(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)(@nestjs/graphql@12.0.7)(graphql@16.7.1)
   '@nestjs/common':
     specifier: 10.0.5
@@ -18,25 +18,25 @@ dependencies:
     specifier: 10.0.5
     version: 10.0.5(@nestjs/common@10.0.5)(@nestjs/platform-express@10.0.5)(reflect-metadata@0.1.13)(rxjs@7.8.1)
   '@nestjs/graphql':
-    specifier: ^12.0.7
+    specifier: 12.0.7
     version: 12.0.7(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)(class-transformer@0.5.1)(class-validator@0.14.0)(graphql@16.7.1)(reflect-metadata@0.1.13)
   '@nestjs/platform-express':
     specifier: 10.0.5
     version: 10.0.5(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)
   '@nestjs/schedule':
-    specifier: ^3.0.1
+    specifier: 3.0.1
     version: 3.0.1(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)(reflect-metadata@0.1.13)
   class-transformer:
-    specifier: ^0.5.1
+    specifier: 0.5.1
     version: 0.5.1
   class-validator:
-    specifier: ^0.14.0
+    specifier: 0.14.0
     version: 0.14.0
   dayjs:
     specifier: 1.11.9
     version: 1.11.9
   graphql:
-    specifier: ^16.7.1
+    specifier: 16.7.1
     version: 16.7.1
   mtr-kit:
     specifier: 1.13.2
@@ -74,7 +74,7 @@ devDependencies:
     specifier: 15.0.0
     version: 15.0.0(eslint@8.44.0)(typescript@5.1.6)
   '@types/cron':
-    specifier: ^2.0.1
+    specifier: 2.0.1
     version: 2.0.1
   '@types/express':
     specifier: 4.17.17
