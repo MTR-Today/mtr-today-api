@@ -6,7 +6,7 @@ settings:
 
 dependencies:
   '@apollo/server':
-    specifier: ^4.7.5
+    specifier: 4.7.5
     version: 4.7.5(graphql@16.7.1)
   '@nestjs/apollo':
     specifier: 12.0.7
