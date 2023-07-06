@@ -1,11 +1,12 @@
 import { Module } from '@nestjs/common'
 
 import { SchedulesController } from './schedules.controller.js'
-import { ScheduleService } from './schedules.service.js'
+import { SchedulesResolver } from './schedules.resolver.js'
+import { SchedulesService } from './schedules.service.js'
 
 @Module({
-  exports: [ScheduleService],
+  exports: [SchedulesService],
   controllers: [SchedulesController],
-  providers: [ScheduleService],
+  providers: [SchedulesService, SchedulesResolver],
 })
 export class SchedulesModule {}

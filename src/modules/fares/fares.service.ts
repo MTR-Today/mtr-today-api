@@ -1,5 +1,8 @@
 import { Injectable } from '@nestjs/common'
+import { Interval, Timeout } from '@nestjs/schedule'
 import { LineCode, StopCode, fareApi, stops } from 'mtr-kit'
+
+import { normalizeStopName } from '../../utils/normalizeStopName.js'
 
 type NormalizedFare = {
   from?: StopCode
@@ -21,8 +24,11 @@ type NormalizedFare = {
 
 @Injectable()
 export class FaresService {
+  fares: NormalizedFare[] = []
+
   async listNormalizedMtrFares(): Promise<NormalizedFare[]> {
-    return (await fareApi.listMtrFares()).map(
+    const fares = await fareApi.listMtrFares()
+    return fares.map(
       ({
         SRC_STATION_NAME,
         DEST_STATION_NAME,
@@ -38,10 +44,12 @@ export class FaresService {
         SINGLE_CON_ELDERLY_FARE,
       }) => ({
         from: stops.find(
-          ({ nameEn }) => nameEn === SRC_STATION_NAME.replace('-', ' ')
+          ({ nameEn }) =>
+            normalizeStopName(nameEn) === normalizeStopName(SRC_STATION_NAME)
         )?.stop,
         to: stops.find(
-          ({ nameEn }) => nameEn === DEST_STATION_NAME.replace('-', ' ')
+          ({ nameEn }) =>
+            normalizeStopName(nameEn) === normalizeStopName(DEST_STATION_NAME)
         )?.stop,
         octopusCard: {
           child: OCT_CON_CHILD_FARE,
@@ -61,7 +69,9 @@ export class FaresService {
   }
 
   async listNormalizedAirportExpressFares(): Promise<NormalizedFare[]> {
-    return (await fareApi.listAirportExpressFares()).map(
+    const fares = await fareApi.listAirportExpressFares()
+
+    return fares.map(
       ({
         ST_FROM,
         ST_TO,
@@ -71,10 +81,13 @@ export class FaresService {
         SINGLE_ADT_FARE,
         SINGLE_CHD_FARE,
       }) => ({
-        from: stops.find(({ nameEn }) => nameEn === ST_FROM.replace('-', ' '))
-          ?.stop,
-        to: stops.find(({ nameEn }) => nameEn === ST_TO.replace('-', ' '))
-          ?.stop,
+        from: stops.find(
+          ({ nameEn }) =>
+            normalizeStopName(nameEn) === normalizeStopName(ST_FROM)
+        )?.stop,
+        to: stops.find(
+          ({ nameEn }) => normalizeStopName(nameEn) === normalizeStopName(ST_TO)
+        )?.stop,
         octopusCard: {
           child: OCT_CHD_FARE,
           adult: OCT_ADT_FARE,
@@ -92,18 +105,24 @@ export class FaresService {
     )
   }
 
-  async listFares() {
-    return [
-      ...(await this.listNormalizedMtrFares()),
-      ...(await this.listNormalizedAirportExpressFares()),
-    ]
+  @Timeout(0)
+  @Interval(1000 * 60 * 60 * 24)
+  async pullFares() {
+    const [mtrFares, airportExpressFares] = await Promise.all([
+      this.listNormalizedMtrFares(),
+      this.listNormalizedAirportExpressFares(),
+    ])
+
+    this.fares = [...mtrFares, ...airportExpressFares]
   }
 
-  async listStopFare(stop: StopCode) {
-    return (await this.listFares()).filter(({ from }) => from === stop)
+  async listFares({ from, to }: { from?: StopCode; to?: StopCode }) {
+    return this.fares.filter(
+      item => (!from || item.from === from) && (!to || item.to === to)
+    )
   }
 
   listLineStopFares(_: LineCode, stop: StopCode) {
-    return this.listStopFare(stop)
+    return this.listFares({ from: stop })
   }
 }

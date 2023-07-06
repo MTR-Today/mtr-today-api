@@ -4,37 +4,31 @@ import { LineCode, StopCode, lineMap, lines } from 'mtr-kit'
 import { NormalizedSchedule, scheduleMap } from '../../worker.js'
 
 @Injectable()
-export class ScheduleService {
-  listLineStopSchedules(line: LineCode, stop: StopCode) {
+export class SchedulesService {
+  listLineStopSchedules({ line, stop }: { line: LineCode; stop: StopCode }) {
     const schedule = scheduleMap.get(`${line}-${stop}`)
-    return schedule ? [schedule] : []
+    return schedule ? [{ ...schedule, line, stop }] : []
   }
 
-  listLineSchedules(code: LineCode) {
-    return lineMap[code].stops
+  listLineSchedules({ line }: { line: LineCode }) {
+    return lineMap[line].stops
       .reduce<({ stop: StopCode } & NormalizedSchedule)[]>(
         (acc, { stop }) => [
           ...acc,
-          ...this.listLineStopSchedules(code, stop).map(schedule => ({
-            stop,
-            ...schedule,
-          })),
+          ...this.listLineStopSchedules({ line, stop }),
         ],
         []
       )
       .filter((v): v is NonNullable<typeof v> => Boolean(v))
   }
 
-  listStopSchedules(stop: StopCode) {
+  listStopSchedules({ stop }: { stop: StopCode }) {
     return lines
       .filter(line => line.stops.some(item => item.stop === stop))
       .reduce<({ line: LineCode } & NormalizedSchedule)[]>(
         (acc, { line }) => [
           ...acc,
-          ...this.listLineStopSchedules(line, stop).map(schedule => ({
-            line: line,
-            ...schedule,
-          })),
+          ...this.listLineStopSchedules({ line, stop }),
         ],
         []
       )
@@ -47,7 +41,7 @@ export class ScheduleService {
     >(
       (acc, { line }) => [
         ...acc,
-        ...this.listLineSchedules(line).map(item => ({
+        ...this.listLineSchedules({ line }).map(item => ({
           line,
           ...item,
         })),

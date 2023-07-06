@@ -1,12 +1,20 @@
 import './worker.js'
 
+import { ValidationPipe } from '@nestjs/common'
 import { NestFactory } from '@nestjs/core'
-import helmet from 'helmet'
 
 import { AppModule } from './app.module.js'
 
 const app = await NestFactory.create(AppModule)
-app.use(helmet())
+app.useGlobalPipes(
+  new ValidationPipe({
+    transform: true,
+    whitelist: true,
+    forbidNonWhitelisted: true,
+    forbidUnknownValues: true,
+  })
+)
+
 app.enableCors({
   origin: [
     'https://www.mtr.today',

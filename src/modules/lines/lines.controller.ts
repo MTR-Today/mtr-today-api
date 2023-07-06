@@ -1,50 +1,40 @@
 import { Controller, Get, Param } from '@nestjs/common'
-import { LineCode, StopCode, lineMap, lines } from 'mtr-kit'
+import { LineCode, StopCode } from 'mtr-kit'
 
-import { FaresService } from '../fares/fares.service.js'
-import { ScheduleService } from '../schedules/schedules.service.js'
+import { SchedulesService } from '../schedules/schedules.service.js'
+import { LinesService } from './lines.service.js'
 
 @Controller('/api/v1/lines')
 export class LinesController {
   constructor(
-    private readonly scheduleService: ScheduleService,
-    private readonly faresService: FaresService
+    private readonly linesService: LinesService,
+    private readonly schedulesService: SchedulesService
   ) {}
 
   @Get()
   listLines() {
-    return lines
+    return this.linesService.listLines()
   }
 
   @Get(':line')
   getLine(@Param() { line }: { line: LineCode }) {
-    return lineMap[line]
-  }
-
-  @Get(':line/schedules')
-  listLineSchedules(@Param() { line }: { line: LineCode }) {
-    return this.scheduleService.listLineSchedules(line)
+    return this.linesService.getLine({ line })
   }
 
   @Get(':line/stops')
   listLinesStops(@Param() { line }: { line: LineCode }) {
-    return lineMap[line].stops
+    return this.linesService.listLineStop({ line })
   }
 
   @Get(':line/stops/:stop')
   getLinesStop(@Param() { line, stop }: { line: LineCode; stop: StopCode }) {
-    return lineMap[line].stops.find(item => item.stop === stop)
+    return this.linesService.getLineStop({ line, stop })
   }
 
   @Get(':line/stops/:stop/schedules')
   listLinesStopsSchedules(
     @Param() { line, stop }: { line: LineCode; stop: StopCode }
   ) {
-    return this.scheduleService.listLineStopSchedules(line, stop)
-  }
-
-  @Get(':line/stops/:stop/fares')
-  listLinesStopsFares(@Param() { stop }: { line: LineCode; stop: StopCode }) {
-    return this.faresService.listStopFare(stop)
+    return this.schedulesService.listLineStopSchedules({ line, stop })
   }
 }
