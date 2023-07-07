@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common'
 import { LineCode, StopCode, lineMap, lines } from 'mtr-kit'
-import { drop, take } from 'ramda'
 
 import { NormalizedSchedule, scheduleMap } from '../../worker.js'
 
@@ -23,18 +22,8 @@ export class SchedulesService {
       .filter((v): v is NonNullable<typeof v> => Boolean(v))
   }
 
-  listSchedules({
-    line,
-    stop,
-    offset,
-    limit,
-  }: {
-    line?: LineCode
-    stop?: StopCode
-    offset?: number
-    limit?: number
-  }) {
-    const res = lines
+  listSchedules({ line, stop }: { line?: LineCode; stop?: StopCode }) {
+    return lines
       .reduce<({ line: LineCode; stop: StopCode } & NormalizedSchedule)[]>(
         (acc, item) => [
           ...acc,
@@ -48,9 +37,5 @@ export class SchedulesService {
       .filter(
         item => (!line || item.line === line) && (!stop || item.stop === stop)
       )
-
-    const withOffset = offset ? drop(offset, res) : res
-    const withLimit = limit ? take(limit, withOffset) : withOffset
-    return withLimit
   }
 }

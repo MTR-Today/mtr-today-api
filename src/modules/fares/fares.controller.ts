@@ -1,6 +1,5 @@
 import { Controller, Get, Query } from '@nestjs/common'
 
-import { defaultLimit, defaultOffset } from '../../constants/pagination.js'
 import { ListFaresQueryDto } from './fares.dto.js'
 import { FaresService } from './fares.service.js'
 
@@ -11,13 +10,8 @@ export class FaresController {
   @Get()
   listFares(
     @Query()
-    {
-      from,
-      to,
-      offset = defaultOffset,
-      limit = defaultLimit,
-    }: ListFaresQueryDto
+    { from, to }: ListFaresQueryDto
   ) {
-    return this.fareService.listFares({ from, to, offset, limit })
+    return this.fareService.listFares({ from, to })
   }
 }

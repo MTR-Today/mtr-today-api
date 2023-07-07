@@ -1,10 +1,8 @@
 import { Args, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql'
 import { StopCode } from 'mtr-kit'
 
-import { defaultLimit, defaultOffset } from '../../constants/pagination.js'
 import { Fare } from '../fares/fares.model.js'
 import { FaresService } from '../fares/fares.service.js'
-import { ListLinesQueryDto } from '../lines/lines.dto.js'
 import { LineBase } from '../lines/lines.model.js'
 import { Schedule } from '../schedules/schedules.model.js'
 import { SchedulesService } from '../schedules/schedules.service.js'
@@ -20,11 +18,8 @@ export class StopsResolver {
   ) {}
 
   @Query(() => [Stop])
-  stops(
-    @Args()
-    { offset = defaultOffset, limit = defaultLimit }: ListLinesQueryDto
-  ) {
-    return this.stopsService.listStop({ offset, limit })
+  stops() {
+    return this.stopsService.listStop()
   }
 
   @Query(() => Stop)

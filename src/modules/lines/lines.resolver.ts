@@ -1,10 +1,8 @@
 import { Args, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql'
 import { LineCode, StopCode } from 'mtr-kit'
 
-import { defaultLimit, defaultOffset } from '../../constants/pagination.js'
 import { Schedule } from '../schedules/schedules.model.js'
 import { SchedulesService } from '../schedules/schedules.service.js'
-import { ListLinesQueryDto } from './lines.dto.js'
 import { Line, LineStop } from './lines.model.js'
 import { LinesService } from './lines.service.js'
 
@@ -13,11 +11,8 @@ export class LinesResolver {
   constructor(private readonly linesService: LinesService) {}
 
   @Query(() => [Line])
-  lines(
-    @Args()
-    { offset = defaultOffset, limit = defaultLimit }: ListLinesQueryDto
-  ) {
-    return this.linesService.listLines({ offset, limit })
+  lines() {
+    return this.linesService.listLines()
   }
 
   @Query(() => Line)

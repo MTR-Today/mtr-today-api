@@ -1,15 +1,11 @@
 import { Injectable } from '@nestjs/common'
 import { LineCode, StopCode, lineMap, lines } from 'mtr-kit'
-import { drop, omit, take } from 'ramda'
+import { omit } from 'ramda'
 
 @Injectable()
 export class LinesService {
-  listLines({ offset, limit }: { offset?: number; limit?: number }) {
-    const res = lines.map(omit(['stops']))
-
-    const withOffset = offset ? drop(offset, res) : res
-    const withLimit = limit ? take(limit, withOffset) : withOffset
-    return withLimit
+  listLines() {
+    return lines.map(omit(['stops']))
   }
 
   getLine({ line }: { line: LineCode }) {

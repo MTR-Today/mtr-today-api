@@ -1,9 +1,7 @@
-import { Controller, Get, Param, Query } from '@nestjs/common'
+import { Controller, Get, Param } from '@nestjs/common'
 import { LineCode, StopCode } from 'mtr-kit'
 
-import { defaultLimit, defaultOffset } from '../../constants/pagination.js'
 import { SchedulesService } from '../schedules/schedules.service.js'
-import { ListLinesQueryDto } from './lines.dto.js'
 import { LinesService } from './lines.service.js'
 
 @Controller('/api/v1/lines')
@@ -14,11 +12,8 @@ export class LinesController {
   ) {}
 
   @Get()
-  listLines(
-    @Query()
-    { offset = defaultOffset, limit = defaultLimit }: ListLinesQueryDto
-  ) {
-    return this.linesService.listLines({ offset, limit })
+  listLines() {
+    return this.linesService.listLines()
   }
 
   @Get(':line')
