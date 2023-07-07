@@ -1,21 +1,21 @@
 import { ArgsType, Field, Int } from '@nestjs/graphql'
 import { Type } from 'class-transformer'
 import { IsEnum, IsInt, IsOptional, Max, Min } from 'class-validator'
-import { StopCode } from 'mtr-kit'
+import { LineCode, StopCode } from 'mtr-kit'
 
 import { defaultMaxLimit } from '../../constants/pagination.js'
 
 @ArgsType()
-export class ListFaresQueryDto {
-  @IsEnum(StopCode)
+export class ListSchedulesQueryDto {
+  @IsEnum(LineCode)
   @IsOptional()
-  @Field(() => StopCode, { nullable: true })
-  from?: StopCode
+  @Field(() => LineCode, { nullable: true })
+  line?: LineCode
 
   @IsEnum(StopCode)
   @IsOptional()
   @Field(() => StopCode, { nullable: true })
-  to?: StopCode
+  stop?: StopCode
 
   @Type(() => Number)
   @IsInt()

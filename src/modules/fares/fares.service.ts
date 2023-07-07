@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { Interval, Timeout } from '@nestjs/schedule'
 import { LineCode, StopCode, fareApi, stops } from 'mtr-kit'
+import { drop, take } from 'ramda'
 
 import { normalizeStopName } from '../../utils/normalizeStopName.js'
 
@@ -116,10 +117,24 @@ export class FaresService {
     this.fares = [...mtrFares, ...airportExpressFares]
   }
 
-  async listFares({ from, to }: { from?: StopCode; to?: StopCode }) {
-    return this.fares.filter(
+  async listFares({
+    from,
+    to,
+    offset,
+    limit,
+  }: {
+    from?: StopCode
+    to?: StopCode
+    offset?: number
+    limit?: number
+  }) {
+    const res = this.fares.filter(
       item => (!from || item.from === from) && (!to || item.to === to)
     )
+
+    const withOffset = offset ? drop(offset, res) : res
+    const withLimit = limit ? take(limit, withOffset) : withOffset
+    return withLimit
   }
 
   listLineStopFares(_: LineCode, stop: StopCode) {

@@ -1,8 +1,10 @@
-import { Controller, Get, Param } from '@nestjs/common'
+import { Controller, Get, Param, Query } from '@nestjs/common'
 import { StopCode } from 'mtr-kit'
 
+import { defaultLimit, defaultOffset } from '../../constants/pagination.js'
 import { FaresService } from '../fares/fares.service.js'
 import { SchedulesService } from '../schedules/schedules.service.js'
+import { ListStopsQueryDto } from './stops.dto.js'
 import { StopsService } from './stops.service.js'
 
 @Controller('/api/v1/stops')
@@ -14,8 +16,11 @@ export class StopsController {
   ) {}
 
   @Get()
-  listStops() {
-    return this.stopsService.listStop()
+  listStops(
+    @Query()
+    { offset = defaultOffset, limit = defaultLimit }: ListStopsQueryDto
+  ) {
+    return this.stopsService.listStop({ offset, limit })
   }
 
   @Get(':stop')
@@ -30,7 +35,7 @@ export class StopsController {
 
   @Get(':stop/schedules')
   listStopSchedules(@Param() { stop }: { stop: StopCode }) {
-    return this.schedulesService.listStopSchedules({ stop })
+    return this.schedulesService.listSchedules({ stop })
   }
 
   @Get(':stop/fares')

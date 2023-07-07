@@ -1,11 +1,14 @@
 import { Injectable } from '@nestjs/common'
 import { StopCode, lines, stopMap, stops } from 'mtr-kit'
-import { omit } from 'ramda'
+import { drop, omit, take } from 'ramda'
 
 @Injectable()
 export class StopsService {
-  listStop() {
-    return stops
+  listStop({ offset, limit }: { offset?: number; limit?: number }) {
+    const res = stops
+    const withOffset = offset ? drop(offset, res) : res
+    const withLimit = limit ? take(limit, withOffset) : withOffset
+    return withLimit
   }
 
   getStop({ stop }: { stop: StopCode }) {
