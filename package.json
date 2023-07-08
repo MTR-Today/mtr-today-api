@@ -34,7 +34,7 @@
     "csv-parse": "^5.4.0",
     "dayjs": "1.11.9",
     "graphql": "16.7.1",
-    "mtr-kit": "1.13.3",
+    "mtr-kit": "1.13.2",
     "promise-throttle": "1.1.2",
     "ramda": "0.29.0",
     "reflect-metadata": "0.1.13",
