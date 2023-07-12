@@ -31,7 +31,7 @@
     "@nestjs/schedule": "3.0.1",
     "class-transformer": "0.5.1",
     "class-validator": "0.14.0",
-    "csv-parse": "^5.4.0",
+    "csv-parse": "5.4.0",
     "dayjs": "1.11.9",
     "graphql": "16.7.1",
     "mtr-kit": "1.13.5",

@@ -33,7 +33,7 @@ dependencies:
     specifier: 0.14.0
     version: 0.14.0
   csv-parse:
-    specifier: ^5.4.0
+    specifier: 5.4.0
     version: 5.4.0
   dayjs:
     specifier: 1.11.9
