@@ -1,4 +1,5 @@
 import { Controller, Get, Param } from '@nestjs/common'
+import { ApiParam } from '@nestjs/swagger'
 import { LineCode, StopCode } from 'mtr-kit'
 
 import { SchedulesService } from '../schedules/schedules.service.js'
@@ -17,21 +18,41 @@ export class LinesController {
   }
 
   @Get(':line')
+  @ApiParam({
+    name: 'line',
+    required: true,
+    enum: LineCode,
+  })
   getLine(@Param() { line }: { line: LineCode }) {
     return this.linesService.getLine({ line })
   }
 
   @Get(':line/stops')
+  @ApiParam({
+    name: 'line',
+    required: true,
+    enum: LineCode,
+  })
   listLinesStops(@Param() { line }: { line: LineCode }) {
     return this.linesService.listLineStop({ line })
   }
 
   @Get(':line/stops/:stop')
+  @ApiParam({
+    name: 'line',
+    required: true,
+    enum: LineCode,
+  })
   getLinesStop(@Param() { line, stop }: { line: LineCode; stop: StopCode }) {
     return this.linesService.getLineStop({ line, stop })
   }
 
   @Get(':line/stops/:stop/schedules')
+  @ApiParam({
+    name: 'line',
+    required: true,
+    enum: LineCode,
+  })
   listLinesStopsSchedules(
     @Param() { line, stop }: { line: LineCode; stop: StopCode }
   ) {
