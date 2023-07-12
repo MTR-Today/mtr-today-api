@@ -13,29 +13,26 @@ import PromiseThrottle from 'promise-throttle'
 
 import { convertTimeRecursive } from './utils/convertTimeRecursive.js'
 
-export type Schedule = {
-  currTime: string
-  isDelay: boolean
-  sysTime: string
+export type NormalizedScheduleItem = {
+  platform: number
+  destination: string
+  timestamp: string
+}
+
+export type NormalizedSchedule = {
+  currentTime: string
+  isDelayed: boolean
+  systemTime: string
   schedule: {
-    up:
-      | {
-          plat: number
-          dest: string
-          time: string
-        }[]
-      | undefined
-    down:
-      | {
-          plat: number
-          dest: string
-          time: string
-        }[]
-      | undefined
+    up: NormalizedScheduleItem[] | undefined
+    down: NormalizedScheduleItem[] | undefined
   }
 }
 
-export const scheduleMap = new Map<`${LineCode}-${StopCode}`, Schedule>()
+export const scheduleMap = new Map<
+  `${LineCode}-${StopCode}`,
+  NormalizedSchedule
+>()
 
 if (isMainThread) {
   const worker = new Worker(url.fileURLToPath(import.meta.url))
@@ -45,7 +42,7 @@ if (isMainThread) {
       line,
       stop,
       ...schedule
-    }: Schedule & { line: LineCode; stop: StopCode }) => {
+    }: NormalizedSchedule & { line: LineCode; stop: StopCode }) => {
       scheduleMap.set(`${line}-${stop}`, schedule)
     }
   )
@@ -55,16 +52,16 @@ if (isMainThread) {
   // eslint-disable-next-line no-console
   worker.on('exit', code => console.log(`Worker exited with code ${code}.`))
 } else {
-  const threadMap = new Map<`${LineCode}-${StopCode}`, Schedule>()
+  const threadMap = new Map<`${LineCode}-${StopCode}`, NormalizedSchedule>()
 
   const formatScheduleItem = (items: ScheduleItem[]) =>
     items
       .filter(({ valid }) => valid === 'Y')
       .sort((a, b) => Number(a.seq) - Number(b.seq))
       .map(({ dest, plat, time }) => ({
-        plat: Number(plat),
-        dest,
-        time,
+        platform: Number(plat),
+        destination: dest,
+        timestamp: time,
       }))
 
   const getStopSchedules = async (line: LineCode, stop: StopCode) => {
@@ -77,9 +74,9 @@ if (isMainThread) {
 
       return convertTimeRecursive(
         {
-          currTime: curr_time,
-          isDelay: isdelay !== 'N',
-          sysTime: sys_time,
+          currentTime: curr_time,
+          isDelayed: isdelay !== 'N',
+          systemTime: sys_time,
           schedule: {
             up: UP ? formatScheduleItem(UP) : UP,
             down: DOWN ? formatScheduleItem(DOWN) : DOWN,
@@ -108,15 +105,15 @@ if (isMainThread) {
 
   const loop = async (ignoreUndefined: boolean) => {
     const lineStops = lines
-      .map(({ code, stops }) => stops.map(stop => ({ line: code, stop })))
+      .map(({ line, stops }) => stops.map(stop => ({ line, stop })))
       .flat()
       .map(({ stop, line }) => {
-        const lastSchedule = threadMap.get(`${line}-${stop}`)
+        const lastSchedule = threadMap.get(`${line}-${stop.stop}`)
         const allTime = [
           ...(lastSchedule?.schedule.down || []),
           ...(lastSchedule?.schedule.up || []),
         ]
-          .map(({ time }) => dayjs(time))
+          .map(({ timestamp }) => dayjs(timestamp))
           .sort((a, b) => (a.isSame(b) ? 0 : a.isBefore(b) ? -1 : 1))
 
         return { line, stop, closestTs: allTime[0] }
@@ -146,7 +143,7 @@ if (isMainThread) {
         ? lineStops.filter(({ closestTs }) => closestTs)
         : lineStops
       ).map(({ stop, line }) =>
-        promiseThrottle.add(getAndPost.bind(this, line, stop))
+        promiseThrottle.add(getAndPost.bind(this, line, stop.stop))
       )
     )
   }
