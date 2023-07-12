@@ -1,5 +1,34 @@
 # Changelog
 
+## [1.3.0](https://github.com/MTR-Today/mtr-today-api/compare/v1.2.0...v1.3.0) (2023-07-12)
+
+
+### Features
+
+* data pagination ([512cf72](https://github.com/MTR-Today/mtr-today-api/commit/512cf72674376247c9d1962021c0d20aae8bc854))
+* fare api ([d4a5290](https://github.com/MTR-Today/mtr-today-api/commit/d4a5290db4b5c7376991bdaeead2f9155e9cf9c8))
+* graphql api ([d9901ba](https://github.com/MTR-Today/mtr-today-api/commit/d9901ba9bbcf8baee45a186f35b160a9161ac9de))
+* rate limit ([e550ff9](https://github.com/MTR-Today/mtr-today-api/commit/e550ff950f0519d38003090e494f7ddb5626f3b0))
+* remove pagination ([4014828](https://github.com/MTR-Today/mtr-today-api/commit/4014828fe98def0a1225384ea416f2cf14ba9575))
+* stop line api ([c3c916d](https://github.com/MTR-Today/mtr-today-api/commit/c3c916da5e7a16899c98f11352fab190b0621e27))
+* update schedule item key ([e40cae5](https://github.com/MTR-Today/mtr-today-api/commit/e40cae528d179c6244c15d8f0e62f88377696051))
+
+
+### Bug Fixes
+
+* **deps:** pin dependencies ([ba89f45](https://github.com/MTR-Today/mtr-today-api/commit/ba89f45787ca8337a81d8926a31852680eec270f))
+* **deps:** pin dependencies ([f1e24d7](https://github.com/MTR-Today/mtr-today-api/commit/f1e24d72476083d16f64cb2c6a81f98c7c923863))
+* **deps:** pin dependencies ([6464626](https://github.com/MTR-Today/mtr-today-api/commit/646462685f0b5a8e9348abda63fd78f8f5f92eb4))
+* **deps:** pin dependency @apollo/server to 4.7.5 ([4ed497d](https://github.com/MTR-Today/mtr-today-api/commit/4ed497d01f327a886e0b1430826419e3b8bd2539))
+* **deps:** pin dependency csv-parse to 5.4.0 ([4c64296](https://github.com/MTR-Today/mtr-today-api/commit/4c64296550fc3a3bbfef72c16f393a1e824ec0bf))
+* **deps:** update dependency dayjs to v1.11.9 ([e6db91d](https://github.com/MTR-Today/mtr-today-api/commit/e6db91d0cf6c7be494b5358b35e647e69dee4938))
+* **deps:** update dependency mtr-kit to v1.11.1 ([dddb641](https://github.com/MTR-Today/mtr-today-api/commit/dddb641f8834d68b08d2c20234beddac826d8edd))
+* **deps:** update dependency mtr-kit to v1.13.1 ([c2a490e](https://github.com/MTR-Today/mtr-today-api/commit/c2a490ea8357247aea257f39810b09f9bd88c167))
+* **deps:** update dependency mtr-kit to v1.13.2 ([25f85f4](https://github.com/MTR-Today/mtr-today-api/commit/25f85f4e32953f0921a0cd0202b02dfc35b0aa14))
+* **deps:** update dependency mtr-kit to v1.13.5 ([1b8b8c0](https://github.com/MTR-Today/mtr-today-api/commit/1b8b8c0b967ed02844eda7f7c8a2220a913ec168))
+* **deps:** update nest monorepo ([abc35cc](https://github.com/MTR-Today/mtr-today-api/commit/abc35cce56b44eed934b8ae3bc5aaccaaaf0b71e))
+* fares route path ([fc2585e](https://github.com/MTR-Today/mtr-today-api/commit/fc2585e13f1c70b79da0da10c2c5dabe827b22e9))
+
 ## [1.2.0](https://github.com/MTR-Today/mtr-today-api/compare/v1.1.0...v1.2.0) (2023-06-27)
 
 
