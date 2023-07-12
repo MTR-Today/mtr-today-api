@@ -22,6 +22,7 @@ import { StopsModule } from './modules/stops/stops.module.js'
       autoSchemaFile: true,
       path: '/api/v1/graphql',
       playground: false,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       plugins: [ApolloServerPluginLandingPageLocalDefault() as any],
     }),
     ScheduleModule.forRoot(),
