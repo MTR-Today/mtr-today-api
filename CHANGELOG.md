@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.0...v1.3.1) (2023-07-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @nestjs/graphql to v12.0.8 ([55c0553](https://github.com/MTR-Today/mtr-today-api/commit/55c0553c40dd6ad8e5a81d47dee7be17e9f5fa6d))
+
 ## [1.3.0](https://github.com/MTR-Today/mtr-today-api/compare/v1.2.0...v1.3.0) (2023-07-12)
 
 
