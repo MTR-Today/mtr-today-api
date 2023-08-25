@@ -45,7 +45,7 @@
   "devDependencies": {
     "@commitlint/cli": "17.7.1",
     "@commitlint/config-conventional": "17.7.0",
-    "@nestjs/cli": "10.1.15",
+    "@nestjs/cli": "10.1.16",
     "@nestjs/schematics": "10.0.2",
     "@nestjs/testing": "10.2.1",
     "@spotify/eslint-config": "15.0.0",
