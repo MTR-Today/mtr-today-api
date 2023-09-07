@@ -17,8 +17,12 @@ import { StopsModule } from './modules/stops/stops.module.js'
 @Module({
   imports: [
     ThrottlerModule.forRoot({
-      ttl: 1,
-      limit: 1,
+      throttlers: [
+        {
+          ttl: 1000,
+          limit: 1,
+        },
+      ],
     }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
