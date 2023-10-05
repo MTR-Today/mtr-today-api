@@ -54,8 +54,8 @@ dependencies:
     specifier: 1.1.2
     version: 1.1.2
   ramda:
-    specifier: 0.29.0
-    version: 0.29.0
+    specifier: 0.29.1
+    version: 0.29.1
   reflect-metadata:
     specifier: 0.1.13
     version: 0.1.13
@@ -6284,8 +6284,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /ramda@0.29.0:
-    resolution: {integrity: sha512-BBea6L67bYLtdbOqfp8f58fPMqEwx0doL+pAi8TZyp2YWz8R9G8z9x75CZI8W+ftqhFHCpEX2cRnUUXK130iKA==}
+  /ramda@0.29.1:
+    resolution: {integrity: sha512-OfxIeWzd4xdUNxlWhgFazxsA/nl3mS4/jGZI5n00uWOoSSFRhC1b6gl6xvmzUamgmqELraWp0J/qqVlXYPDPyA==}
     dev: false
 
   /randombytes@2.1.0:
