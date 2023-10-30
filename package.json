@@ -46,7 +46,7 @@
     "@commitlint/cli": "18.2.0",
     "@commitlint/config-conventional": "18.1.0",
     "@nestjs/cli": "10.2.1",
-    "@nestjs/schematics": "10.0.2",
+    "@nestjs/schematics": "10.0.3",
     "@nestjs/testing": "10.2.7",
     "@spotify/eslint-config": "15.0.0",
     "@types/cron": "2.0.1",
