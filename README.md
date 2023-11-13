@@ -1,4 +1,3 @@
-
 <div align="center">
 
 ![Banner](docs/banner.png 'Banner')

@@ -124,8 +124,8 @@ if (isMainThread) {
         return a.closestTs?.isSame(b.closestTs) || a.closestTs === b.closestTs
           ? 0
           : a.closestTs?.isBefore(b.closestTs)
-          ? -1
-          : 1
+            ? -1
+            : 1
       })
       .map(({ closestTs, ...rest }) => ({
         ...rest,
