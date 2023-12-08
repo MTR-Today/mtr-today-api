@@ -39,8 +39,8 @@ dependencies:
     specifier: 0.14.0
     version: 0.14.0
   csv-parse:
-    specifier: 5.5.2
-    version: 5.5.2
+    specifier: 5.5.3
+    version: 5.5.3
   dayjs:
     specifier: 1.11.10
     version: 1.11.10
@@ -3047,8 +3047,8 @@ packages:
     resolution: {integrity: sha512-FAaLDaplstoRsDR8XGYH51znUN0UY7nMc6Z9/fvE8EXGwvJE9hu7W2vHwx1+bd6gCYnln9nLbzxFTrcO9YQDZw==}
     dev: false
 
-  /csv-parse@5.5.2:
-    resolution: {integrity: sha512-YRVtvdtUNXZCMyK5zd5Wty1W6dNTpGKdqQd4EQ8tl/c6KW1aMBB1Kg1ppky5FONKmEqGJ/8WjLlTNLPne4ioVA==}
+  /csv-parse@5.5.3:
+    resolution: {integrity: sha512-v0KW6C0qlZzoGjk6u5tLmVfyZxNgPGXZsWTXshpAgKVGmGXzaVWGdlCFxNx5iuzcXT/oJN1HHM9DZKwtAtYa+A==}
     dev: false
 
   /damerau-levenshtein@1.0.8:
