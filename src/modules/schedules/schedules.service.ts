@@ -12,13 +12,9 @@ export class SchedulesService {
 
   listLineSchedules({ line }: { line: LineCode }) {
     return lineMap[line].stops
-      .reduce<({ stop: StopCode } & NormalizedSchedule)[]>(
-        (acc, { stop }) => [
-          ...acc,
-          ...this.listLineStopSchedules({ line, stop }),
-        ],
-        []
-      )
+      .reduce<
+        ({ stop: StopCode } & NormalizedSchedule)[]
+      >((acc, { stop }) => [...acc, ...this.listLineStopSchedules({ line, stop })], [])
       .filter((v): v is NonNullable<typeof v> => Boolean(v))
   }
 
