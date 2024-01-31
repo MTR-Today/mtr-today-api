@@ -17,7 +17,7 @@
     "start:prod": "node dist/main",
     "lint": "eslint src",
     "test": "tsc",
-    "postinstall": "husky",
+    "prepare": "husky",
     "pre-commit": "pnpm lint-staged",
     "pre-push": "tsc"
   },
