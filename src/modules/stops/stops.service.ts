@@ -15,6 +15,6 @@ export class StopsService {
   listStopLines({ stop }: { stop: StopCode }) {
     return lines
       .filter(line => line.stops.some(item => item.stop === stop))
-      .map(omit(['stop']))
+      .map(omit(['stops']))
   }
 }
