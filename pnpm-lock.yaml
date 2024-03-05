@@ -92,8 +92,8 @@ devDependencies:
     specifier: 20.11.24
     version: 20.11.24
   '@types/ramda':
-    specifier: 0.29.10
-    version: 0.29.10
+    specifier: 0.29.11
+    version: 0.29.11
   '@types/supertest':
     specifier: 6.0.2
     version: 6.0.2
@@ -1587,10 +1587,10 @@ packages:
   /@types/qs@6.9.7:
     resolution: {integrity: sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==}
 
-  /@types/ramda@0.29.10:
-    resolution: {integrity: sha512-0BzWVKtSEtignlk+XBuK88Il5wzQwbRVfEkzE8iKm02NYHMGQ/9ffB05M+zXhTCqo50DOIAT9pNSJsjFMMG4rQ==}
+  /@types/ramda@0.29.11:
+    resolution: {integrity: sha512-jm1+PmNOpE7aPS+mMcuB4a72VkCXUJqPSaQRu2YqR8MbsFfaowYXgKxc7bluYdDpRHNXT5Z+xu+Lgr3/ml6wSA==}
     dependencies:
-      types-ramda: 0.29.7
+      types-ramda: 0.29.9
     dev: true
 
   /@types/range-parser@1.2.4:
@@ -7541,8 +7541,8 @@ packages:
   /typedarray@0.0.6:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
 
-  /types-ramda@0.29.7:
-    resolution: {integrity: sha512-8KBxZGJwUF3MpRkkJauSpvfHXk8Ssq15QXGuCBTDGeKd9PfheokkC3wAKRV3djej9O31Qa5M7Owsg8hF0GjtAw==}
+  /types-ramda@0.29.9:
+    resolution: {integrity: sha512-B+VbLtW68J4ncG/rccKaYDhlirKlVH/Izh2JZUfaPJv+3Tl2jbbgYsB1pvole1vXKSgaPlAe/wgEdOnMdAu52A==}
     dependencies:
       ts-toolbelt: 9.6.0
     dev: true
