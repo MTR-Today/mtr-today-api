@@ -83,8 +83,8 @@ devDependencies:
     specifier: 15.0.0
     version: 15.0.0(eslint@8.57.0)(typescript@5.4.3)
   '@types/cron':
-    specifier: 2.0.1
-    version: 2.0.1
+    specifier: 2.4.0
+    version: 2.4.0
   '@types/express':
     specifier: 4.17.21
     version: 4.17.21
@@ -1497,11 +1497,11 @@ packages:
     resolution: {integrity: sha512-he+DHOWReW0nghN24E1WUqM0efK4kI9oTqDm6XmK8ZPe2djZ90BSNdGnIyCLzCPw7/pogPlGbzI2wHGGmi4O/Q==}
     dev: true
 
-  /@types/cron@2.0.1:
-    resolution: {integrity: sha512-WHa/1rtNtD2Q/H0+YTTZoty+/5rcE66iAFX2IY+JuUoOACsevYyFkSYu/2vdw+G5LrmO7Lxowrqm0av4k3qWNQ==}
+  /@types/cron@2.4.0:
+    resolution: {integrity: sha512-5bBaAkqvSFBX8JMi/xCofNzG5E594TNsApMz68dLd/sQYz/HGQqgcxGHTRjOvD4G3Y+YF1Oo3S7QdCvKt1KAJQ==}
+    deprecated: This is a stub types definition. cron provides its own type definitions, so you do not need this installed.
     dependencies:
-      '@types/luxon': 3.3.0
-      '@types/node': 20.11.30
+      cron: 3.1.6
     dev: true
 
   /@types/eslint-scope@3.7.4:
@@ -2987,7 +2987,6 @@ packages:
     dependencies:
       '@types/luxon': 3.3.0
       luxon: 3.4.3
-    dev: false
 
   /cross-inspect@1.0.0:
     resolution: {integrity: sha512-4PFfn4b5ZN6FMNGSZlyb7wUhuN8wvj8t/VQHZdM4JsDcruGJ8L2kf9zao98QIrBPFCpdk27qst/AGTl7pL3ypQ==}
@@ -5611,7 +5610,6 @@ packages:
   /luxon@3.4.3:
     resolution: {integrity: sha512-tFWBiv3h7z+T/tDaoxA8rqTxy1CHV6gHS//QdaH4pulbq/JuBSGgQspQQqcgnwdAx6pNI7cmvz5Sv/addzHmUg==}
     engines: {node: '>=12'}
-    dev: false
 
   /magic-string@0.30.5:
     resolution: {integrity: sha512-7xlpfBaQaP/T6Vh8MO/EqXSW5En6INHEvEXQiuff7Gku0PWjU3uf6w/j9o7O+SpB5fOAkrI5HeoNgwjEO0pFsA==}
