@@ -67,6 +67,6 @@
     "lint-staged": "15.2.2",
     "prettier": "3.2.5",
     "source-map-support": "0.5.21",
-    "typescript": "5.4.3"
+    "typescript": "5.4.4"
   }
 }
