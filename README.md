@@ -8,7 +8,7 @@ Open API for [MTR HK](https://www.mtr.com.hk/) trains schedule and fares
 
 ![GitHub CI](https://github.com/MTR-Today/mtr-today-api/actions/workflows/runTest.yml/badge.svg) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org) [![npm type definitions](https://img.shields.io/npm/types/typescript.svg)](https://www.typescriptlang.org/)
 
-[Usage](#-api-documentation) | [Development](#%EF%B8%8F-development) | [Contributing](#-contributing)
+[Usage](#-api-documentation) | [Development](#-development) | [Contributing](#-contributing)
 
 </div>
 
