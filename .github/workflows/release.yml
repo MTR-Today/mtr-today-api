@@ -41,7 +41,7 @@ jobs:
           images: ${{ vars.IMAGE_NAME }}
       - name: Build and push Docker image
         if: ${{ steps.release.outputs.release_created }}
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: .
           file: ./Dockerfile
