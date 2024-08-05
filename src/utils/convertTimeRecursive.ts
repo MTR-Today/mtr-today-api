@@ -28,6 +28,7 @@ export const convertTimeRecursive = <T>(data: T, timeFormat: string): T => {
       const convertedDate = dayjs.tz(data, timeFormat, 'Asia/Hong_Kong')
 
       return (convertedDate.isValid() ? convertedDate.toISOString() : data) as T
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (e) {
       return data
     }
