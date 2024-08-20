@@ -34,7 +34,7 @@
     "class-transformer": "0.5.1",
     "class-validator": "0.14.1",
     "csv-parse": "5.5.6",
-    "dayjs": "1.11.12",
+    "dayjs": "1.11.13",
     "graphql": "16.9.0",
     "mtr-kit": "1.13.5",
     "promise-throttle": "1.1.2",
