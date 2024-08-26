@@ -89,8 +89,8 @@ devDependencies:
     specifier: 20.16.1
     version: 20.16.1
   '@types/ramda':
-    specifier: 0.30.1
-    version: 0.30.1
+    specifier: 0.30.2
+    version: 0.30.2
   '@types/supertest':
     specifier: 6.0.2
     version: 6.0.2
@@ -1573,8 +1573,8 @@ packages:
   /@types/qs@6.9.7:
     resolution: {integrity: sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==}
 
-  /@types/ramda@0.30.1:
-    resolution: {integrity: sha512-aoyF/ADPL6N+/NXXfhPWF+Qj6w1Cql59m9wX0Gi15uyF+bpzXeLd63HPdiTDE2bmLXfNcVufsDPKmbfOrOzTBA==}
+  /@types/ramda@0.30.2:
+    resolution: {integrity: sha512-PyzHvjCalm2BRYjAU6nIB3TprYwMNOUY/7P/N8bSzp9W/yM2YrtGtAnnVtaCNSeOZ8DzKyFDvaqQs7LnWwwmBA==}
     dependencies:
       types-ramda: 0.30.1
     dev: true
