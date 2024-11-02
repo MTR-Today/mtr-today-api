@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.3.2 (2024-11-02)
+
+
+### Bug Fixes
+
+* try fix release ([dcb880d](https://github.com/MTR-Today/mtr-today-api/commit/dcb880db850718cad63e256a10b29cd0a3886d08))
+
 ## [1.3.1](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.0...v1.3.1) (2023-07-13)
 
 
