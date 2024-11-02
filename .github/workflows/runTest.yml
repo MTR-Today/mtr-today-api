@@ -18,8 +18,6 @@ jobs:
           node-version-file: '.node-version'
       - uses: pnpm/action-setup@v4
         name: Install pnpm
-        with:
-          version: 8
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
       - run: pnpm test
