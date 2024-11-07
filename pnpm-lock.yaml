@@ -30,8 +30,8 @@ importers:
         specifier: 4.1.1
         version: 4.1.1(@nestjs/common@10.4.7(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.7)
       '@nestjs/swagger':
-        specifier: 8.0.2
-        version: 8.0.2(@nestjs/common@10.4.7(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.7)(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)
+        specifier: 8.0.3
+        version: 8.0.3(@nestjs/common@10.4.7(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.7)(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)
       '@nestjs/throttler':
         specifier: 6.2.1
         version: 6.2.1(@nestjs/common@10.4.7(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.7)(reflect-metadata@0.2.2)
@@ -617,8 +617,8 @@ packages:
     peerDependencies:
       typescript: '>=4.8.2'
 
-  '@nestjs/swagger@8.0.2':
-    resolution: {integrity: sha512-1Y1YxGZN670FUph6T9HifFjc/3C3Trf3Q01iKDa+qlTP7WF5VFIADZLUS1LJYJfYu1Ss7fJVdxhcJo8+cfocVw==}
+  '@nestjs/swagger@8.0.3':
+    resolution: {integrity: sha512-bAke1vMMiRivLPWQQiLSDCv7U+wO9COVHQSylv2kyAkW1EYU3R/D/l2FJvopSOPV3bLrysaOxSU8kIYPeebfmw==}
     peerDependencies:
       '@fastify/static': ^6.0.0 || ^7.0.0
       '@nestjs/common': ^9.0.0 || ^10.0.0
@@ -715,6 +715,9 @@ packages:
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
+
+  '@scarf/scarf@1.3.0':
+    resolution: {integrity: sha512-lHKK8M5CTcpFj2hZDB3wIjb0KAbEOgDmiJGDv1WBRfQgRm/a8/XMEkG/N1iM01xgbUDsPQwi42D+dFo1XPAKew==}
 
   '@spotify/eslint-config-base@15.0.0':
     resolution: {integrity: sha512-7UA5QWbb8xk3Q1665BkRldzieI/Of7ONzjEXZpoyIjrfBDEmlXEDdCmOsv8Pt2aOuzHSTiykMzn7wNF5ymGL/A==}
@@ -3849,8 +3852,8 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  swagger-ui-dist@5.17.14:
-    resolution: {integrity: sha512-CVbSfaLpstV65OnSjbXfVd6Sta3q3F7Cj/yYuvHMp1P90LztOLs6PfUnKEVAeiIVQt9u2SaPwv0LiH/OyMjHRw==}
+  swagger-ui-dist@5.18.1:
+    resolution: {integrity: sha512-nOUpYnU6HZ5Eq2+xmptFti4RX/Vcbe+6PDtQGnSiGT2j9ImgcrJsjsX3OEl8TZV+48y8Wfn0gcjxyoXsMFHr/w==}
 
   symbol-observable@1.2.0:
     resolution: {integrity: sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==}
@@ -4904,7 +4907,7 @@ snapshots:
     transitivePeerDependencies:
       - chokidar
 
-  '@nestjs/swagger@8.0.2(@nestjs/common@10.4.7(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.7)(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)':
+  '@nestjs/swagger@8.0.3(@nestjs/common@10.4.7(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.7)(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)':
     dependencies:
       '@microsoft/tsdoc': 0.15.0
       '@nestjs/common': 10.4.7(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
@@ -4914,7 +4917,7 @@ snapshots:
       lodash: 4.17.21
       path-to-regexp: 3.3.0
       reflect-metadata: 0.2.2
-      swagger-ui-dist: 5.17.14
+      swagger-ui-dist: 5.18.1
     optionalDependencies:
       class-transformer: 0.5.1
       class-validator: 0.14.1
@@ -4984,6 +4987,8 @@ snapshots:
   '@protobufjs/utf8@1.1.0': {}
 
   '@rtsao/scc@1.1.0': {}
+
+  '@scarf/scarf@1.3.0': {}
 
   '@spotify/eslint-config-base@15.0.0(eslint@8.57.1)':
     dependencies:
@@ -8505,7 +8510,9 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  swagger-ui-dist@5.17.14: {}
+  swagger-ui-dist@5.18.1:
+    dependencies:
+      '@scarf/scarf': 1.3.0
 
   symbol-observable@1.2.0: {}
 
