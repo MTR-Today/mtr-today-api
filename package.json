@@ -33,7 +33,7 @@
     "@nestjs/throttler": "6.2.1",
     "class-transformer": "0.5.1",
     "class-validator": "0.14.1",
-    "csv-parse": "5.5.6",
+    "csv-parse": "5.6.0",
     "dayjs": "1.11.13",
     "graphql": "16.9.0",
     "mtr-kit": "1.13.6",
