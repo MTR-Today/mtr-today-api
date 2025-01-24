@@ -28,7 +28,7 @@
     "@nestjs/core": "11.0.4",
     "@nestjs/graphql": "13.0.2",
     "@nestjs/platform-express": "11.0.4",
-    "@nestjs/schedule": "5.0.0",
+    "@nestjs/schedule": "5.0.1",
     "@nestjs/swagger": "8.1.1",
     "@nestjs/throttler": "6.4.0",
     "class-transformer": "0.5.1",
