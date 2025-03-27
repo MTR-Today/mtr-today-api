@@ -22,6 +22,9 @@
       "recommended": true,
       "performance": {
         "noAccumulatingSpread": "off"
+      },
+      "style": {
+        "useImportType": "off"
       }
     }
   },

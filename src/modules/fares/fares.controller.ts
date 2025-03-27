@@ -1,7 +1,7 @@
 import { Controller, Get, Query } from '@nestjs/common';
 
-import type { ListFaresQueryDto } from './fares.dto.js';
-import type { FaresService } from './fares.service.js';
+import { ListFaresQueryDto } from './fares.dto.js';
+import { FaresService } from './fares.service.js';
 
 @Controller('/api/v1/fares')
 export class FaresController {

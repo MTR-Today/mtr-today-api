@@ -1,7 +1,7 @@
 import { Controller, Get, Query } from '@nestjs/common';
 
-import type { ListSchedulesQueryDto } from './schedules.dto.js';
-import type { SchedulesService } from './schedules.service.js';
+import { ListSchedulesQueryDto } from './schedules.dto.js';
+import { SchedulesService } from './schedules.service.js';
 
 @Controller('/api/v1/schedules')
 export class SchedulesController {

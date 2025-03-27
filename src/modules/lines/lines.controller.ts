@@ -1,9 +1,9 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { ApiParam } from '@nestjs/swagger';
-import { LineCode, type StopCode } from 'mtr-kit';
+import { LineCode, StopCode } from 'mtr-kit';
 
-import type { SchedulesService } from '../schedules/schedules.service.js';
-import type { LinesService } from './lines.service.js';
+import { SchedulesService } from '../schedules/schedules.service.js';
+import { LinesService } from './lines.service.js';
 
 @Controller('/api/v1/lines')
 export class LinesController {

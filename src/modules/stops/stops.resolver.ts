@@ -2,12 +2,12 @@ import { Args, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
 import { StopCode } from 'mtr-kit';
 
 import { Fare } from '../fares/fares.model.js';
-import type { FaresService } from '../fares/fares.service.js';
+import { FaresService } from '../fares/fares.service.js';
 import { LineBase } from '../lines/lines.model.js';
 import { Schedule } from '../schedules/schedules.model.js';
-import type { SchedulesService } from '../schedules/schedules.service.js';
+import { SchedulesService } from '../schedules/schedules.service.js';
 import { Stop } from './stops.model.js';
-import type { StopsService } from './stops.service.js';
+import { StopsService } from './stops.service.js';
 
 @Resolver(() => Stop)
 export class StopsResolver {

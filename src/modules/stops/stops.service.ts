@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { type StopCode, lines, stopMap, stops } from 'mtr-kit';
+import { StopCode, lines, stopMap, stops } from 'mtr-kit';
 import { omit } from 'ramda';
 
 @Injectable()

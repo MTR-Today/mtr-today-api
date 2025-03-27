@@ -2,9 +2,9 @@ import { Controller, Get, Param } from '@nestjs/common';
 import { ApiParam } from '@nestjs/swagger';
 import { StopCode } from 'mtr-kit';
 
-import type { FaresService } from '../fares/fares.service.js';
-import type { SchedulesService } from '../schedules/schedules.service.js';
-import type { StopsService } from './stops.service.js';
+import { FaresService } from '../fares/fares.service.js';
+import { SchedulesService } from '../schedules/schedules.service.js';
+import { StopsService } from './stops.service.js';
 
 @Controller('/api/v1/stops')
 export class StopsController {

@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Interval, Timeout } from '@nestjs/schedule';
-import { type LineCode, type StopCode, fareApi, stops } from 'mtr-kit';
+import { LineCode, StopCode, fareApi, stops } from 'mtr-kit';
 import { drop, take } from 'ramda';
 
 import { normalizeStopName } from '../../utils/normalizeStopName.js';

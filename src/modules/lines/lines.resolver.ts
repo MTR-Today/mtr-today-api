@@ -1,10 +1,10 @@
 import { Args, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
-import { LineCode, type StopCode } from 'mtr-kit';
+import { LineCode, StopCode } from 'mtr-kit';
 
 import { Schedule } from '../schedules/schedules.model.js';
-import type { SchedulesService } from '../schedules/schedules.service.js';
+import { SchedulesService } from '../schedules/schedules.service.js';
 import { Line, LineStop } from './lines.model.js';
-import type { LinesService } from './lines.service.js';
+import { LinesService } from './lines.service.js';
 
 @Resolver(() => Line)
 export class LinesResolver {
