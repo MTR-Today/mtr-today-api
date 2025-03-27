@@ -1,5 +1,53 @@
 # Changelog
 
+## [1.3.3](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.2...v1.3.3) (2025-03-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @apollo/server to v4.11.3 ([#671](https://github.com/MTR-Today/mtr-today-api/issues/671)) ([384d4c9](https://github.com/MTR-Today/mtr-today-api/commit/384d4c98f9ee0fa00e8ea02cc96ca24c121089bf))
+* **deps:** update dependency @nestjs/schedule to v4.1.2 ([#654](https://github.com/MTR-Today/mtr-today-api/issues/654)) ([b1297af](https://github.com/MTR-Today/mtr-today-api/commit/b1297af1e2e73fc74d263801a480636806e085eb))
+* **deps:** update dependency @nestjs/schedule to v5 ([7e9df1d](https://github.com/MTR-Today/mtr-today-api/commit/7e9df1d2439cc066874718bd4bc9fb43eabcbda6))
+* **deps:** update dependency @nestjs/schedule to v5.0.1 ([#694](https://github.com/MTR-Today/mtr-today-api/issues/694)) ([c5a6a5d](https://github.com/MTR-Today/mtr-today-api/commit/c5a6a5d1efcab7bfc8fce70721860bbd51bf5d81))
+* **deps:** update dependency @nestjs/swagger to v11 ([f3f4a9a](https://github.com/MTR-Today/mtr-today-api/commit/f3f4a9a2c689380d7da3d5ab3de2f3fb4e5050fb))
+* **deps:** update dependency @nestjs/swagger to v11.0.4 ([#719](https://github.com/MTR-Today/mtr-today-api/issues/719)) ([4231973](https://github.com/MTR-Today/mtr-today-api/commit/423197369e521720fe7e0d2430bddff07aef877d))
+* **deps:** update dependency @nestjs/swagger to v11.0.5 ([#725](https://github.com/MTR-Today/mtr-today-api/issues/725)) ([5113112](https://github.com/MTR-Today/mtr-today-api/commit/5113112b89f002125cebb737df8c25d48980e60a))
+* **deps:** update dependency @nestjs/swagger to v11.0.6 ([#728](https://github.com/MTR-Today/mtr-today-api/issues/728)) ([e282de9](https://github.com/MTR-Today/mtr-today-api/commit/e282de9366f82756ce39b29ca26af40d15054ba4))
+* **deps:** update dependency @nestjs/swagger to v11.0.7 ([008a1bd](https://github.com/MTR-Today/mtr-today-api/commit/008a1bd8d41973f0045143ada47e43337e0a5d44))
+* **deps:** update dependency @nestjs/swagger to v11.1.0 ([#758](https://github.com/MTR-Today/mtr-today-api/issues/758)) ([44854b4](https://github.com/MTR-Today/mtr-today-api/commit/44854b4341e63179fd71f5ec225d9b0751ac5c8c))
+* **deps:** update dependency @nestjs/swagger to v8.0.2 ([0ed4661](https://github.com/MTR-Today/mtr-today-api/commit/0ed466158ed6e80f2f32798afe6b6955fad93efe))
+* **deps:** update dependency @nestjs/swagger to v8.0.3 ([#615](https://github.com/MTR-Today/mtr-today-api/issues/615)) ([f73a908](https://github.com/MTR-Today/mtr-today-api/commit/f73a9084e3ccf20f66db00ac062cae7d574428ea))
+* **deps:** update dependency @nestjs/swagger to v8.0.4 ([#616](https://github.com/MTR-Today/mtr-today-api/issues/616)) ([e942882](https://github.com/MTR-Today/mtr-today-api/commit/e942882f5d05b3768ece7c78252da796dec92ace))
+* **deps:** update dependency @nestjs/swagger to v8.0.5 ([#617](https://github.com/MTR-Today/mtr-today-api/issues/617)) ([e05208c](https://github.com/MTR-Today/mtr-today-api/commit/e05208c19ed6adf38f8d3a7b39de4cdfae7621f2))
+* **deps:** update dependency @nestjs/swagger to v8.0.7 ([#622](https://github.com/MTR-Today/mtr-today-api/issues/622)) ([963d2c8](https://github.com/MTR-Today/mtr-today-api/commit/963d2c85a506a15e7b18d6fceedfa67c649e0e02))
+* **deps:** update dependency @nestjs/swagger to v8.1.0 ([#652](https://github.com/MTR-Today/mtr-today-api/issues/652)) ([a9b58f7](https://github.com/MTR-Today/mtr-today-api/commit/a9b58f7d28f33a7c8acc07809a967f84fb695435))
+* **deps:** update dependency @nestjs/swagger to v8.1.1 ([#674](https://github.com/MTR-Today/mtr-today-api/issues/674)) ([e2ed70b](https://github.com/MTR-Today/mtr-today-api/commit/e2ed70bda43e3423b44de144e3a66e229b23f59d))
+* **deps:** update dependency @nestjs/throttler to v6.3.0 ([#658](https://github.com/MTR-Today/mtr-today-api/issues/658)) ([09e5e84](https://github.com/MTR-Today/mtr-today-api/commit/09e5e848f431f6bd610fc903e810b35cda5ac831))
+* **deps:** update dependency @nestjs/throttler to v6.4.0 ([#692](https://github.com/MTR-Today/mtr-today-api/issues/692)) ([1a45477](https://github.com/MTR-Today/mtr-today-api/commit/1a454773eed88eb433ac13142c6c1f2e2a751ed0))
+* **deps:** update dependency csv-parse to v5.6.0 ([#631](https://github.com/MTR-Today/mtr-today-api/issues/631)) ([82cbdc7](https://github.com/MTR-Today/mtr-today-api/commit/82cbdc7329e4116cd48ce4bb8b7b304ca4c32b8a))
+* **deps:** update dependency graphql to v16.10.0 ([#660](https://github.com/MTR-Today/mtr-today-api/issues/660)) ([d981319](https://github.com/MTR-Today/mtr-today-api/commit/d98131963b1565299c9bf05294da7195fd20316b))
+* **deps:** update dependency rxjs to v7.8.2 ([#723](https://github.com/MTR-Today/mtr-today-api/issues/723)) ([ad7e2b3](https://github.com/MTR-Today/mtr-today-api/commit/ad7e2b3627dd0ba53b3e12c6f76ee4d19b00e481))
+* **deps:** update nest monorepo ([#690](https://github.com/MTR-Today/mtr-today-api/issues/690)) ([ca583be](https://github.com/MTR-Today/mtr-today-api/commit/ca583be3ab6bcb7e444af3486c169182570182fc))
+* **deps:** update nest monorepo ([#715](https://github.com/MTR-Today/mtr-today-api/issues/715)) ([623ac41](https://github.com/MTR-Today/mtr-today-api/commit/623ac41f93358259d1ebc2740c7cef2e2efa9f87))
+* **deps:** update nest monorepo to v10.4.11 ([#641](https://github.com/MTR-Today/mtr-today-api/issues/641)) ([dc3f6e6](https://github.com/MTR-Today/mtr-today-api/commit/dc3f6e600066fd18c3b36ba9b7977029750bd92d))
+* **deps:** update nest monorepo to v10.4.12 ([#645](https://github.com/MTR-Today/mtr-today-api/issues/645)) ([a28274c](https://github.com/MTR-Today/mtr-today-api/commit/a28274cf337fccf94b442b54b20419b68e1d2308))
+* **deps:** update nest monorepo to v10.4.13 ([#647](https://github.com/MTR-Today/mtr-today-api/issues/647)) ([7ad3319](https://github.com/MTR-Today/mtr-today-api/commit/7ad33192981bdd75b7ab1eb534b7d41c6b798933))
+* **deps:** update nest monorepo to v10.4.7 ([e03acda](https://github.com/MTR-Today/mtr-today-api/commit/e03acda72f71402be2ed3bb586a8a7d291da84b9))
+* **deps:** update nest monorepo to v10.4.8 ([#623](https://github.com/MTR-Today/mtr-today-api/issues/623)) ([08f5297](https://github.com/MTR-Today/mtr-today-api/commit/08f5297acc4890bc9963c575f1e340ebccf3b315))
+* **deps:** update nest monorepo to v10.4.9 ([#635](https://github.com/MTR-Today/mtr-today-api/issues/635)) ([9152a0c](https://github.com/MTR-Today/mtr-today-api/commit/9152a0c775be8538c8be19fa8c65147dd60bebb1))
+* **deps:** update nest monorepo to v11 ([9111327](https://github.com/MTR-Today/mtr-today-api/commit/91113273f0a073d58cbc0f84e5da27addd7f1574))
+* **deps:** update nest monorepo to v11.0.11 ([#729](https://github.com/MTR-Today/mtr-today-api/issues/729)) ([8f4f047](https://github.com/MTR-Today/mtr-today-api/commit/8f4f04740ab27a6444841c1154bd3d864b7602ab))
+* **deps:** update nest monorepo to v11.0.12 ([f2e000a](https://github.com/MTR-Today/mtr-today-api/commit/f2e000ad6ce30bb0573146c5a604269ed566e115))
+* **deps:** update nest monorepo to v11.0.5 ([#695](https://github.com/MTR-Today/mtr-today-api/issues/695)) ([92edc02](https://github.com/MTR-Today/mtr-today-api/commit/92edc02260379f921178adb95d4c620bddb64d1d))
+* **deps:** update nest monorepo to v11.0.6 ([#697](https://github.com/MTR-Today/mtr-today-api/issues/697)) ([77653c6](https://github.com/MTR-Today/mtr-today-api/commit/77653c69504e283fc975a898c76cd3f84fc353d5))
+* **deps:** update nest monorepo to v11.0.7 ([#700](https://github.com/MTR-Today/mtr-today-api/issues/700)) ([8d96e90](https://github.com/MTR-Today/mtr-today-api/commit/8d96e90ef0e6187017f0a0298c4762d5900da693))
+* **deps:** update nest monorepo to v11.0.8 ([#707](https://github.com/MTR-Today/mtr-today-api/issues/707)) ([b5df0c0](https://github.com/MTR-Today/mtr-today-api/commit/b5df0c0c68477502e92e180dfe242b96b8c45b4a))
+* **deps:** update nest monorepo to v11.0.9 ([#709](https://github.com/MTR-Today/mtr-today-api/issues/709)) ([e6c99be](https://github.com/MTR-Today/mtr-today-api/commit/e6c99be8953c5db59abbc5318e08ad46f2cd004f))
+* **deps:** update nest-graphql monorepo to v12.2.2 ([#651](https://github.com/MTR-Today/mtr-today-api/issues/651)) ([2013add](https://github.com/MTR-Today/mtr-today-api/commit/2013add146536eb7a4f846c8d5d1309b1f58537f))
+* **deps:** update nest-graphql monorepo to v13 ([367878f](https://github.com/MTR-Today/mtr-today-api/commit/367878f26c142f38cf123b9a7f8a70d283f8bfb9))
+* **deps:** update nest-graphql monorepo to v13.0.3 ([#716](https://github.com/MTR-Today/mtr-today-api/issues/716)) ([5cd724f](https://github.com/MTR-Today/mtr-today-api/commit/5cd724f507714135c84b105894c619e862f31640))
+* **deps:** update nest-graphql monorepo to v13.0.4 ([#753](https://github.com/MTR-Today/mtr-today-api/issues/753)) ([5d9c7fa](https://github.com/MTR-Today/mtr-today-api/commit/5d9c7fa53c1d6e4485aa5d35582bb7f8bc28aba1))
+
 ## 1.3.2 (2024-11-02)
 
 
