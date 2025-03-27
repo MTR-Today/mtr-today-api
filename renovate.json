@@ -1,11 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:js-app"],
-  "baseBranches": ["develop"],
-  "packageRules": [
-    {
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "automerge": true
-    }
-  ]
+  "extends": ["config:js-app", "config:semverAllMonthly", ":automergeMinor"]
 }
