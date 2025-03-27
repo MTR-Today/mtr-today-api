@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.4](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.3...v1.3.4) (2025-03-27)
+
+
+### Bug Fixes
+
+* biome linter ([ec2cb8a](https://github.com/MTR-Today/mtr-today-api/commit/ec2cb8a49c76ed0ffe41950c3d8ee3eb08165ae7))
+
 ## [1.3.3](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.2...v1.3.3) (2025-03-27)
 
 
