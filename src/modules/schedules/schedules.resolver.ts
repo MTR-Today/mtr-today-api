@@ -1,8 +1,8 @@
-import { Args, Query, Resolver } from '@nestjs/graphql'
+import { Args, Query, Resolver } from '@nestjs/graphql';
 
-import { ListSchedulesQueryDto } from './schedules.dto.js'
-import { Schedule } from './schedules.model.js'
-import { SchedulesService } from './schedules.service.js'
+import type { ListSchedulesQueryDto } from './schedules.dto.js';
+import { Schedule } from './schedules.model.js';
+import type { SchedulesService } from './schedules.service.js';
 
 @Resolver(() => Schedule)
 export class SchedulesResolver {
@@ -11,8 +11,8 @@ export class SchedulesResolver {
   @Query(() => [Schedule])
   schedules(
     @Args()
-    { line, stop }: ListSchedulesQueryDto
+    { line, stop }: ListSchedulesQueryDto,
   ) {
-    return this.schedulesService.listSchedules({ line, stop })
+    return this.schedulesService.listSchedules({ line, stop });
   }
 }

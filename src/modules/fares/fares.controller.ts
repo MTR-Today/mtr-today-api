@@ -1,7 +1,7 @@
-import { Controller, Get, Query } from '@nestjs/common'
+import { Controller, Get, Query } from '@nestjs/common';
 
-import { ListFaresQueryDto } from './fares.dto.js'
-import { FaresService } from './fares.service.js'
+import type { ListFaresQueryDto } from './fares.dto.js';
+import type { FaresService } from './fares.service.js';
 
 @Controller('/api/v1/fares')
 export class FaresController {
@@ -10,8 +10,8 @@ export class FaresController {
   @Get()
   listFares(
     @Query()
-    { from, to }: ListFaresQueryDto
+    { from, to }: ListFaresQueryDto,
   ) {
-    return this.fareService.listFares({ from, to })
+    return this.fareService.listFares({ from, to });
   }
 }

@@ -1,34 +1,34 @@
-import { Injectable } from '@nestjs/common'
-import { Interval, Timeout } from '@nestjs/schedule'
-import { LineCode, StopCode, fareApi, stops } from 'mtr-kit'
-import { drop, take } from 'ramda'
+import { Injectable } from '@nestjs/common';
+import { Interval, Timeout } from '@nestjs/schedule';
+import { type LineCode, type StopCode, fareApi, stops } from 'mtr-kit';
+import { drop, take } from 'ramda';
 
-import { normalizeStopName } from '../../utils/normalizeStopName.js'
+import { normalizeStopName } from '../../utils/normalizeStopName.js';
 
 type NormalizedFare = {
-  from?: StopCode
-  to?: StopCode
+  from?: StopCode;
+  to?: StopCode;
   octopusCard: {
-    child: number
-    adult: number
-    student: number
-    elderly: number
-    joyYou: number
-    pwd: number
-  }
+    child: number;
+    adult: number;
+    student: number;
+    elderly: number;
+    joyYou: number;
+    pwd: number;
+  };
   singleJourneyTicket: {
-    child: number
-    adult: number
-    elderly: number
-  }
-}
+    child: number;
+    adult: number;
+    elderly: number;
+  };
+};
 
 @Injectable()
 export class FaresService {
-  fares: NormalizedFare[] = []
+  fares: NormalizedFare[] = [];
 
   async listNormalizedMtrFares(): Promise<NormalizedFare[]> {
-    const fares = await fareApi.listMtrFares()
+    const fares = await fareApi.listMtrFares();
     return fares.map(
       ({
         SRC_STATION_NAME,
@@ -46,11 +46,11 @@ export class FaresService {
       }) => ({
         from: stops.find(
           ({ nameEn }) =>
-            normalizeStopName(nameEn) === normalizeStopName(SRC_STATION_NAME)
+            normalizeStopName(nameEn) === normalizeStopName(SRC_STATION_NAME),
         )?.stop,
         to: stops.find(
           ({ nameEn }) =>
-            normalizeStopName(nameEn) === normalizeStopName(DEST_STATION_NAME)
+            normalizeStopName(nameEn) === normalizeStopName(DEST_STATION_NAME),
         )?.stop,
         octopusCard: {
           child: OCT_CON_CHILD_FARE,
@@ -65,12 +65,12 @@ export class FaresService {
           adult: SINGLE_ADT_FARE,
           elderly: SINGLE_CON_ELDERLY_FARE,
         },
-      })
-    )
+      }),
+    );
   }
 
   async listNormalizedAirportExpressFares(): Promise<NormalizedFare[]> {
-    const fares = await fareApi.listAirportExpressFares()
+    const fares = await fareApi.listAirportExpressFares();
 
     return fares.map(
       ({
@@ -84,10 +84,11 @@ export class FaresService {
       }) => ({
         from: stops.find(
           ({ nameEn }) =>
-            normalizeStopName(nameEn) === normalizeStopName(ST_FROM)
+            normalizeStopName(nameEn) === normalizeStopName(ST_FROM),
         )?.stop,
         to: stops.find(
-          ({ nameEn }) => normalizeStopName(nameEn) === normalizeStopName(ST_TO)
+          ({ nameEn }) =>
+            normalizeStopName(nameEn) === normalizeStopName(ST_TO),
         )?.stop,
         octopusCard: {
           child: OCT_CHD_FARE,
@@ -102,8 +103,8 @@ export class FaresService {
           adult: SINGLE_ADT_FARE,
           elderly: SINGLE_ADT_FARE,
         },
-      })
-    )
+      }),
+    );
   }
 
   @Timeout(0)
@@ -112,9 +113,9 @@ export class FaresService {
     const [mtrFares, airportExpressFares] = await Promise.all([
       this.listNormalizedMtrFares(),
       this.listNormalizedAirportExpressFares(),
-    ])
+    ]);
 
-    this.fares = [...mtrFares, ...airportExpressFares]
+    this.fares = [...mtrFares, ...airportExpressFares];
   }
 
   async listFares({
@@ -123,21 +124,21 @@ export class FaresService {
     offset,
     limit,
   }: {
-    from?: StopCode
-    to?: StopCode
-    offset?: number
-    limit?: number
+    from?: StopCode;
+    to?: StopCode;
+    offset?: number;
+    limit?: number;
   }) {
     const res = this.fares.filter(
-      item => (!from || item.from === from) && (!to || item.to === to)
-    )
+      (item) => (!from || item.from === from) && (!to || item.to === to),
+    );
 
-    const withOffset = offset ? drop(offset, res) : res
-    const withLimit = limit ? take(limit, withOffset) : withOffset
-    return withLimit
+    const withOffset = offset ? drop(offset, res) : res;
+    const withLimit = limit ? take(limit, withOffset) : withOffset;
+    return withLimit;
   }
 
   listLineStopFares(_: LineCode, stop: StopCode) {
-    return this.listFares({ from: stop })
+    return this.listFares({ from: stop });
   }
 }

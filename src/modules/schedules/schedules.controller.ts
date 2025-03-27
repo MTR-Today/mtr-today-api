@@ -1,7 +1,7 @@
-import { Controller, Get, Query } from '@nestjs/common'
+import { Controller, Get, Query } from '@nestjs/common';
 
-import { ListSchedulesQueryDto } from './schedules.dto.js'
-import { SchedulesService } from './schedules.service.js'
+import type { ListSchedulesQueryDto } from './schedules.dto.js';
+import type { SchedulesService } from './schedules.service.js';
 
 @Controller('/api/v1/schedules')
 export class SchedulesController {
@@ -10,8 +10,8 @@ export class SchedulesController {
   @Get()
   listSchedules(
     @Query()
-    { line, stop }: ListSchedulesQueryDto
+    { line, stop }: ListSchedulesQueryDto,
   ) {
-    return this.schedulesService.listSchedules({ line, stop })
+    return this.schedulesService.listSchedules({ line, stop });
   }
 }

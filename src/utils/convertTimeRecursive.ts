@@ -1,17 +1,17 @@
-import dayjs from 'dayjs'
-import customParseFormat from 'dayjs/plugin/customParseFormat.js'
-import timezone from 'dayjs/plugin/timezone.js'
-import utc from 'dayjs/plugin/utc.js'
+import dayjs from 'dayjs';
+import customParseFormat from 'dayjs/plugin/customParseFormat.js';
+import timezone from 'dayjs/plugin/timezone.js';
+import utc from 'dayjs/plugin/utc.js';
 
-dayjs.extend(utc)
-dayjs.extend(timezone)
-dayjs.extend(customParseFormat)
+dayjs.extend(utc);
+dayjs.extend(timezone);
+dayjs.extend(customParseFormat);
 
 export const convertTimeRecursive = <T>(data: T, timeFormat: string): T => {
-  if (!data) return data
+  if (!data) return data;
 
   if (Array.isArray(data)) {
-    return data.map(item => convertTimeRecursive(item, timeFormat)) as T
+    return data.map((item) => convertTimeRecursive(item, timeFormat)) as T;
   }
 
   if (typeof data === 'object') {
@@ -19,20 +19,22 @@ export const convertTimeRecursive = <T>(data: T, timeFormat: string): T => {
       Object.entries(data).map(([key, value]) => [
         key,
         convertTimeRecursive(value, timeFormat),
-      ])
-    ) as T
+      ]),
+    ) as T;
   }
 
   if (typeof data === 'string') {
     try {
-      const convertedDate = dayjs.tz(data, timeFormat, 'Asia/Hong_Kong')
+      const convertedDate = dayjs.tz(data, timeFormat, 'Asia/Hong_Kong');
 
-      return (convertedDate.isValid() ? convertedDate.toISOString() : data) as T
+      return (
+        convertedDate.isValid() ? convertedDate.toISOString() : data
+      ) as T;
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (e) {
-      return data
+      return data;
     }
   }
 
-  return data
-}
+  return data;
+};

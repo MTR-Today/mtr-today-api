@@ -1,8 +1,8 @@
-import { Args, Query, Resolver } from '@nestjs/graphql'
+import { Args, Query, Resolver } from '@nestjs/graphql';
 
-import { ListFaresQueryDto } from './fares.dto.js'
-import { Fare } from './fares.model.js'
-import { FaresService } from './fares.service.js'
+import type { ListFaresQueryDto } from './fares.dto.js';
+import { Fare } from './fares.model.js';
+import type { FaresService } from './fares.service.js';
 
 @Resolver(() => Fare)
 export class FaresResolver {
@@ -11,8 +11,8 @@ export class FaresResolver {
   @Query(() => [Fare])
   fares(
     @Args()
-    { from, to }: ListFaresQueryDto
+    { from, to }: ListFaresQueryDto,
   ) {
-    return this.faresService.listFares({ from, to })
+    return this.faresService.listFares({ from, to });
   }
 }

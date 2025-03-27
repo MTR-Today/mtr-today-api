@@ -1,44 +1,44 @@
-import { Field, Int, ObjectType } from '@nestjs/graphql'
-import { LineCode, StopCode } from 'mtr-kit'
+import { Field, Int, ObjectType } from '@nestjs/graphql';
+import { LineCode, StopCode } from 'mtr-kit';
 
 @ObjectType()
 export class ScheduleItem {
   @Field(() => Int)
-  platform!: number
+  platform!: number;
 
   @Field()
-  destination!: string
+  destination!: string;
 
   @Field()
-  timestamp!: string
+  timestamp!: string;
 }
 
 @ObjectType()
 export class ScheduleDetail {
   @Field(() => [ScheduleItem], { nullable: true })
-  up?: ScheduleItem[]
+  up?: ScheduleItem[];
 
   @Field(() => [ScheduleItem], { nullable: true })
-  down?: ScheduleItem[]
+  down?: ScheduleItem[];
 }
 
 @ObjectType()
 export class Schedule {
   @Field(() => LineCode)
-  line!: LineCode
+  line!: LineCode;
 
   @Field(() => StopCode)
-  stop!: StopCode
+  stop!: StopCode;
 
   @Field()
-  currentTime!: string
+  currentTime!: string;
 
   @Field()
-  isDelayed!: boolean
+  isDelayed!: boolean;
 
   @Field()
-  systemTime!: string
+  systemTime!: string;
 
   @Field()
-  schedule!: ScheduleDetail
+  schedule!: ScheduleDetail;
 }

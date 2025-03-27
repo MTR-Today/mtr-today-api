@@ -1,40 +1,40 @@
-import { Field, ObjectType, registerEnumType } from '@nestjs/graphql'
-import { StopCode } from 'mtr-kit'
+import { Field, ObjectType, registerEnumType } from '@nestjs/graphql';
+import { StopCode } from 'mtr-kit';
 
-import { Fare } from '../fares/fares.model.js'
-import { LineBase } from '../lines/lines.model.js'
-import { Schedule } from '../schedules/schedules.model.js'
+import { Fare } from '../fares/fares.model.js';
+import { LineBase } from '../lines/lines.model.js';
+import { Schedule } from '../schedules/schedules.model.js';
 
 registerEnumType(StopCode, {
   name: 'StopCode',
-})
+});
 
 @ObjectType()
 export class StopBase {
   @Field(() => StopCode)
-  stop!: StopCode
+  stop!: StopCode;
 
   @Field()
-  nameEn!: string
+  nameEn!: string;
 
   @Field()
-  nameZh!: string
+  nameZh!: string;
 
   @Field()
-  color!: string
+  color!: string;
 
   @Field()
-  textColor!: string
+  textColor!: string;
 }
 
 @ObjectType()
 export class Stop extends StopBase {
   @Field(() => [LineBase])
-  lines!: LineBase[]
+  lines!: LineBase[];
 
   @Field(() => [Fare])
-  fares!: Fare[]
+  fares!: Fare[];
 
   @Field(() => [Schedule])
-  schedules!: Schedule[]
+  schedules!: Schedule[];
 }

@@ -9,15 +9,28 @@ on:
       - develop
 
 jobs:
-  build:
+  run-lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup node version
+        uses: actions/setup-node@v4
         with:
           node-version-file: '.node-version'
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm lint
-      - run: pnpm test
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm i --frozen-lockfile
+
+      - name: Lint
+        run: pnpm biome check --diagnostic-level=error
+
+      - name: Lint type
+        run: pnpm tsc

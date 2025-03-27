@@ -1,22 +1,22 @@
-import { Controller, Get, Param } from '@nestjs/common'
-import { ApiParam } from '@nestjs/swagger'
-import { StopCode } from 'mtr-kit'
+import { Controller, Get, Param } from '@nestjs/common';
+import { ApiParam } from '@nestjs/swagger';
+import { StopCode } from 'mtr-kit';
 
-import { FaresService } from '../fares/fares.service.js'
-import { SchedulesService } from '../schedules/schedules.service.js'
-import { StopsService } from './stops.service.js'
+import type { FaresService } from '../fares/fares.service.js';
+import type { SchedulesService } from '../schedules/schedules.service.js';
+import type { StopsService } from './stops.service.js';
 
 @Controller('/api/v1/stops')
 export class StopsController {
   constructor(
     private readonly stopsService: StopsService,
     private readonly schedulesService: SchedulesService,
-    private readonly faresService: FaresService
+    private readonly faresService: FaresService,
   ) {}
 
   @Get()
   listStops() {
-    return this.stopsService.listStop()
+    return this.stopsService.listStop();
   }
 
   @Get(':stop')
@@ -26,7 +26,7 @@ export class StopsController {
     enum: StopCode,
   })
   getStop(@Param() { stop }: { stop: StopCode }) {
-    return this.stopsService.getStop({ stop })
+    return this.stopsService.getStop({ stop });
   }
 
   @Get(':stop/lines')
@@ -36,7 +36,7 @@ export class StopsController {
     enum: StopCode,
   })
   listStopLines(@Param() { stop }: { stop: StopCode }) {
-    return this.stopsService.listStopLines({ stop })
+    return this.stopsService.listStopLines({ stop });
   }
 
   @Get(':stop/schedules')
@@ -46,7 +46,7 @@ export class StopsController {
     enum: StopCode,
   })
   listStopSchedules(@Param() { stop }: { stop: StopCode }) {
-    return this.schedulesService.listSchedules({ stop })
+    return this.schedulesService.listSchedules({ stop });
   }
 
   @Get(':stop/fares')
@@ -56,6 +56,6 @@ export class StopsController {
     enum: StopCode,
   })
   listStopFares(@Param() { stop }: { stop: StopCode }) {
-    return this.faresService.listFares({ from: stop })
+    return this.faresService.listFares({ from: stop });
   }
 }
