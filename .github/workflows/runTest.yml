@@ -30,7 +30,7 @@ jobs:
         run: pnpm i --frozen-lockfile
 
       - name: Lint
-        run: pnpm biome check --diagnostic-level=error
+        run: pnpm biome check
 
       - name: Lint type
         run: pnpm tsc
