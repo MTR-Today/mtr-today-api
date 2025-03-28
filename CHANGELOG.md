@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.6](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.5...v1.3.6) (2025-03-28)
+
+
+### Bug Fixes
+
+* throttle api call ([9fad909](https://github.com/MTR-Today/mtr-today-api/commit/9fad909424e2b326a871c8a34ce6b746ac3098df))
+
 ## [1.3.5](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.4...v1.3.5) (2025-03-27)
 
 
