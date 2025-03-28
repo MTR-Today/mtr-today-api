@@ -134,7 +134,7 @@ if (isMainThread) {
     const promiseThrottle = new (
       PromiseThrottle as unknown as typeof PromiseThrottle.default
     )({
-      requestsPerSecond: 2,
+      requestsPerSecond: 1,
       promiseImplementation: Promise,
     });
 
