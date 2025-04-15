@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.7](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.6...v1.3.7) (2025-04-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @nestjs/common to v11.0.16 [security] ([#767](https://github.com/MTR-Today/mtr-today-api/issues/767)) ([35d953c](https://github.com/MTR-Today/mtr-today-api/commit/35d953c69f92fc24a6d3cacd0b7967c5a5c8386c))
+
 ## [1.3.6](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.5...v1.3.6) (2025-03-28)
 
 
