@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.8](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.7...v1.3.8) (2025-05-02)
+
+
+### Bug Fixes
+
+* **deps:** update all dependencies ([452513d](https://github.com/MTR-Today/mtr-today-api/commit/452513dd81f55682e8aa387799df7aa3d787227c))
+
 ## [1.3.7](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.6...v1.3.7) (2025-04-15)
 
 
