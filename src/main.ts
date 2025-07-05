@@ -1,10 +1,10 @@
-import './worker.js';
+import "./worker.js";
 
-import { ValidationPipe } from '@nestjs/common';
-import { NestFactory } from '@nestjs/core';
-import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { ValidationPipe } from "@nestjs/common";
+import { NestFactory } from "@nestjs/core";
+import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 
-import { AppModule } from './app.module.js';
+import { AppModule } from "./app.module.js";
 
 const app = await NestFactory.create(AppModule);
 app.useGlobalPipes(
@@ -17,18 +17,18 @@ app.useGlobalPipes(
 );
 
 const config = new DocumentBuilder()
-  .setTitle('MTR Today API')
-  .setVersion('1.0')
+  .setTitle("MTR Today API")
+  .setVersion("1.0")
   .build();
 
 const document = SwaggerModule.createDocument(app, config);
-SwaggerModule.setup('/api/v1', app, document);
+SwaggerModule.setup("/api/v1", app, document);
 
 app.enableCors({
   origin: [
-    'https://www.mtr.today',
-    'https://mtr.today',
-    'http://dev.mtr.today:5173',
+    "https://www.mtr.today",
+    "https://mtr.today",
+    "http://dev.mtr.today:5173",
   ],
 });
 
