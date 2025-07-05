@@ -1,5 +1,5 @@
-import { Field, Float, ObjectType } from '@nestjs/graphql';
-import { StopCode } from 'mtr-kit';
+import { Field, Float, ObjectType } from "@nestjs/graphql";
+import { StopCode } from "mtr-kit";
 
 @ObjectType()
 export class OctopusCardFare {

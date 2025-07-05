@@ -1,17 +1,17 @@
-import * as url from 'node:url';
-import { Worker, isMainThread, parentPort } from 'node:worker_threads';
+import * as url from "node:url";
+import { isMainThread, parentPort, Worker } from "node:worker_threads";
 
-import dayjs from 'dayjs';
+import dayjs from "dayjs";
 import {
   type LineCode,
+  lines,
   type ScheduleItem,
   type StopCode,
-  lines,
   stopScheduleApi,
-} from 'mtr-kit';
-import PromiseThrottle from 'promise-throttle';
+} from "mtr-kit";
+import PromiseThrottle from "promise-throttle";
 
-import { convertTimeRecursive } from './utils/convertTimeRecursive.js';
+import { convertTimeRecursive } from "./utils/convertTimeRecursive.js";
 
 export type NormalizedScheduleItem = {
   platform: number;
@@ -37,7 +37,7 @@ export const scheduleMap = new Map<
 if (isMainThread) {
   const worker = new Worker(url.fileURLToPath(import.meta.url));
   worker.on(
-    'message',
+    "message",
     ({
       line,
       stop,
@@ -48,15 +48,15 @@ if (isMainThread) {
   );
 
   // eslint-disable-next-line no-console
-  worker.on('error', (err) => console.error(err));
+  worker.on("error", (err) => console.error(err));
   // eslint-disable-next-line no-console
-  worker.on('exit', (code) => console.log(`Worker exited with code ${code}.`));
+  worker.on("exit", (code) => console.log(`Worker exited with code ${code}.`));
 } else {
   const threadMap = new Map<`${LineCode}-${StopCode}`, NormalizedSchedule>();
 
   const formatScheduleItem = (items: ScheduleItem[]) =>
     items
-      .filter(({ valid }) => valid === 'Y')
+      .filter(({ valid }) => valid === "Y")
       .sort((a, b) => Number(a.seq) - Number(b.seq))
       .map(({ dest, plat, time }) => ({
         platform: Number(plat),
@@ -75,14 +75,14 @@ if (isMainThread) {
       return convertTimeRecursive(
         {
           currentTime: curr_time,
-          isDelayed: isdelay !== 'N',
+          isDelayed: isdelay !== "N",
           systemTime: sys_time,
           schedule: {
             up: UP ? formatScheduleItem(UP) : UP,
             down: DOWN ? formatScheduleItem(DOWN) : DOWN,
           },
         },
-        'YYYY-MM-DD HH:mm:ss',
+        "YYYY-MM-DD HH:mm:ss",
       );
     } catch (e) {
       // eslint-disable-next-line no-console

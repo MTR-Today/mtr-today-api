@@ -1,8 +1,8 @@
-import { Module } from '@nestjs/common';
+import { Module } from "@nestjs/common";
 
-import { FaresController } from './fares.controller.js';
-import { FaresResolver } from './fares.resolver.js';
-import { FaresService } from './fares.service.js';
+import { FaresController } from "./fares.controller.js";
+import { FaresResolver } from "./fares.resolver.js";
+import { FaresService } from "./fares.service.js";
 
 @Module({
   exports: [FaresService],

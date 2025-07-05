@@ -1,12 +1,12 @@
-import { Controller, Get, Param } from '@nestjs/common';
-import { ApiParam } from '@nestjs/swagger';
-import { StopCode } from 'mtr-kit';
+import { Controller, Get, Param } from "@nestjs/common";
+import { ApiParam } from "@nestjs/swagger";
+import { StopCode } from "mtr-kit";
 
-import { FaresService } from '../fares/fares.service.js';
-import { SchedulesService } from '../schedules/schedules.service.js';
-import { StopsService } from './stops.service.js';
+import { FaresService } from "../fares/fares.service.js";
+import { SchedulesService } from "../schedules/schedules.service.js";
+import { StopsService } from "./stops.service.js";
 
-@Controller('/api/v1/stops')
+@Controller("/api/v1/stops")
 export class StopsController {
   constructor(
     private readonly stopsService: StopsService,
@@ -19,9 +19,9 @@ export class StopsController {
     return this.stopsService.listStop();
   }
 
-  @Get(':stop')
+  @Get(":stop")
   @ApiParam({
-    name: 'stop',
+    name: "stop",
     required: true,
     enum: StopCode,
   })
@@ -29,9 +29,9 @@ export class StopsController {
     return this.stopsService.getStop({ stop });
   }
 
-  @Get(':stop/lines')
+  @Get(":stop/lines")
   @ApiParam({
-    name: 'stop',
+    name: "stop",
     required: true,
     enum: StopCode,
   })
@@ -39,9 +39,9 @@ export class StopsController {
     return this.stopsService.listStopLines({ stop });
   }
 
-  @Get(':stop/schedules')
+  @Get(":stop/schedules")
   @ApiParam({
-    name: 'stop',
+    name: "stop",
     required: true,
     enum: StopCode,
   })
@@ -49,9 +49,9 @@ export class StopsController {
     return this.schedulesService.listSchedules({ stop });
   }
 
-  @Get(':stop/fares')
+  @Get(":stop/fares")
   @ApiParam({
-    name: 'stop',
+    name: "stop",
     required: true,
     enum: StopCode,
   })

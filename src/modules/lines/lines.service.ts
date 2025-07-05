@@ -1,15 +1,15 @@
-import { Injectable } from '@nestjs/common';
-import { LineCode, StopCode, lineMap, lines } from 'mtr-kit';
-import { omit } from 'ramda';
+import { Injectable } from "@nestjs/common";
+import { LineCode, lineMap, lines, StopCode } from "mtr-kit";
+import { omit } from "ramda";
 
 @Injectable()
 export class LinesService {
   listLines() {
-    return lines.map(omit(['stops']));
+    return lines.map(omit(["stops"]));
   }
 
   getLine({ line }: { line: LineCode }) {
-    return omit(['stops'], lineMap[line]);
+    return omit(["stops"], lineMap[line]);
   }
 
   listLineStop({ line }: { line: LineCode }) {

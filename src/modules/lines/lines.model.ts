@@ -1,10 +1,10 @@
-import { Field, Int, ObjectType, registerEnumType } from '@nestjs/graphql';
-import { LineCode, StopCode } from 'mtr-kit';
+import { Field, Int, ObjectType, registerEnumType } from "@nestjs/graphql";
+import { LineCode, StopCode } from "mtr-kit";
 
-import { Schedule } from '../schedules/schedules.model.js';
+import { Schedule } from "../schedules/schedules.model.js";
 
 registerEnumType(LineCode, {
-  name: 'LineCode',
+  name: "LineCode",
 });
 
 @ObjectType()
