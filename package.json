@@ -13,10 +13,7 @@
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main",
-    "prepare": "husky",
-    "pre-commit": "pnpm biome check --fix --staged --no-errors-on-unmatched",
-    "pre-push": "tsc"
+    "start:prod": "node dist/main"
   },
   "dependencies": {
     "@apollo/server": "4.12.2",
@@ -50,7 +47,7 @@
     "@types/node": "22.16.0",
     "@types/ramda": "0.30.2",
     "@types/supertest": "6.0.3",
-    "husky": "9.1.7",
+    "lefthook": "1.11.16",
     "source-map-support": "0.5.21",
     "typescript": "5.8.3"
   },
