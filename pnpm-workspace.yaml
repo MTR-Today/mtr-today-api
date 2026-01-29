@@ -2,3 +2,4 @@ onlyBuiltDependencies:
   - '@biomejs/biome'
   - '@nestjs/core'
   - '@scarf/scarf'
+  - lefthook
