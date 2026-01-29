@@ -19,7 +19,7 @@ jobs:
           node-version-file: '.node-version'
       - uses: pnpm/action-setup@v4
         name: Install pnpm
-      - uses: google-github-actions/release-please-action@v4
+      - uses: googleapis/release-please-action@v4
         id: release
         with:
           release-type: node
