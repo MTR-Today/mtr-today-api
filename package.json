@@ -34,7 +34,7 @@
     "graphql": "16.12.0",
     "mtr-kit": "1.13.9",
     "promise-throttle": "1.1.2",
-    "ramda": "0.31.3",
+    "ramda": "0.32.0",
     "reflect-metadata": "0.2.2",
     "rxjs": "7.8.2"
   },
@@ -47,7 +47,7 @@
     "@nestjs/testing": "11.1.12",
     "@types/express": "5.0.6",
     "@types/node": "24.10.9",
-    "@types/ramda": "0.30.2",
+    "@types/ramda": "0.31.1",
     "@types/supertest": "6.0.3",
     "lefthook": "2.0.16",
     "source-map-support": "0.5.21",
