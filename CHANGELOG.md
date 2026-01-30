@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.3.12](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.11...v1.3.12) (2026-01-30)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @apollo/server to v5 ([e8cea9c](https://github.com/MTR-Today/mtr-today-api/commit/e8cea9c1e43f82407d99917fd4479d96744d41bb))
+* **deps:** update dependency @apollo/server to v5 ([fe5e319](https://github.com/MTR-Today/mtr-today-api/commit/fe5e31915079ec51a0e9b0b940cfb805f14ae5c3))
+* **deps:** update dependency @nestjs/schedule to v6.1.0 ([#790](https://github.com/MTR-Today/mtr-today-api/issues/790)) ([049ad91](https://github.com/MTR-Today/mtr-today-api/commit/049ad910a6c60e3d94a7df4c3fb5fa74d4b8c103))
+* **deps:** update dependency @nestjs/swagger to v11.2.5 ([#781](https://github.com/MTR-Today/mtr-today-api/issues/781)) ([e1a6153](https://github.com/MTR-Today/mtr-today-api/commit/e1a6153bcbab0f9bde535eebe477c33c88d2c947))
+* **deps:** update dependency @nestjs/throttler to v6.5.0 ([#791](https://github.com/MTR-Today/mtr-today-api/issues/791)) ([cea33e5](https://github.com/MTR-Today/mtr-today-api/commit/cea33e5a2fae6332aeb4e4e5644e8e055a0a0058))
+* **deps:** update dependency class-validator to v0.14.3 ([#782](https://github.com/MTR-Today/mtr-today-api/issues/782)) ([4be8cc8](https://github.com/MTR-Today/mtr-today-api/commit/4be8cc8c5e203f4315c1b8ceee353ba742852a21))
+* **deps:** update dependency csv-parse to v6 ([34ce13e](https://github.com/MTR-Today/mtr-today-api/commit/34ce13ee33e2cf72493769b30d390cffd3fb165e))
+* **deps:** update dependency csv-parse to v6 ([24c932b](https://github.com/MTR-Today/mtr-today-api/commit/24c932bcfc95ac10f91d0746c1cbad6503d7e9dd))
+* **deps:** update dependency dayjs to v1.11.19 ([#783](https://github.com/MTR-Today/mtr-today-api/issues/783)) ([53511b9](https://github.com/MTR-Today/mtr-today-api/commit/53511b92a7e282ad4d21b4e336fdc2b84f9b1ce2))
+* **deps:** update dependency graphql to v16.12.0 ([#792](https://github.com/MTR-Today/mtr-today-api/issues/792)) ([d9d3ba3](https://github.com/MTR-Today/mtr-today-api/commit/d9d3ba36e59dee5be8c57136238d376c31508d5a))
+* **deps:** update dependency mtr-kit to v1.13.9 ([#784](https://github.com/MTR-Today/mtr-today-api/issues/784)) ([b3b56ba](https://github.com/MTR-Today/mtr-today-api/commit/b3b56ba0d87aabafa113d86fc2c717462b683528))
+* **deps:** update dependency ramda to v0.32.0 ([#793](https://github.com/MTR-Today/mtr-today-api/issues/793)) ([a770917](https://github.com/MTR-Today/mtr-today-api/commit/a770917b59bda07c574b0fa529ba04233f08462f))
+* **deps:** update nest monorepo ([#785](https://github.com/MTR-Today/mtr-today-api/issues/785)) ([69984a4](https://github.com/MTR-Today/mtr-today-api/commit/69984a427c1398c1aa984ce2c2021051914637bb))
+* **deps:** update nest-graphql monorepo to v13.2.3 ([#794](https://github.com/MTR-Today/mtr-today-api/issues/794)) ([1b0ef99](https://github.com/MTR-Today/mtr-today-api/commit/1b0ef996cc9cf78126b17bed16a0697f58e0d82e))
+
 ## [1.3.11](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.10...v1.3.11) (2025-07-05)
 
 
