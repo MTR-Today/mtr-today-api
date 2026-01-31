@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "github>marklai1998/shared-config-renovate//presets/default.json",
-    "github>marklai1998/shared-config-renovate//presets/autoMerge.json"
+    "github>marklai1998/shared-configs//packages/renovate/presets/default.json",
+    "github>marklai1998/shared-configs//packages/renovate/presets/autoMerge.json"
   ]
 }
