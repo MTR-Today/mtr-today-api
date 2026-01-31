@@ -1,5 +1,5 @@
-import { Field, Int, ObjectType } from "@nestjs/graphql";
-import { LineCode, StopCode } from "mtr-kit";
+import { Field, Int, ObjectType } from '@nestjs/graphql';
+import { LineCode, StopCode } from 'mtr-kit';
 
 @ObjectType()
 export class ScheduleItem {

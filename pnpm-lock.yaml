@@ -72,6 +72,9 @@ importers:
       '@commitlint/cli':
         specifier: 20.3.1
         version: 20.3.1(@types/node@24.10.9)(typescript@5.9.3)
+      '@marklai/shared-config-biome':
+        specifier: ^1.0.0
+        version: 1.0.0(@biomejs/biome@2.3.13)
       '@marklai/shared-config-commitlint':
         specifier: ^1.0.0
         version: 1.0.0(@commitlint/cli@20.3.1(@types/node@24.10.9)(typescript@5.9.3))
@@ -584,6 +587,12 @@ packages:
   '@lukeed/csprng@1.1.0':
     resolution: {integrity: sha512-Z7C/xXCiGWsg0KuKsHTKJxbWhpI3Vs5GwLfOean7MGyVFGqdRgBbAjOCh6u4bbjPc/8MJ2pZmK/0DLdCbivLDA==}
     engines: {node: '>=8'}
+
+  '@marklai/shared-config-biome@1.0.0':
+    resolution: {integrity: sha512-LOUwfnXGSB9Kuh5bAZNCUgUrtvaOxjBPEuD6hdGoMjLcrOikrLJW8COVVko3GaomRWivM4BlaLlYcyRI5eK0EA==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      '@biomejs/biome': ^2.0.0
 
   '@marklai/shared-config-commitlint@1.0.0':
     resolution: {integrity: sha512-z9c8iFPafWLVu2ezkWw7AhwOPu2rU8lFsDMlnGIn7M/TcvTx42gBofmm8CQmSxGSepRKWgLXg9/2F//oeCNhrg==}
@@ -2972,6 +2981,10 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.5
 
   '@lukeed/csprng@1.1.0': {}
+
+  '@marklai/shared-config-biome@1.0.0(@biomejs/biome@2.3.13)':
+    dependencies:
+      '@biomejs/biome': 2.3.13
 
   '@marklai/shared-config-commitlint@1.0.0(@commitlint/cli@20.3.1(@types/node@24.10.9)(typescript@5.9.3))':
     dependencies:

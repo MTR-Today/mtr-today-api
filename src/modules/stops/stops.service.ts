@@ -1,6 +1,6 @@
-import { Injectable } from "@nestjs/common";
-import { lines, StopCode, stopMap, stops } from "mtr-kit";
-import { omit } from "ramda";
+import { Injectable } from '@nestjs/common';
+import { lines, StopCode, stopMap, stops } from 'mtr-kit';
+import { omit } from 'ramda';
 
 @Injectable()
 export class StopsService {
@@ -15,6 +15,6 @@ export class StopsService {
   listStopLines({ stop }: { stop: StopCode }) {
     return lines
       .filter((line) => line.stops.some((item) => item.stop === stop))
-      .map(omit(["stops"]));
+      .map(omit(['stops']));
   }
 }

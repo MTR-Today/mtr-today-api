@@ -1,9 +1,9 @@
-import { Controller, Get, Query } from "@nestjs/common";
+import { Controller, Get, Query } from '@nestjs/common';
 
-import { ListSchedulesQueryDto } from "./schedules.dto.js";
-import { SchedulesService } from "./schedules.service.js";
+import { ListSchedulesQueryDto } from './schedules.dto.js';
+import { SchedulesService } from './schedules.service.js';
 
-@Controller("/api/v1/schedules")
+@Controller('/api/v1/schedules')
 export class SchedulesController {
   constructor(private readonly schedulesService: SchedulesService) {}
 

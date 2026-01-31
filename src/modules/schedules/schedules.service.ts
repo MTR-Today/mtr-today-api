@@ -1,7 +1,7 @@
-import { Injectable } from "@nestjs/common";
-import { LineCode, lineMap, lines, StopCode } from "mtr-kit";
+import { Injectable } from '@nestjs/common';
+import { LineCode, lineMap, lines, StopCode } from 'mtr-kit';
 
-import { NormalizedSchedule, scheduleMap } from "../../worker.js";
+import { NormalizedSchedule, scheduleMap } from '../../worker.js';
 
 @Injectable()
 export class SchedulesService {

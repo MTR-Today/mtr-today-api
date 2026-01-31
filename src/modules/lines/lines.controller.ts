@@ -1,11 +1,11 @@
-import { Controller, Get, Param } from "@nestjs/common";
-import { ApiParam } from "@nestjs/swagger";
-import { LineCode, StopCode } from "mtr-kit";
+import { Controller, Get, Param } from '@nestjs/common';
+import { ApiParam } from '@nestjs/swagger';
+import { LineCode, StopCode } from 'mtr-kit';
 
-import { SchedulesService } from "../schedules/schedules.service.js";
-import { LinesService } from "./lines.service.js";
+import { SchedulesService } from '../schedules/schedules.service.js';
+import { LinesService } from './lines.service.js';
 
-@Controller("/api/v1/lines")
+@Controller('/api/v1/lines')
 export class LinesController {
   constructor(
     private readonly linesService: LinesService,
@@ -17,9 +17,9 @@ export class LinesController {
     return this.linesService.listLines();
   }
 
-  @Get(":line")
+  @Get(':line')
   @ApiParam({
-    name: "line",
+    name: 'line',
     required: true,
     enum: LineCode,
   })
@@ -27,9 +27,9 @@ export class LinesController {
     return this.linesService.getLine({ line });
   }
 
-  @Get(":line/stops")
+  @Get(':line/stops')
   @ApiParam({
-    name: "line",
+    name: 'line',
     required: true,
     enum: LineCode,
   })
@@ -37,9 +37,9 @@ export class LinesController {
     return this.linesService.listLineStop({ line });
   }
 
-  @Get(":line/stops/:stop")
+  @Get(':line/stops/:stop')
   @ApiParam({
-    name: "line",
+    name: 'line',
     required: true,
     enum: LineCode,
   })
@@ -47,9 +47,9 @@ export class LinesController {
     return this.linesService.getLineStop({ line, stop });
   }
 
-  @Get(":line/stops/:stop/schedules")
+  @Get(':line/stops/:stop/schedules')
   @ApiParam({
-    name: "line",
+    name: 'line',
     required: true,
     enum: LineCode,
   })

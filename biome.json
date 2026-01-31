@@ -1,18 +1,6 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git",
-    "useIgnoreFile": true
-  },
-  "files": {
-    "ignoreUnknown": false
-  },
-  "formatter": {
-    "enabled": true,
-    "indentStyle": "space"
-  },
-  "assist": { "enabled": true },
+  "extends": ["@marklai/shared-config-biome"],
   "linter": {
     "enabled": true,
     "rules": {
@@ -26,9 +14,6 @@
     }
   },
   "javascript": {
-    "formatter": {
-      "quoteStyle": "double"
-    },
     "parser": {
       "unsafeParameterDecoratorsEnabled": true
     }
