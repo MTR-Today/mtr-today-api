@@ -72,9 +72,9 @@ importers:
       '@commitlint/cli':
         specifier: 20.3.1
         version: 20.3.1(@types/node@24.10.9)(typescript@5.9.3)
-      '@commitlint/config-conventional':
-        specifier: 20.3.1
-        version: 20.3.1
+      '@marklai/shared-config-commitlint':
+        specifier: ^1.0.0
+        version: 1.0.0(@commitlint/cli@20.3.1(@types/node@24.10.9)(typescript@5.9.3))
       '@nestjs/cli':
         specifier: 11.0.16
         version: 11.0.16(@types/node@24.10.9)
@@ -584,6 +584,12 @@ packages:
   '@lukeed/csprng@1.1.0':
     resolution: {integrity: sha512-Z7C/xXCiGWsg0KuKsHTKJxbWhpI3Vs5GwLfOean7MGyVFGqdRgBbAjOCh6u4bbjPc/8MJ2pZmK/0DLdCbivLDA==}
     engines: {node: '>=8'}
+
+  '@marklai/shared-config-commitlint@1.0.0':
+    resolution: {integrity: sha512-z9c8iFPafWLVu2ezkWw7AhwOPu2rU8lFsDMlnGIn7M/TcvTx42gBofmm8CQmSxGSepRKWgLXg9/2F//oeCNhrg==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      '@commitlint/cli': ^20.0.0
 
   '@microsoft/tsdoc@0.16.0':
     resolution: {integrity: sha512-xgAyonlVVS+q7Vc7qLW0UrJU7rSFcETRWsqdXZtjzRU8dF+6CkozTK4V4y1LwOX7j8r/vHphjDeMeGI4tNGeGA==}
@@ -2966,6 +2972,11 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.5
 
   '@lukeed/csprng@1.1.0': {}
+
+  '@marklai/shared-config-commitlint@1.0.0(@commitlint/cli@20.3.1(@types/node@24.10.9)(typescript@5.9.3))':
+    dependencies:
+      '@commitlint/cli': 20.3.1(@types/node@24.10.9)(typescript@5.9.3)
+      '@commitlint/config-conventional': 20.3.1
 
   '@microsoft/tsdoc@0.16.0': {}
 
