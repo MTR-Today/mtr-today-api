@@ -18,7 +18,7 @@
     "pre-push": "tsc"
   },
   "dependencies": {
-    "@apollo/server": "5.3.0",
+    "@apollo/server": "5.4.0",
     "@nestjs/apollo": "13.2.4",
     "@nestjs/common": "11.1.13",
     "@nestjs/core": "11.1.13",
