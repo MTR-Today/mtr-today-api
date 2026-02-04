@@ -73,10 +73,10 @@ importers:
         specifier: 20.4.1
         version: 20.4.1(@types/node@24.10.10)(typescript@5.9.3)
       '@marklai/shared-config-biome':
-        specifier: ^1.0.0
+        specifier: 1.0.0
         version: 1.0.0(@biomejs/biome@2.3.14)
       '@marklai/shared-config-commitlint':
-        specifier: ^1.0.0
+        specifier: 1.0.0
         version: 1.0.0(@commitlint/cli@20.4.1(@types/node@24.10.10)(typescript@5.9.3))
       '@nestjs/cli':
         specifier: 11.0.16
