@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.3.14](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.13...v1.3.14) (2026-02-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @apollo/server to v5.4.0 [security] ([#815](https://github.com/MTR-Today/mtr-today-api/issues/815)) ([064f58a](https://github.com/MTR-Today/mtr-today-api/commit/064f58a998755f5b93f097a0bef647f06b3a359d))
+* **deps:** update nest-graphql monorepo to v13.2.4 ([f8687d6](https://github.com/MTR-Today/mtr-today-api/commit/f8687d6666c53797ca2f6b08942007c9d2deb6e7))
+* **deps:** update nest-graphql monorepo to v13.2.4 ([f1f121c](https://github.com/MTR-Today/mtr-today-api/commit/f1f121cea7c9e658dd5a882587e2aaeffcbff8c3))
+
 ## [1.3.13](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.12...v1.3.13) (2026-02-04)
 
 
