@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.2",
-    "@commitlint/cli": "20.4.1",
+    "@commitlint/cli": "20.4.2",
     "@marklai/shared-config-biome": "1.0.0",
     "@marklai/shared-config-commitlint": "1.0.0",
     "@nestjs/cli": "11.0.16",
