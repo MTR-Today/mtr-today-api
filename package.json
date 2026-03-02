@@ -28,7 +28,7 @@
     "@nestjs/swagger": "11.2.6",
     "@nestjs/throttler": "6.5.0",
     "class-transformer": "0.5.1",
-    "class-validator": "0.14.4",
+    "class-validator": "0.15.1",
     "csv-parse": "6.1.0",
     "dayjs": "1.11.19",
     "graphql": "16.13.0",
