@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.18](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.17...v1.3.18) (2026-03-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency class-validator to v0.15.1 ([#849](https://github.com/MTR-Today/mtr-today-api/issues/849)) ([4d75202](https://github.com/MTR-Today/mtr-today-api/commit/4d75202eb467f1dc7a5853988bf4995ebf3f9ea6))
+
 ## [1.3.17](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.16...v1.3.17) (2026-03-01)
 
 
