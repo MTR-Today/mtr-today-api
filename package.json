@@ -31,7 +31,7 @@
     "class-validator": "0.15.1",
     "csv-parse": "6.1.0",
     "dayjs": "1.11.19",
-    "graphql": "16.13.0",
+    "graphql": "16.13.1",
     "mtr-kit": "1.13.9",
     "promise-throttle": "1.1.2",
     "ramda": "0.32.0",
