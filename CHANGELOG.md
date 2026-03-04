@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.3.19](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.18...v1.3.19) (2026-03-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency graphql to v16.13.1 ([dd6d373](https://github.com/MTR-Today/mtr-today-api/commit/dd6d3730653365370d0a25ce3403b562740c8c82))
+* **deps:** update dependency graphql to v16.13.1 ([8d15ddf](https://github.com/MTR-Today/mtr-today-api/commit/8d15ddfd399f997dee5ab5c2ec2dfa05ab950bb3))
+* **deps:** update nest monorepo to v11.1.15 ([#855](https://github.com/MTR-Today/mtr-today-api/issues/855)) ([e207f20](https://github.com/MTR-Today/mtr-today-api/commit/e207f200bec0d8c98db0eeb077251ee9d6527ffa))
+
 ## [1.3.18](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.17...v1.3.18) (2026-03-02)
 
 
