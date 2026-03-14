@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.21](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.20...v1.3.21) (2026-03-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency dayjs to v1.11.20 ([#872](https://github.com/MTR-Today/mtr-today-api/issues/872)) ([ac65f2f](https://github.com/MTR-Today/mtr-today-api/commit/ac65f2fd20e31e52bd177fad50469be4b90d6783))
+
 ## [1.3.20](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.19...v1.3.20) (2026-03-09)
 
 
