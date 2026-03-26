@@ -1,4 +1,5 @@
 onlyBuiltDependencies:
+  - '@apollo/protobufjs'
   - '@biomejs/biome'
   - '@nestjs/core'
   - '@scarf/scarf'
