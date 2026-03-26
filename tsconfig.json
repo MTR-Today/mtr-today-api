@@ -10,11 +10,11 @@
     "experimentalDecorators": true,
     "sourceMap": true,
     "outDir": "./dist",
+    "rootDir": "src",
     "incremental": true,
 
     "allowJs": false,
     "skipLibCheck": true,
-    "esModuleInterop": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
 
