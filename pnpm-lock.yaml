@@ -76,8 +76,8 @@ importers:
         specifier: 1.0.0
         version: 1.0.0(@biomejs/biome@2.4.11)
       '@marklai/shared-config-commitlint':
-        specifier: 1.0.0
-        version: 1.0.0(@commitlint/cli@20.5.0(@types/node@24.12.2)(conventional-commits-parser@6.4.0)(typescript@6.0.2))
+        specifier: 1.0.1
+        version: 1.0.1(@commitlint/cli@20.5.0(@types/node@24.12.2)(conventional-commits-parser@6.4.0)(typescript@6.0.2))
       '@nestjs/cli':
         specifier: 11.0.19
         version: 11.0.19(@types/node@24.12.2)
@@ -312,8 +312,8 @@ packages:
     engines: {node: '>=v18'}
     hasBin: true
 
-  '@commitlint/config-conventional@20.3.1':
-    resolution: {integrity: sha512-NCzwvxepstBZbmVXsvg49s+shCxlJDJPWxXqONVcAtJH9wWrOlkMQw/zyl+dJmt8lyVopt5mwQ3mR5M2N2rUWg==}
+  '@commitlint/config-conventional@20.5.0':
+    resolution: {integrity: sha512-t3Ni88rFw1XMa4nZHgOKJ8fIAT9M2j5TnKyTqJzsxea7FUetlNdYFus9dz+MhIRZmc16P0PPyEfh6X2d/qw8SA==}
     engines: {node: '>=v18'}
 
   '@commitlint/config-validator@20.5.0':
@@ -580,8 +580,8 @@ packages:
     peerDependencies:
       '@biomejs/biome': ^2.0.0
 
-  '@marklai/shared-config-commitlint@1.0.0':
-    resolution: {integrity: sha512-z9c8iFPafWLVu2ezkWw7AhwOPu2rU8lFsDMlnGIn7M/TcvTx42gBofmm8CQmSxGSepRKWgLXg9/2F//oeCNhrg==}
+  '@marklai/shared-config-commitlint@1.0.1':
+    resolution: {integrity: sha512-4eQHMvshLYBZKbrNrSkrVBAu/v3yiCVdOzF8XHW4tlBnM9TMNsosjUUSPeztIv6K+OJzh0jZRGcRZh8OvKzjVQ==}
     engines: {node: '>=20'}
     peerDependencies:
       '@commitlint/cli': ^20.0.0
@@ -1181,9 +1181,9 @@ packages:
     resolution: {integrity: sha512-6gfI3otXK5Ph5DfCOI1dblr+kN3FAm5a97hYoQkqNZxOaYa5WKfXH+AnpsmS+iUH2mgVC2Cg2Qw9m5OKcmNrIg==}
     engines: {node: '>=18'}
 
-  conventional-changelog-conventionalcommits@7.0.2:
-    resolution: {integrity: sha512-NKXYmMR/Hr1DevQegFB4MwfM5Vv0m4UIxKZTTYuD98lpTknaZlSRrDOG4X7wIXpGkfsYxZTghUN+Qq+T0YQI7w==}
-    engines: {node: '>=16'}
+  conventional-changelog-conventionalcommits@9.3.1:
+    resolution: {integrity: sha512-dTYtpIacRpcZgrvBYvBfArMmK2xvIpv2TaxM0/ZI5CBtNUzvF2x0t15HsbRABWprS6UPmvj+PzHVjSx4qAVKyw==}
+    engines: {node: '>=18'}
 
   conventional-commits-parser@6.4.0:
     resolution: {integrity: sha512-tvRg7FIBNlyPzjdG8wWRlPHQJJHI7DylhtRGeU9Lq+JuoPh5BKpPRX83ZdLrvXuOSu5Eo/e7SzOQhU4Hd2Miuw==}
@@ -2588,10 +2588,10 @@ snapshots:
       - conventional-commits-parser
       - typescript
 
-  '@commitlint/config-conventional@20.3.1':
+  '@commitlint/config-conventional@20.5.0':
     dependencies:
       '@commitlint/types': 20.5.0
-      conventional-changelog-conventionalcommits: 7.0.2
+      conventional-changelog-conventionalcommits: 9.3.1
 
   '@commitlint/config-validator@20.5.0':
     dependencies:
@@ -2885,10 +2885,10 @@ snapshots:
     dependencies:
       '@biomejs/biome': 2.4.11
 
-  '@marklai/shared-config-commitlint@1.0.0(@commitlint/cli@20.5.0(@types/node@24.12.2)(conventional-commits-parser@6.4.0)(typescript@6.0.2))':
+  '@marklai/shared-config-commitlint@1.0.1(@commitlint/cli@20.5.0(@types/node@24.12.2)(conventional-commits-parser@6.4.0)(typescript@6.0.2))':
     dependencies:
       '@commitlint/cli': 20.5.0(@types/node@24.12.2)(conventional-commits-parser@6.4.0)(typescript@6.0.2)
-      '@commitlint/config-conventional': 20.3.1
+      '@commitlint/config-conventional': 20.5.0
 
   '@microsoft/tsdoc@0.16.0': {}
 
@@ -3526,7 +3526,7 @@ snapshots:
     dependencies:
       compare-func: 2.0.0
 
-  conventional-changelog-conventionalcommits@7.0.2:
+  conventional-changelog-conventionalcommits@9.3.1:
     dependencies:
       compare-func: 2.0.0
 
