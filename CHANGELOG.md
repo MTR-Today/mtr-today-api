@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.28](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.27...v1.3.28) (2026-04-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @nestjs/swagger to v11.3.0 ([#922](https://github.com/MTR-Today/mtr-today-api/issues/922)) ([4a9f75e](https://github.com/MTR-Today/mtr-today-api/commit/4a9f75e43acb24fe931ce22ec330f9dc63a1f96f))
+
 ## [1.3.27](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.26...v1.3.27) (2026-04-16)
 
 
