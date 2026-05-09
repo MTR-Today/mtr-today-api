@@ -1,6 +1,6 @@
-onlyBuiltDependencies:
-  - '@apollo/protobufjs'
-  - '@biomejs/biome'
-  - '@nestjs/core'
-  - '@scarf/scarf'
-  - lefthook
+allowBuilds:
+  '@apollo/protobufjs': true
+  '@biomejs/biome': true
+  '@nestjs/core': true
+  '@scarf/scarf': true
+  lefthook: true
