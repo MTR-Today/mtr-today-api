@@ -39,15 +39,15 @@
     "rxjs": "7.8.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.13",
+    "@biomejs/biome": "2.4.14",
     "@commitlint/cli": "20.5.3",
     "@marklai/shared-config-biome": "1.0.0",
-    "@marklai/shared-config-commitlint": "1.0.1",
+    "@marklai/shared-config-commitlint": "1.0.2",
     "@nestjs/cli": "11.0.21",
     "@nestjs/schematics": "11.1.0",
     "@nestjs/testing": "11.1.19",
     "@types/express": "5.0.6",
-    "@types/node": "24.12.2",
+    "@types/node": "24.12.3",
     "@types/ramda": "0.31.1",
     "@types/supertest": "7.2.0",
     "lefthook": "2.1.6",
