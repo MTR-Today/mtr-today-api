@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.38](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.37...v1.3.38) (2026-05-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency dayjs to v1.11.21 ([#981](https://github.com/MTR-Today/mtr-today-api/issues/981)) ([3382911](https://github.com/MTR-Today/mtr-today-api/commit/33829117e56f873f4d8a602eca4967b43a396a93))
+* **deps:** update nest monorepo to v11.1.24 ([#979](https://github.com/MTR-Today/mtr-today-api/issues/979)) ([083b290](https://github.com/MTR-Today/mtr-today-api/commit/083b29006fe6c29deca405095cdeb2a414d0c119))
+
 ## [1.3.37](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.36...v1.3.37) (2026-05-25)
 
 
