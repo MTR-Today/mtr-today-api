@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.39](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.38...v1.3.39) (2026-06-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency graphql to v16.14.1 ([#986](https://github.com/MTR-Today/mtr-today-api/issues/986)) ([3663eb7](https://github.com/MTR-Today/mtr-today-api/commit/3663eb7fc009fd04b4b396648b29b5db930df971))
+
 ## [1.3.38](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.37...v1.3.38) (2026-05-29)
 
 
