@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.48](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.47...v1.3.48) (2026-07-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency csv-parse to v7.0.1 ([#1023](https://github.com/MTR-Today/mtr-today-api/issues/1023)) ([a808314](https://github.com/MTR-Today/mtr-today-api/commit/a80831475acd96fead5dcfa340dce70cd9504064))
+* **deps:** update dependency graphql to v17.0.2 ([#1027](https://github.com/MTR-Today/mtr-today-api/issues/1027)) ([54eb948](https://github.com/MTR-Today/mtr-today-api/commit/54eb948364ade59f5adc2d825307773cbbe4c587))
+
 ## [1.3.47](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.46...v1.3.47) (2026-07-03)
 
 
