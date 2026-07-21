@@ -54,5 +54,5 @@
     "source-map-support": "0.5.21",
     "typescript": "7.0.2"
   },
-  "packageManager": "pnpm@11.13.1"
+  "packageManager": "pnpm@11.14.0"
 }
