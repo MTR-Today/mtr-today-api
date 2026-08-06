@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.51](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.50...v1.3.51) (2026-08-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency csv-parse to v7.0.2 ([#1054](https://github.com/MTR-Today/mtr-today-api/issues/1054)) ([63d76af](https://github.com/MTR-Today/mtr-today-api/commit/63d76af705285dae514807d7a36c4c5175807ee7))
+
 ## [1.3.50](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.49...v1.3.50) (2026-07-20)
 
 
