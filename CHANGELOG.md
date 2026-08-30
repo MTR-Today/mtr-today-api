@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.3.55](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.54...v1.3.55) (2026-08-30)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @nestjs/schedule to v12 ([#1080](https://github.com/MTR-Today/mtr-today-api/issues/1080)) ([57ee5de](https://github.com/MTR-Today/mtr-today-api/commit/57ee5de21b54e1a6eed75477b7bed021b9e89682))
+* **deps:** update dependency @nestjs/swagger to v12 ([#1081](https://github.com/MTR-Today/mtr-today-api/issues/1081)) ([4a38c61](https://github.com/MTR-Today/mtr-today-api/commit/4a38c61fcced566415a9993a4a02525ded145c9a))
+* **deps:** update nest monorepo to v12 ([#1082](https://github.com/MTR-Today/mtr-today-api/issues/1082)) ([4220b1f](https://github.com/MTR-Today/mtr-today-api/commit/4220b1fe4e74dd5f872bddec26b86e787833fda7))
+* **deps:** update nest-graphql monorepo to v14 ([#1083](https://github.com/MTR-Today/mtr-today-api/issues/1083)) ([545b47f](https://github.com/MTR-Today/mtr-today-api/commit/545b47fab977b366e45212c8e94a36487658b460))
+
 ## [1.3.54](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.53...v1.3.54) (2026-08-28)
 
 
