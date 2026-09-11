@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.58](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.57...v1.3.58) (2026-09-11)
+
+
+### Bug Fixes
+
+* downgrade ts ([2e92ca7](https://github.com/MTR-Today/mtr-today-api/commit/2e92ca7430e6b2f3f0f3b4339a2f81d51792c168))
+* downgrade ts ([c1e6707](https://github.com/MTR-Today/mtr-today-api/commit/c1e67078571cb84b853fac6370900a0e3c2d1bce))
+
 ## [1.3.57](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.56...v1.3.57) (2026-09-11)
 
 
