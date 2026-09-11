@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.60](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.59...v1.3.60) (2026-09-11)
+
+
+### Bug Fixes
+
+* remove plat casting ([106fd7a](https://github.com/MTR-Today/mtr-today-api/commit/106fd7ae4e65e600bf7ab32204248f3ff3a603a7))
+
 ## [1.3.59](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.58...v1.3.59) (2026-09-11)
 
 
