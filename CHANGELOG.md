@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.59](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.58...v1.3.59) (2026-09-11)
+
+
+### Bug Fixes
+
+* missing deps ([b2e0fb0](https://github.com/MTR-Today/mtr-today-api/commit/b2e0fb0813402fd256204322ce87aac6cbc408e0))
+
 ## [1.3.58](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.57...v1.3.58) (2026-09-11)
 
 
