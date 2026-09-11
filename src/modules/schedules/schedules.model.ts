@@ -1,10 +1,10 @@
-import { Field, Int, ObjectType } from '@nestjs/graphql';
+import { Field, ObjectType } from '@nestjs/graphql';
 import { LineCode, StopCode } from 'mtr-kit';
 
 @ObjectType()
 export class ScheduleItem {
-  @Field(() => Int)
-  platform!: number;
+  @Field()
+  platform!: string;
 
   @Field()
   destination!: string;
