@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.57](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.56...v1.3.57) (2026-09-11)
+
+
+### Bug Fixes
+
+* string platform ([e527ad3](https://github.com/MTR-Today/mtr-today-api/commit/e527ad325720e3e43ceebddb647bc212cce6afde))
+
 ## [1.3.56](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.55...v1.3.56) (2026-08-31)
 
 
