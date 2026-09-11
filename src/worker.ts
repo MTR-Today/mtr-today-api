@@ -14,7 +14,7 @@ import PromiseThrottle from 'promise-throttle';
 import { convertTimeRecursive } from './utils/convertTimeRecursive.js';
 
 export type NormalizedScheduleItem = {
-  platform: number;
+  platform: string;
   destination: string;
   timestamp: string;
 };
@@ -59,7 +59,7 @@ if (isMainThread) {
       .filter(({ valid }) => valid === 'Y')
       .sort((a, b) => Number(a.seq) - Number(b.seq))
       .map(({ dest, plat, time }) => ({
-        platform: Number(plat),
+        platform: plat,
         destination: dest,
         timestamp: time,
       }));
