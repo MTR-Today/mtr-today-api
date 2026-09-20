@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.3.62](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.61...v1.3.62) (2026-09-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @nestjs/throttler to v6.6.0 ([#1109](https://github.com/MTR-Today/mtr-today-api/issues/1109)) ([f86b8b1](https://github.com/MTR-Today/mtr-today-api/commit/f86b8b161f4525af17f55b8bec45ea248da4e74c))
+* **deps:** update dependency @nestjs/throttler to v6.7.0 ([#1112](https://github.com/MTR-Today/mtr-today-api/issues/1112)) ([3fb2321](https://github.com/MTR-Today/mtr-today-api/commit/3fb232169ce84cae5b30710ca18ff3f829f58bec))
+* **deps:** update nest-graphql monorepo to v14.0.1 ([#1111](https://github.com/MTR-Today/mtr-today-api/issues/1111)) ([81777f9](https://github.com/MTR-Today/mtr-today-api/commit/81777f99de01d73dbbe99ff1c037227f2b7c5b3f))
+
 ## [1.3.61](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.60...v1.3.61) (2026-09-17)
 
 
