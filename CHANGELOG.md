@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.64](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.63...v1.3.64) (2026-09-25)
+
+
+### Bug Fixes
+
+* **deps:** update nest monorepo to v12.0.4 ([#1118](https://github.com/MTR-Today/mtr-today-api/issues/1118)) ([b55d393](https://github.com/MTR-Today/mtr-today-api/commit/b55d3931cb3828653ba2c7c82a69efe288321a0b))
+
 ## [1.3.63](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.62...v1.3.63) (2026-09-21)
 
 
