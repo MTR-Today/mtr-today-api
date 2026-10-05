@@ -40,18 +40,18 @@
     "rxjs": "7.8.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.14",
+    "@biomejs/biome": "2.5.15",
     "@commitlint/cli": "21.2.3",
     "@marklai/shared-config-biome": "1.0.2",
-    "@marklai/shared-config-commitlint": "1.1.1",
+    "@marklai/shared-config-commitlint": "1.1.2",
     "@nestjs/cli": "12.0.3",
     "@nestjs/schematics": "12.0.4",
     "@nestjs/testing": "12.0.4",
     "@types/express": "5.0.6",
-    "@types/node": "24.13.6",
+    "@types/node": "24.19.1",
     "@types/ramda": "0.32.0",
     "@types/supertest": "7.2.1",
-    "lefthook": "2.1.14",
+    "lefthook": "2.1.16",
     "source-map-support": "0.5.21",
     "typescript": "6.0.3"
   },
