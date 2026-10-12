@@ -51,7 +51,7 @@
     "@types/node": "24.19.1",
     "@types/ramda": "0.32.0",
     "@types/supertest": "7.2.1",
-    "lefthook": "2.1.16",
+    "lefthook": "2.2.1",
     "source-map-support": "0.5.21",
     "typescript": "6.0.3"
   },
