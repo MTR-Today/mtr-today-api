@@ -1,4 +1,4 @@
-FROM node:24.21.0
+FROM node:24.22.0
 COPY . /app
 WORKDIR /app
 RUN npm i -g pnpm
