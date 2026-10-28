@@ -215,8 +215,8 @@ importers:
         specifier: 1.13.9
         version: 1.13.9
       promise-throttle:
-        specifier: 1.1.2
-        version: 1.1.2
+        specifier: 2.1.0
+        version: 2.1.0
       ramda:
         specifier: 0.32.0
         version: 0.32.0
@@ -1788,8 +1788,8 @@ packages:
     resolution: {integrity: sha512-/+5VFTchJDoVj3bhoqi6UeymcD00DAwb1nJwamzPvHEszJ4FpF6SNNbUbOS8yI56qHzdV8eK0qEfOSiodkTdxg==}
     engines: {node: '>= 0.4'}
 
-  promise-throttle@1.1.2:
-    resolution: {integrity: sha512-dij7vjyXNewuuN/gyr+TX2KRjw48mbV5FEtgyXaIoJjGYAKT0au23/voNvy9eS4UNJjx2KUdEcO5Yyfc1h7vWQ==}
+  promise-throttle@2.1.0:
+    resolution: {integrity: sha512-DTRVUZeBHzxQLcsay35jX8R5VSPyNrVIq3iUYEHRBi7yLv7+Sn3f0DoOz2ZiHgLrd9ByAu6b13TmzYwF5KFOZA==}
 
   proxy-addr@2.0.8:
     resolution: {integrity: sha512-5nnx0yGyVUcY6t9RnWcARWtwT9F1D8O9rt08htPvnd49W1IgZtmLkhu9WfMzQj1cFxjHIO6connUNVW5k7AVyQ==}
@@ -3522,7 +3522,7 @@ snapshots:
 
   possible-typed-array-names@1.1.0: {}
 
-  promise-throttle@1.1.2: {}
+  promise-throttle@2.1.0: {}
 
   proxy-addr@2.0.8:
     dependencies:
