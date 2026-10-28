@@ -34,7 +34,7 @@
     "dayjs": "1.11.23",
     "graphql": "17.0.2",
     "mtr-kit": "1.13.9",
-    "promise-throttle": "1.1.2",
+    "promise-throttle": "2.1.0",
     "ramda": "0.32.0",
     "reflect-metadata": "0.2.2",
     "rxjs": "7.8.2"

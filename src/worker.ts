@@ -131,9 +131,7 @@ if (isMainThread) {
         closestTs: closestTs?.toISOString(),
       }));
 
-    const promiseThrottle = new (
-      PromiseThrottle as unknown as typeof PromiseThrottle.default
-    )({
+    const promiseThrottle = new PromiseThrottle({
       requestsPerSecond: 1,
       promiseImplementation: Promise,
     });
