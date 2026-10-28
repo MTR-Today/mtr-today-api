@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.73](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.72...v1.3.73) (2026-10-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency promise-throttle to v2 ([#1165](https://github.com/MTR-Today/mtr-today-api/issues/1165)) ([957c332](https://github.com/MTR-Today/mtr-today-api/commit/957c3324ea453d5e9417a615b2a5ed60e40ca969))
+
 ## [1.3.72](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.71...v1.3.72) (2026-10-28)
 
 
