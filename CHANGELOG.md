@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.74](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.73...v1.3.74) (2026-10-29)
+
+
+### Bug Fixes
+
+* **deps:** update node.js to v26 ([#1169](https://github.com/MTR-Today/mtr-today-api/issues/1169)) ([17d478c](https://github.com/MTR-Today/mtr-today-api/commit/17d478cb0e589d25a57c8cf7f6f0507f782dae41))
+
 ## [1.3.73](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.72...v1.3.73) (2026-10-28)
 
 
