@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.75](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.74...v1.3.75) (2026-10-30)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @nestjs/swagger to v12.0.5 ([#1172](https://github.com/MTR-Today/mtr-today-api/issues/1172)) ([8d02f3f](https://github.com/MTR-Today/mtr-today-api/commit/8d02f3fff252240b338b75502de83b92eb25ddd4))
+* **deps:** update nest-graphql monorepo ([#1173](https://github.com/MTR-Today/mtr-today-api/issues/1173)) ([dfedd9c](https://github.com/MTR-Today/mtr-today-api/commit/dfedd9cd2c79324550dec3061209ef31bfe5d42c))
+
 ## [1.3.74](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.73...v1.3.74) (2026-10-29)
 
 
