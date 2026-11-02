@@ -1,6 +1,9 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "extends": ["@marklai/shared-config-biome"],
+  "files": {
+    "includes": ["**", "!CHANGELOG.md"]
+  },
   "linter": {
     "enabled": true,
     "rules": {

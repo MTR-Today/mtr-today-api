@@ -1,6 +1,6 @@
 allowBuilds:
-  '@apollo/protobufjs': true
-  '@biomejs/biome': true
-  '@nestjs/core': true
-  '@scarf/scarf': true
+  "@apollo/protobufjs": true
+  "@biomejs/biome": true
+  "@nestjs/core": true
+  "@scarf/scarf": true
   lefthook: true

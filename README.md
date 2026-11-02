@@ -1,6 +1,6 @@
 <div align="center">
 
-![Banner](docs/banner.png 'Banner')
+![Banner](docs/banner.png "Banner")
 
 # MTR Today API
 
