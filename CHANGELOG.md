@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.78](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.77...v1.3.78) (2026-11-07)
+
+
+### Bug Fixes
+
+* **deps:** update nest monorepo to v12.3.3 ([#1183](https://github.com/MTR-Today/mtr-today-api/issues/1183)) ([4416d18](https://github.com/MTR-Today/mtr-today-api/commit/4416d18bca1aad4c74fb5990f3d840e3dd27fdff))
+* **deps:** update nest-graphql monorepo to v14.2.0 ([#1185](https://github.com/MTR-Today/mtr-today-api/issues/1185)) ([082a51c](https://github.com/MTR-Today/mtr-today-api/commit/082a51cb4302239233796825118b16e49bf728d2))
+
 ## [1.3.77](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.76...v1.3.77) (2026-11-06)
 
 
