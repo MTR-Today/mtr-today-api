@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.81](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.80...v1.3.81) (2026-11-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @apollo/server to v5.5.2 ([#1196](https://github.com/MTR-Today/mtr-today-api/issues/1196)) ([e5c9ae5](https://github.com/MTR-Today/mtr-today-api/commit/e5c9ae513124027a4d0970f9d6f2755523faa08e))
+
 ## [1.3.80](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.79...v1.3.80) (2026-11-09)
 
 
