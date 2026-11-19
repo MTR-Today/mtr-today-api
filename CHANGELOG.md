@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.84](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.83...v1.3.84) (2026-11-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @nestjs/throttler to v6.8.0 ([#1207](https://github.com/MTR-Today/mtr-today-api/issues/1207)) ([ffaca25](https://github.com/MTR-Today/mtr-today-api/commit/ffaca25047f991fbd5507f8a20f2323865703091))
+
 ## [1.3.83](https://github.com/MTR-Today/mtr-today-api/compare/v1.3.82...v1.3.83) (2026-11-17)
 
 
